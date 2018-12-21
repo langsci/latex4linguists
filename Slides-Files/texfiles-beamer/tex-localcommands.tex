@@ -1,0 +1,403 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%           MyP-Commands  2018.12.08       
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% German quotation marks:
+\newcommand{\gqq}[1]{\glqq{}#1\grqq{}}		%double
+\newcommand{\gq}[1]{\glq{}#1\grq{}}			%simple
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations in German
+% package needed: xspace
+% Short space in German abbreviations: \,	
+\newcommand{\dash}{\mbox{d.\,h.}\xspace}
+\newcommand{\idR}{\mbox{i.\,d.\,R.}\xspace}
+\newcommand{\su}{\mbox{s.\,u.}\xspace}
+\newcommand{\ua}{\mbox{u.\,a.}\xspace}
+\newcommand{\va}{\mbox{v.\,a.}\xspace}
+\newcommand{\zB}{\mbox{z.\,B.}\xspace}
+%\newcommand{\s}{s.~}
+%not possibel: \dh --> d.\,h.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Abbreviations in English
+\newcommand{\ao}{a.o.\ }	% among others
+\newcommand{\cf}[1]{(cf.~#1)}	% confer = compare
+\newcommand{\cfe}[1]{(cf.~(\ref{#1}))}	% compare + example
+\newcommand{\ia}{i.a.}	% inter alia = among others
+\newcommand{\ie}{i.e.~}	% id est = that is
+\newcommand{\fe}{e.g.~}	% exempli gratia = for example
+%not possible: \eg --> e.g.~
+\newcommand{\vs}{vs.\ }	% versus
+\newcommand{\wrt}{w.r.t.\ }	% with respect to
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dash:
+\newcommand{\gs}[1]{--\,#1\,--}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rightarrow with and without space
+\def\ra{\ensuremath\rightarrow}			%without space
+\def\ras{\ensuremath\rightarrow\ }		%with space
+\def\la{\ensuremath\leftarrow}
+\def\las{\ensuremath\leftarrow\ }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% X-bar notation
+
+%% Notation with primes (not emphasized): \xprime{X}
+\newcommand{\xprime}[1]{#1$^{\prime}$}
+\newcommand{\xxprime}[1]{#1$^{\prime\prime}$}
+\newcommand{\xxxprime}[1]{#1$^{\prime\prime\prime}$}
+
+%% Notation with primes (emphasized): \exbar{X}
+\newcommand{\exprime}[1]{\emph{#1}$^{\prime}$}
+\newcommand{\exxprime}[1]{\emph{#1}$^{\prime\prime}$}
+\newcommand{\exxxprime}[1]{\emph{#1}$^{\prime\prime\prime}$}
+
+% Notation with zero and max (not emphasized): \xbar{X}
+\newcommand{\xzero}[1]{#1$^{0}$}
+\newcommand{\maxbar}[1]{#1$^{\textsc{max}}$}
+
+% Notation with zero and max (emphasized): \xbar{X}
+\newcommand{\ezerobar}[1]{\emph{#1}$^{0}$}
+\newcommand{\emaxbar}[1]{\emph{#1}$^{\textsc{max}}$}
+
+%% Notation with bars (already implemented in gb4e):
+% \obar{X}, \ibar{X}, \iibar{X}, \mbar{X} %Problems with \mbar!
+% $\overline{}$
+%
+%% Without gb4e:
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+%
+%%% OR:
+%\newcommand{\ibar}[1]{$\overline{\textrm{#1}}$}
+%\newcommand{\iibar}[1]{$\overline{\overline{\textrm{#1}}}$}
+%% (emphasized):
+\newcommand{\eibar}[1]{$\overline{#1}$}
+\newcommand{\eiibar}[1]{\overline{$\overline{#1}}$}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Subscript & Superscript: no italics inside math mode
+\newcommand{\down}[1]{\textsubscript{#1}}
+\newcommand{\downm}[1]{_{\textrm{#1}}}
+
+\newcommand{\up}[1]{\textsuperscript{#1}}
+\newcommand{\upm}[1]{^{\textrm{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Small caps subscripts
+\newcommand{\scdown}[1]{\textsubscript{\textsc{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Shorter Underline
+%\DeclareTextCommand{\_}{T1}{\leavevmode \kern.06em\vbox{\hrule width.4em}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Object- and Meta-language marking:
+%\newcommand{\obj}[1]{\glqq{}#1\grqq{}}		%German double quotes
+%\newcommand{\obj}[1]{``#1''}					  %English double quotes
+\newcommand{\obj}[1]{\emph{#1}}                 %Emphasising
+\newcommand{\term}[1]{\textsc{#1}}              %for abbreviated terminology
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Size:
+\newcommand{\size}[1]{{\footnotesize #1}}	% f.e. resize citations
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for LaTeX terminology: package names, environments, commands
+\newcommand{\ltxterm}[1]{{\footnotesize \texttt{#1}}}
+\newcommand{\ltxpack}[1]{{\footnotesize \texttt{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short cuts (<STRG + ALT>):
+%\newcommand{\short}[1]{\texttt{\textsc{#1}}}		%Emphasising
+\newcommand{\short}[1]{$\langle$\texttt{\textsc{#1}}$\rangle$}		%Emphasising
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Writing text with colour:
+% package needed: xcolor
+% Command \alert{} in Beamer >> red
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Marking text with colour: 
+%%% package needed: color
+\newcommand{\clrr}[1]{\colorbox{red}{#1}}
+\newcommand{\clry}[1]{\colorbox{yellow}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Semantic types (<e,t>), features, variables and graphemes in angled brackets 
+
+%%% types and variables, in math mode: angled brackets + italics + no space
+%\newcommand{\type}[1]{$<#1>$}
+
+%%% OR more correctly: 
+%%% Types and Variables: chevrons! + text in math mode (italics + no space)
+\newcommand{\type}[1]{$\langle #1 \rangle$} %% In Math Mode, only single types
+\newcommand{\typem}[1]{\langle #1 \rangle } %% Mathmode extra, complex types
+
+%%% Features and Graphemes: chevrons! + normal font
+\newcommand{\ab}[1]{$\langle$#1$\rangle$} %% no italics
+\newcommand{\abe}[1]{$\langle$\emph{#1}$\rangle$} %% italics
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Function symbol in Beamer Class!
+%% italics and serif
+\newcommand{\func}{\emph{\textrm{f}}}
+\newcommand{\gunc}{\emph{\textrm{g}}}
+\newcommand{\chiF}[1]{\chi _{\textrm{#1}}} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HPSG: Features and Values!
+\newcommand{\wert}[1]{\emph{#1}}		%Values & Types
+\newcommand{\val}[1]{\emph{#1}}		%Values & Types
+\newcommand{\feat}[1]{\textsc{#1}}	%Features
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% (Syntactic) Trees
+% package needed: forest
+%
+%%% Setting for simple trees
+%\forestset{
+%	sn edges/.style={for tree={parent anchor=south, child anchor=north}}
+%}
+
+%%% Setting for complex trees
+%\forestset{
+%	sn edges/.style={for tree={parent anchor=south, child anchor=north,align=center,base=bottom,where n children=0{tier=word,inner xsep=0pt,outer sep=0pt}{}}}, 
+%background tree/.style={for tree={text opacity=0.2,draw opacity=0.2,edge={draw opacity=0.2}}}
+%}
+%
+%\newcommand\HideWd[1]{%
+%	\makebox[0pt]{#1}%
+%}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Outputbox
+\newcommand{\outputbox}[1]{\noindent\fbox{\parbox[t][][t]{0.98\linewidth}{#1}}\vspace{0.5em}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Margin notes: \myp{NOTE}
+% package needed: marginnote
+\renewcommand{\marginfont}{\singlespacing}
+\renewcommand{\marginfont}{\footnotesize}
+\renewcommand{\marginfont}{\color{black}}
+
+\newcommand{\myp}[1]{%
+	\marginnote{%
+		\begin{spacing}{1}
+			\vspace{-\baselineskip}%
+			\color{red}\scriptsize#1
+		\end{spacing}
+	}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Corpora & Grammmars
+\newcommand{\DWDS}[1]{DWDS\nocite{DWDS}: #1}
+ 
+\newcommand{\CREA}{\citetext{CREA \citeyear{CREA}}}
+\newcommand{\CREAA}{\citetext{CREA \citeyear{CREAA}}}
+\newcommand{\CORPES}{\citetext{CORPES \citeyear{CORPES}}}
+
+\newcommand{\DECOW}{\citetext{DECOW \citeyear{SchaeferR15a}}}
+\newcommand{\ESCOW}{\citetext{ESCOW \citeyear{SchaeferR&Co12a}}}
+
+\newcommand{\RAEa}[1]{RAE, \citeyear[#1]{RAE10a}}
+\newcommand{\RAEb}[1]{RAE, \citeyear[#1]{RAE10b}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Literature and Appendix
+\newcommand{\backupbegin}{
+	\newcounter{finalframe}
+	\setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+	\setcounter{framenumber}{\value{finalframe}}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%          Useful commands                    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{XY}
+%%\frame{
+%%\begin{multicols}{2}
+%%\frametitle{~}
+%%	\tableofcontents[currentsection]
+%%\end{multicols}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}{XY}
+%
+%\begin{itemize}
+%	\item XY
+%\end{itemize}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\iftoggle{handout}{
+%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%%\frametitle{Bücher \& Artikel}
+%	
+%Test Toggle ON
+%	
+%\end{frame}
+%
+%}
+%%% END handout true 
+%%% BEGIN handout false
+%{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%% EMPTY
+%
+%}%% END HO-Toggle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%% COMMENTING BLOCKS
+% \if0    \fi 
+
+%%%%%%%%%%%%%%%%%%%%%
+%% FOR ITEMS:
+%\begin{itemize}
+%  \item<2-> from point 2
+%  \item<3-> from point 3 
+%  \item<4-> from point 4 
+%\end{itemize}
+%
+% or: \onslide<2->
+% or: \visible<overlay specification>{text}
+% or: \only<overlay specification>{text}
+% or: \pause
+
+%%%%%%%%%%%%%%%%%%%%%
+%% JAMBOX FOR EXAMPLES:
+%\ea 
+%\settowidth\jamwidth{ Test} 
+%Die Studierenden, die weitgehend von Stipendien leben, erhalten einen Mietzuschuss. 
+%\jambox{Test}
+%\z 
+
+%%%%%%%%%%%%%%%%%%%%%
+%% VERTICAL SPACE:
+% \vspace{.5cm}
+% \vfill
+
+%%%%%%%%%%%%%%%%%%%%%
+% RED MARKING OF TEXT:
+%\alert{bis spätestens Mittwoch, 18 Uhr}
+
+%%%%%%%%%%%%%%%%%%%%%
+%% RESCALE BIG TABLES:
+%\scalebox{0.8}{
+%For Big Tables
+%}
+
+%%%%%%%%%%%%%%%%%%%%%
+%% BLOCKS:
+%\begin{alertblock}{Title}
+%Text
+%\end{alertblock}
+%
+%\begin{block}{Title}
+%Text
+%\end{block}
+%
+%\begin{exampleblock}{Title}
+%Text
+%\end{exampleblock}
+
+%%%%%%%%%%%%%%%%%%%%%
+%% MINIPAGE:
+%\begin{minipage}[ÄUSSERE POSITION][HÖHE][INNERE POSITION]{BREITE}
+%	Beispieltext
+%\end{minipage}
+%
+%% MINIPAGE EXAMPLE:
+%\begin{minipage}[b][][c]{.45\textwidth}
+%	\onslide<2->
+%	\begin{figure}
+%		\centering
+%		\includegraphics[scale=.1]{../material/Vierecke-Fee1}
+%		\caption{Vierecke 1}
+%	\end{figure}
+%\end{minipage}
+%%
+%\begin{minipage}[b][][c]{.45\textwidth}
+%	\onslide<3->
+%	\begin{figure}
+%		\centering
+%			\includegraphics[scale=.1]{../material/Vierecke-Fee2}
+%		\caption{Vierecke 2}
+%	\end{figure}
+%\end{minipage}	
+%%
+
+%%%%%%%%%%%%%%%%%%%%%
+%% VIDEO:
+%\begin{frame}
+%\frametitle{Vor fast 54 Jahren in Berlin \dots}
+%
+%\begin{center}
+%	\includemedia[
+%	width=0.9\linewidth,height=0.506\linewidth,
+%	activate=pageopen,
+%	flashvars={
+%		modestbranding=1 % no YT logo in control bar
+%		&autohide=1 % controlbar autohide
+%		&showinfo=0 % no title and other info before start
+%		&rel=0 % no related videos after end
+%		&playsinline=0
+%		&start=28.5
+%	}
+%	]{}{http://www.youtube.com/v/NaZ3onbUrew}
+%\end{center}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%          NOTES: To Check                    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% Do I use ``'' or \emph{•} for object language?
