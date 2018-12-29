@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc} %XeLaTeX
 
 %% For German texts
 \usepackage[english,ngerman]{babel}
@@ -23,7 +23,9 @@
 	\renewcommand{\figurename}{Abb.} 
 
 %% TIPA encoding needs options: T3 & T1
-\usepackage[T3,T1]{fontenc}
+%\usepackage[T3,T1]{fontenc}  %XeLaTeX
+
+\usepackage{fontspec}
 
 %% Font
 %\usepackage{lmodern}
@@ -42,7 +44,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{MnSymbol} 				% Meaning brackets
+%\usepackage{MnSymbol} 				% Meaning brackets %XeLaTeX
 
 %% Toggles
 \usepackage{etoolbox}
@@ -164,7 +166,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%          IPA                                 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[noenc,safe]{tipa}	
+%\usepackage[noenc,safe]{tipa}	%XeLaTeX
+
+\usepackage[safe]{tipa}	
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
