@@ -539,9 +539,12 @@ A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textb
 \begin{frame}[fragile]
 \frametitle{Exercise}
 
-Insert the following lines in your \ltxterm{.tex} file and compile.
+\begin{itemize}
+	\item Insert the following lines in your \ltxterm{.tex} file and compile.
+\end{itemize}
 
-\vspace{.5cm}
+
+\vspace{.25cm}
 
 %\begin{figure}[b]
 
@@ -554,40 +557,43 @@ Insert the following lines in your \ltxterm{.tex} file and compile.
 %
 %\begin{figure}[b]
 
-\centering
-\includegraphics[width=0.86\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest1pdf}
+%\centering
+%\includegraphics[width=0.86\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest1pdf}
 
 %	\caption{Präambel 2}
 %\end{figure}
 
+\begin{itemize}
+	\item Write something after the \lstinline|\end{document}| command and compile again.	
+\end{itemize}
 
 \end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{Dokumentstruktur}
-
-\centering
-\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
-
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{Dokumentstruktur}
-
-\centering
-\includegraphics[width=0.99\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2pdf}
-
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Dokumentstruktur}
+%
+%\centering
+%\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
+%
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Dokumentstruktur}
+%
+%\centering
+%\includegraphics[width=0.99\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2pdf}
+%
+%\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Dokumentklasse}
+\section{Document class}
 %\frame{
 %	%\frametitle{~}
 %	\begin{multicols}{2}
@@ -597,17 +603,27 @@ Insert the following lines in your \ltxterm{.tex} file and compile.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Dokumentklasse}
+\frametitle{Document class}
 
-Der \lstinline|documentclass|-Befehl legt die \textbf{Parameter des allgemeinen Dokument-Layouts} fest. Die wichtigsten Klassen sind: 
-
+Global parameters of the layout can be specified in the \lstinline|documentclass| command. The most commonly used classes are:
+ 
 \begin{itemize}
-\item \texttt{book} für Bücher  
-\item \texttt{report} für längere Schriften mit etlichen Kapiteln, z.\,B. eine Dissertation
-\item \texttt{article} für Artikel, ohne Kapitel nur mit Abschnitten
-\item \texttt{letter} für Briefe
+	\item \ltxterm{book} for books
+	\item \ltxterm{report} for long scripts with different chapters
+	\item \ltxterm{article} for articles, without chapters, only with sections
+	\item \ltxterm{letter} for letters
 \end{itemize}
 
+Variations of these classes (not in American formats) are provided by the \textbf{\ltxterm{KOMA-Script}}:
+
+\begin{itemize}
+	\item \ltxterm{scrbook} for books
+	\item \ltxterm{scrreprt} for long scripts with different chapters
+	\item \alert{\ltxterm{scrartcl}} for articles, without chapters, only with sections
+	\item \ltxterm{scrlttr2} for letters
+\end{itemize}
+
+Cf.\ \citet{Kohm&Co13a} and \url{https://www.komascript.de/}
 
 \end{frame}
 
@@ -615,75 +631,70 @@ Der \lstinline|documentclass|-Befehl legt die \textbf{Parameter des allgemeinen 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
 
-Da diese Klassen häufig für \textbf{amerikanische Formate}
-spezifiziert sind, gibt es Varianten dieser Klassen, die von
-\textbf{\texttt{KOMA-Script}} zur Verfügung gestellt werden (die wir verwenden werden):
+You can specify \textbf{options} in your \lstinline|documentclass| command.
 
 \begin{itemize}
-\item \texttt{scrbook} für Bücher  
-\item \texttt{scrreprt} für längere Schriften mit etlichen Kapiteln, z.\,B. eine Dissertation
-\item \texttt{scrartcl} für Artikel, ohne Kapitel nur mit Abschnitten
-\item \texttt{scrlttr2} für Briefe
+	\item \textbf{Font size} as default: \ltxterm{10pt}, \ltxterm{11pt}, \ltxterm{12pt} \par
+	Default $\rightarrow$ \ltxterm{10pt} 
+	
+	\item \textbf{Paper format}: \ltxterm{letterpaper}, \ltxterm{a4paper} \par
+	Default $\rightarrow$ \ltxterm{letterpaper}
+
 \end{itemize}
 
-Für Details über das \texttt{KOMA-Script} siehe \citet{Kohm&Co13a} und \url{https://www.komascript.de/}
+Specification of paper format in \ltxterm{KOMA-Script} classes: \ltxterm{paper=a4},  \ltxterm{paper=letter}
+
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-%\frametitle{Dokumentstruktur}
-
-\centering
-\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
-
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{Dokumentklasse}
-
-Zudem kann man die Optionen dieser Dokumentklassen in dem \ltxterm{documentclass}-Befehl festlegen.
-
-Häufigste Optionen und Minimalbeispiel:
+\frametitle{Exercise}
 
 \begin{itemize}
-\item \textbf{Schriftgröße} für die (Default-)Schriftgröße: \ltxterm{10pt}, \texttt{11pt}, \texttt{12pt} \par
-Default $\rightarrow$ \ltxterm{10pt} 
-
-\item \textbf{Papierformat}: \ltxterm{letterpaper}, \ltxterm{a4paper} \par
-Default $\rightarrow$ \ltxterm{letterpaper} \par
+	\item Specify the following options for your document  \ltxterm{.tex} file and compile.
 \end{itemize}
 
+\vspace{.25cm}
 
-In den \ltxterm{KOMA-Script}-Klassen sollte man \ltxterm{paper=a4}
-oder \ltxterm{paper=letter} statt \ltxterm{a4paper} bzw. \ltxterm{letterpaper} verwenden.
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-\frametitle{Dokumentklasse}
-
-\begin{lstlisting}
-\documentclass[10pt,paper=a4]{scrartcl}
-\begin{document}
-Text Text Text
-\end{document}
-\end{lstlisting}
-
-\begin{description}
-\item[Hinweis:] \ltxterm{TeXstudio} bietet einen Assistenten, der die Präambel für Sie schreibt. Schauen Sie in der Toolbar unter \texttt{Assistenten/Assistent für ein neues Dokument} nach. Dort können Sie alles weitere einstellen.
-\end{description}
+\centering
+\includegraphics[scale=0.45]{../../texfiles-beamer/tex-material/WissArb-latex/xelatexTest2tex}
 
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Dokumentstruktur}
+%
+%\centering
+%\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
+%
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%\frametitle{Dokumentklasse}
+%
+%\begin{lstlisting}
+%\documentclass[10pt,paper=a4]{scrartcl}
+%\begin{document}
+%Text Text Text
+%\end{document}
+%\end{lstlisting}
+%
+%\begin{description}
+%\item[Hinweis:] \ltxterm{TeXstudio} bietet einen Assistenten, der die Präambel für Sie schreibt. Schauen Sie in der Toolbar unter \texttt{Assistenten/Assistent für ein neues Dokument} nach. Dort können Sie alles weitere einstellen.
+%\end{description}
+%
+%\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Befehle}
+\section{Commands}
 \frame{
 	%\frametitle{~}
 	\begin{multicols}{2}
@@ -693,144 +704,112 @@ Text Text Text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Befehle (commands)}
+\frametitle{Commands}
 
+\textbf{Syntax of commands:}
 
 \begin{itemize}
-	\item \LaTeX\ arbeitet mit einer \textbf{logischen Textauszeichnung}
 	
-	\item[]
-	
-	\item Wenn Sie etwas kursiv setzen wollen, müssen Sie nicht irgendwo \gqq{klicken}, sondern \textbf{einen Befehl eingeben}
+	\item backslash \\
+	$+$ command name \\
+	$+$ optional arguments in square brackets \\
+	$+$ obligatory arguments in curly brackets
+
 \end{itemize}
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{Befehle}
-
-\textbf{Syntax von Befehlen:}
-
-\pause
-
-\begin{itemize}
-	\item Alle \LaTeX -Befehle beginnen mit einem \textbf{Backslash} \gqq{\textbackslash}, 
-	
-	\item gefolgt vom \textbf{Namen des Befehls}, 
-	
-	\item von optionalen Argumenten in \textbf{eckigen Klammern} und 
-	
-	\item von obligatorischen Argumenten in \textbf{geschweiften Klammern}.
-
-%\pause 
 		
 \begin{lstlisting}
-\Befehlsname[optional]{obligatorisch} 
-\Befehlsname[opt1, opt2=Wert]{obl1}{obl2}
+\name[optional argument]{obligatory argument} 
+\name[opt1, opt2=value]{obl1}{obl2}
+
+\textbf{bold}
+\documentclass[10pt, paper=a4]{scrartcl}
 \end{lstlisting}
 
-\pause 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+%\frametitle{Befehle}
+
+In \LaTeX , there are normally \textbf{3 types of commands}:
+
+\begin{itemize}
+	\item \textbf{simple commands:} backslash $+$ command name $+$ optional arguments (square brackets) $+$ obligatory arguments (curly brackets)
+
+\vspace{-.5cm}
+
+\begin{columns}
+	\column[t]{.5\textwidth}
 	
-	\item Beispiele:
+\begin{lstlisting}
+\name[optional]{obligatory} 
+\end{lstlisting}
+
+	\column[t]{.5\textwidth}	
+	
+\begin{lstlisting}
+\textit{Text in italics} 
+\end{lstlisting}
+	
+\end{columns}
+\end{itemize}
+
+
+\begin{itemize}
+	\item \textbf{environments:} \ltxterm{begin} $+$ \ltxterm{end} command. 
 		
-\begin{lstlisting}
-\textbf{fettgedruckter Text} 
-\citep[vgl.][3--5]{Freitag&MyP15a}
-\end{lstlisting}
+	Command applies between \ltxterm{begin} and \ltxterm{end}.
 
-\pause 
+\vspace{-.5cm}
+
+\begin{columns}
+	\column[t]{.5\textwidth}
 	
-	\ea \textbf{fettgedruckter Text} 
-	\ex \citep[vgl.][3--5]{Freitag&MyP15a}
-	\z 
-\end{itemize}
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]
-%\frametitle{Befehle}
-
-\LaTeX\ kennt im Prinzip \textbf{drei Arten von Befehlen}:
-
-\begin{itemize}
-
-\item[]
-\item \textbf{Einfache Befehle:}
-
-Backslash \gqq{\textbackslash} + Befehlsnamen + optionale Argumenten in eckigen Klammern + obligatorische Argumenten in geschweiften Klammern
-
-
 \begin{lstlisting}
-\Befehlsname[optional]{obligatorisch} 
-\Befehlsname[opt1, opt2=Wert]{obl1}{obl2}
-\end{lstlisting}
-
-\pause 
-
-\item[]
-\item Beispiele:
-
-\begin{lstlisting}
-\textit{kursive Hervorhebung} 
-\citet[vgl.][3--5]{Freitag&MyP15a}
-\end{lstlisting}
-
-\pause 
-
-\ea \textit{kursive Hervorhebung} 
-\ex \citet[vgl.][3--5]{Freitag&MyP15a}
-\z 
-
-\end{itemize}
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]
-%\frametitle{Befehle}
-
-
-\begin{itemize}
-	\item \textbf{Umgebungen:}\\
-	Umgebungen bestehen aus einem \texttt{begin}- und einem \texttt{end}-Befehl. Der Befehl gilt im Bereich zwischen \texttt{begin} und \texttt{end}.
-
-\begin{lstlisting}
-\begin{Umgebung}[optional]
+\begin{environment}[optional]
 ...
-\end{Umgebung}
+\end{environment}
+
 \end{lstlisting}
 
-	\pause 
+\column[t]{.5\textwidth}	
+
+\begin{lstlisting}
+\begin{center}
+Hello world!
+\end{center}
+\end{lstlisting}
+
+\end{columns}
+\end{itemize}
+
+\begin{itemize}
+
+	\item \textbf{declarations:} backslash $+$ command name
 	
-%	\item[]
-	\item Beispiele:
+	The scope of the command can be defined by an environment or with curly brackets. 
+
+\vspace{-.5cm}
+
+\begin{columns}
+	\column[t]{.5\textwidth}
 	
 \begin{lstlisting}
-\begin{multicols}{2}[Beispiel]
-Das ist die erste Spalte
+\declaration ... 
+{\declaration ...} outside of scope
 
-Das ist die zweite Spalte
-\end{multicols}
 \end{lstlisting}
 	
-	\pause 
-			
-\ea 
-\begin{multicols}{2}[Beispiel]
-	Das ist die erste Spalte
-		
-	Das ist die zweite Spalte
-\end{multicols}
-
-\z 
-
+	\column[t]{.5\textwidth}	
+	
+\begin{lstlisting}
+{\Huge Hello world!} outside of scope
+\end{lstlisting}
+	
+\end{columns}
+	
 \end{itemize}
 
 \end{frame}
