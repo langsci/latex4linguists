@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%          MyP-Packages   2018.12.08   
+%%%          MyP-Packages   2018.12.08    XeLaTeX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\usepackage[utf8]{inputenc} %XeLaTeX
 
 %% For German texts
-\usepackage[english,ngerman]{babel}
+\usepackage[ngerman,english]{babel}
 
 %% For English texts
 %\usepackage[ngerman,english]{babel}
@@ -22,14 +22,23 @@
 	}
 	\renewcommand{\figurename}{Abb.} 
 
-%% TIPA encoding needs options: T3 & T1
-%\usepackage[T3,T1]{fontenc}  %XeLaTeX
+%% Change ''Figure'' into ''Fig.'' 
+%% for: babel
+	\renewcommand{\thefigure}{\arabic{figure}}
+	\addto\captionsenglish{%
+		\renewcommand{\figurename}{Fig.}%
+	}
+%	\renewcommand{\figurename}{Fig.} %% << not needed? 
 
-\usepackage{fontspec}
+
+%% TIPA encoding needs options: T3 & T1
+\usepackage[T3,T1]{fontenc}  %not needed in XeLaTeX (?)
+
+%\usepackage{fontspec} % XeLaTeX: Problem: Libertine+Fontspec+TIPA
 
 %% Font
-%\usepackage{lmodern}
-\usepackage{libertine}
+\usepackage{lmodern}
+%\usepackage{libertine} % XeLaTeX: Problem: Libertine+Fontspec+TIPA
 
 %% Blind text: \blindtext \Blindtext \blindtext[5] \blindlist{itemize}[x] ...
 \usepackage{blindtext}
@@ -37,14 +46,14 @@
 %% ulem: Strike out
 \usepackage[normalem]{ulem}  
 
-%% graphicx: if gb4e is active PDFLaTeX does not accept files with underline. Only PDFLaTeX accepts files with .jpg, .png, .pdf endings
+%% graphicx: if gb4e is active PDFLaTeX does not accept files with underline. PDFLaTeX accepts files only with .jpg, .png, .pdf endings
 \usepackage{graphicx}
 
 %% Math symbols
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-%\usepackage{MnSymbol} 				% Meaning brackets %XeLaTeX
+\usepackage{MnSymbol} 				% Meaning brackets 
 
 %% Toggles
 \usepackage{etoolbox}
@@ -166,15 +175,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%          IPA                                 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage[noenc,safe]{tipa}	%XeLaTeX
-
-\usepackage[safe]{tipa}	
+%\usepackage[noenc,safe]{tipa}	%in PDFLaTeX
+\usepackage[safe]{tipa}	% in XeLaTeX
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%          Vowel diagram                       
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{vowel}
+%\usepackage{vowel}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -204,7 +212,7 @@
 %%%%          Margin notes                        
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% See definition in localcommands.sty, not working with Beamer class
-\usepackage{marginnote}
+%\usepackage{marginnote}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,9 +225,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%          Hyperref & URL                      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage[
-%	hyphens
-%	]{url}
+
+%\usepackage[hyphens]{url}
+\usepackage{url}
 
 %\usepackage{hyperref}
 

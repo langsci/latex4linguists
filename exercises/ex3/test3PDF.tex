@@ -1,0 +1,306 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compile: PDFLaTeX BibTeX PDFLaTeXP PDFLaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,paper=a4,abstracton]{scrartcl}
+
+%%%%%%%%%%%%%PACKAGES%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel}
+\usepackage{blindtext}
+\usepackage[T3,T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[authoryear]{natbib}
+	\setcitestyle{notesep={:~}}
+\usepackage{graphicx}
+%\usepackage{booktabs, array}
+%\usepackage{linguex}
+%\usepackage[noenc,safe]{tipa}
+%\usepackage{etex}		%For Forest bug
+%\usepackage{forest}
+%\usepackage{tikz-qtree}
+%\usepackage{xspace}
+%\usepackage{setspace}
+%\usepackage{listings}
+%\usepackage{multicol}
+
+%\usepackage[bookmarksnumbered]{hyperref}
+\usepackage[bookmarksnumbered, 
+%hidelinks
+]{hyperref}
+
+%%%%%%%%%%%%%META DATA%%%%%%%%%%%%%
+\author{$\langle$Ihr Name$\rangle$ \and $\langle$noch ein Name$\rangle$}
+\title{\LaTeX\ für Linguisten}
+\subtitle{Meine erste \LaTeX -Datei}
+\date{$\langle$Das heutige Datum$\rangle$}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Ein Abstract ist eine kurze Zusammenfassung über den Inhalt 
+	der Arbeit. Das Abstract wird immer am Anfang des Dokuments 
+	positioniert.\par
+	Es ist auch möglich das Abstract in mehrere Absätze
+	zu teilen.
+\end{abstract}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Zeichen und Sonderzeichen]{Hier werden Zeichen und Sonderzeichen geübt}
+
+Folgende Zeichen können bei \LaTeX\ nicht direkt benutzt werden: \# \$ \& \_ \{ \} \%. Für die folgenden Zeichen braucht man andere Befehle: \textbackslash, \textgreater , \textless , \textasciicircum .
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection[Erste Subsection]{Das ist eine Subsection}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection[Zweite Subsection]{Das ist eine weitere Subsection}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Fußnoten]{Hier werden Fußnoten geübt}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer\footnote{Hier ist eine Fußnote.} einige Vorzüge von \LaTeX\ austesten können.\footnote{Hier ist noch eine Fußnote.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Textauszeichnung]{Hier wird die Textauszeichnung geübt}
+
+Diese Datei ist {\tiny dazu} gemacht, dass {\Huge alle} Workshopteilnehmer einige {\Large Vorzüge} von \LaTeX\ austesten können.
+
+Diese \textbf{Datei} ist dazu \underline{gemacht}, dass alle \textsc{Workshopteilnehmer} einige \emph{Vorzüge} von \LaTeX\ austesten \texttt{können}.
+
+\noindent Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Textumgebungen}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Quote und Quotation}
+
+ Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können. Das ist der Text vor der \texttt{quote}-Umgebung.
+\begin{quote}
+	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+	
+	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+\end{quote}
+Das ist der Text nach der \texttt{quote}-Umgebung. Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+ Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können. Das ist der Text vor der \texttt{quotation}-Umgebung.
+\begin{quotation}
+	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+	
+	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+\end{quotation}
+Das ist der Text nach der \texttt{quotation}-Umgebung. Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Listen}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+ 
+\begin{itemize}
+	\item Diese 
+	\item Datei 
+	\item[+] ist 
+	\item dazu 
+	\item gemacht
+\end{itemize} 
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+\begin{enumerate}
+	\item Diese 
+	\item Datei 
+	\begin{enumerate}
+		\item[+] ist 
+		\item dazu 
+		\item gemacht
+	\end{enumerate}
+	\item einige 
+	\item Vorzüge 
+	\item von 
+	\item \LaTeX\ 
+	\item auszutesten
+\end{enumerate}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+\begin{description}
+	\item[Linguistik:] eine wissenschaftliche Disziplin
+	\begin{itemize}
+		\item Ihr Untersuchungsobjekt ist die Sprache.
+		\item Sie interagiert mit anderen Disziplinen:
+		\begin{enumerate}
+			\item Philosophie
+			\item Psychologie
+			\item Soziologie
+		\end{enumerate}
+	\end{itemize}
+\end{description}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nicht-textbezogene Umgebungen}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Paket installieren}
+
+Das Paket \textbf{blindtext} wurde in der Präambel installiert und im Folgenden benutzt:
+
+
+\blindtext
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Grafiken}
+
+Die folgende Grafik ist so breit wie der Text:
+
+\includegraphics[width=\linewidth]{LaTeX_flowchart_1.pdf}
+
+
+Die Größe der folgenden Grafik ist 50\% der Textbreite:
+
+\includegraphics[width=.5\linewidth]{LaTeX_flowchart_1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Tabellen}
+
+Ein Beispiel einer Tabelle: 
+\begin{tabular}[t]{rc|l|}
+	ZelleZelle 1 & ZelleZelle 2 & ZelleZelle 3 \\
+	ZelleZelle 1 & ZelleZelle 2 & ZelleZelle 3 \\
+	\hline
+	Zelle & Zelle & Zelle \\
+\end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Gleitumgebungen}
+
+Die Größe der folgenden Grafik ist 50\% der Textbreite:
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.5\linewidth]{LaTeX_flowchart_1}
+	\caption{Flowchart}
+	\label{fig:flowchart}
+\end{figure}
+
+
+\blindtext
+
+
+Ein Beispiel einer Tabelle in einer Gleitumgebung: 
+
+\begin{table}[htbp]
+\centering	
+\caption{Meine erste Tabelle}
+\begin{tabular}[t]{rc|l|}
+	ZelleZelle 1 & ZelleZelle 2 & ZelleZelle 3 \\
+	ZelleZelle 1 & ZelleZelle 2 & ZelleZelle 3 \\
+	\hline
+	Zelle & Zelle & Zelle \\
+\end{tabular}
+\label{fig:Tabelle1}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Querverweise}
+
+Hier wird auf die Tabelle \ref{fig:Tabelle1} und hier auf die Abbildung \ref{fig:flowchart} referiert, die Abbildung befindet sich auf Seite \pageref{fig:flowchart}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Referenzen im Text}
+
+\citeauthor{Chomsky80a} verfasste \citeyear{Chomsky80a} seinen Artikel \emph{On Binding}. \citeauthor{Chomsky80a}s Artikel wird sehr häufig zitiert \citep[vgl.][]{Heim&Kratzer00a}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Verschiedene natbib-Befehle}
+
+Im Folgenden sind verschiedene Beispiele für \texttt{natbib}-Befehle aufgelistet:
+
+\begin{enumerate}
+	\item \textbackslash citealt\{xxx\}: \citealt{Heim&Kratzer00a}
+	
+	\item \textbackslash citealp\{xxx\}: \citealp{Heim01a}
+	
+	\item \textbackslash citet\{xxx\}: \citet{Winter97a}  
+	
+	\item \textbackslash citet[aa]\{xxx\}: \citet[36]{Champollion14a}
+	
+	\item \textbackslash citep\{xxx\}: \citep{Krifka89a}
+	
+	\item \textbackslash citep[aa]\{xxx\}: \citep[42]{MyP17c} 
+	
+	\item \textbackslash citep[bb][aa]\{xxx\}: \citep[vgl.][36]{Nolda&Co14a}
+	
+	\item \textbackslash citep[bb][~]\{xxx\}: \citep[vgl.][]{Heusinger&Co11a} 
+	
+	\item \textbackslash citep[bb][~]\{xxx, yyy, zzz\}: \citep[vgl.][]{Heim01a,Winter97a,Krifka89a}
+\end{enumerate}
+
+%\citep{Heusinger}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 4}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LITERATUR
+
+\bibliographystyle{deChicagoMyP}
+%\bibliographystyle{unified}
+%\bibliographystyle{chicago}
+\bibliography{myLibrary}
+
+
+%\blindtext
+
+\end{document}
+
+%%%%%%%%END DOCUMENT%%%%%%%%%%%%%

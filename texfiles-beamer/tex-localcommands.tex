@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%           MyP-Commands  2018.12.08       
+%%%           MyP-Commands  2018.12.08       XeLaTeX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 
 
@@ -197,25 +197,38 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TIPA Lösungen    Linux Libertine + Tipa + Fontspec = Katastrophe!   
+
+%% Solution 1 (RF)
+%% Tipa font:
+%\renewcommand\textipa[1]{{\fontfamily{cmr}\tipaencoding #1}}
+
+%%% Solution 3 (RF): this solution is working but with problems with ligatures
+%%%% works for texlive 2018
+%\newfontfamily{\ipafont}[Scale=MatchUppercase]{Linux Libertine B}
+%\def\useTIPAfont{\ipafont}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Outputbox
 \newcommand{\outputbox}[1]{\noindent\fbox{\parbox[t][][t]{0.98\linewidth}{#1}}\vspace{0.5em}}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Margin notes: \myp{NOTE}
-% package needed: marginnote
-\renewcommand{\marginfont}{\singlespacing}
-\renewcommand{\marginfont}{\footnotesize}
-\renewcommand{\marginfont}{\color{black}}
-
-\newcommand{\myp}[1]{%
-	\marginnote{%
-		\begin{spacing}{1}
-			\vspace{-\baselineskip}%
-			\color{red}\scriptsize#1
-		\end{spacing}
-	}
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Margin notes: \myp{NOTE}
+%% package needed: marginnote
+%\renewcommand{\marginfont}{\singlespacing}
+%\renewcommand{\marginfont}{\footnotesize}
+%\renewcommand{\marginfont}{\color{black}}
+%
+%\newcommand{\myp}[1]{%
+%	\marginnote{%
+%		\begin{spacing}{1}
+%			\vspace{-\baselineskip}%
+%			\color{red}\scriptsize#1
+%		\end{spacing}
+%	}
+%}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

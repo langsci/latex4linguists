@@ -10,21 +10,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
 \title{
-	Wissenschaftliches Arbeiten in der Linguistik\\
-	(Technische Übung)
+	\LaTeX\ for Linguists
 }
 
-\subtitle{\LaTeX\ 1: Grundlagen}
+\subtitle{\LaTeX\ 1: Basics}
 
 \author[aMyP]{
-	{\small Antonio Machicao y Priemer}
+	{\small Sebastian Nordhoff \& Antonio Machicao y Priemer}
 	\\
 	{\footnotesize \url{www.linguistik.hu-berlin.de/staff/amyp}}
 	%	\\
 	%	{\footnotesize \href{mailto:mapriema@hu-berlin.de}{mapriema@hu-berlin.de}}
 }
 
-\institute{Institut für deutsche Sprache und Linguistik}
+\institute{LOT 2019, Amsterdam}
 
 %\date{ }
 
@@ -81,12 +80,15 @@
 \dots basierend auf \citet{Freitag&MyP15a} und auf \citet{MyP&Kerkhof16a}\\
 \ras \href{https://www.researchgate.net/publication/279514740_LATEX-Einfuhrung_fur_Linguisten}{LINK}
 
+
+\nocite{Kopka94a}
+
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Was ist \LaTeX ?}
+\section{What is \LaTeX ?}
 \frame{
 %\frametitle{~}
 \begin{multicols}{2}
@@ -95,29 +97,27 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Geschichte}
+\subsection{History}
 
 \begin{frame}
-\frametitle{Geschichte}
+\frametitle{History}
 
 \begin{itemize}
-	\item $\tau \epsilon \chi$ (\TeX ) wurde zwischen 1977 und 1986 von Donald E. Knuth entwickelt, da er mit den damaligen Textverarbeitungsprogrammen unzufrieden war.
+	\item $\tau \epsilon \chi$ (\TeX ) was developed between 1977 and 1986 by Donald E. Knuth.
 	
-	\item[]
+	\item \LaTeX\ is an interface with helpful macros for the \TeX\ system. It was written by Leslie Lamport ($=$ \textbf{La}mport \textbf{\TeX }). 
 	
-	\item \LaTeX\ ist ein Interface, das eine Sammlung an nützlichen \textbf{Makros} zur Verfügung stellt, um einfacher das \TeX -System verwenden zu können. 
+	\item Pronunciation: \textipa{["la:.tE\c{c}]}, \textipa{["leI.tE\c{c}]}, \textipa{["leI.tEkh]}
 	
-	\item[]
+	\item \LaTeX\ works with markup tagging conventions -- similar to HTML -- to 
 	
-	\item \LaTeX\ wurde von Leslie Lamport geschrieben. Der Name ist eine Abkürzung für \textbf{La}mport \textbf{TeX}. 
-	
-	\item[]
-	
-	\item Aussprache: \textipa{["la:.tE\c{c}]}
-	
-	\item[]
-	
-	\item Siehe auch \citet{Kopka94a}.
+	\begin{itemize}
+		\item define the structure of the document (\fe chapters and sections),
+		
+		\item for typographic marking (\fe bold and italics), 
+		
+		\item for cross-references (\fe citations)
+	\end{itemize}
 
 \end{itemize}
 
@@ -139,112 +139,93 @@
 \frametitle{WYSIWYG vs. WYGIWYN}
 
 \begin{itemize}
-	\item \emph{MS Word} oder \emph{Libre Office}:
+	\item \emph{MS Word} or \emph{Libre Office}:
+	\textbf{WYSIWYG} (\emph{what-you-see-is-what-you-get}) 
 	
-	\ras WYSIWYG-Prinzip (\emph{what-you-see-is-what-you-get}) 
+	\begin{figure}
+		\includegraphics[scale=.3]{../../texfiles-beamer/tex-material/WissArb-latex/WYSIWYG}
+	\end{figure}
+		
+	\item \LaTeX : \textbf{WYGIWYN} or \textbf{WYGIWYM} (\emph{what-you-get-is-what-you-need}/\emph{mean})
 	
-	\item[]
+	\begin{figure}
+		\includegraphics[scale=.3]{../../texfiles-beamer/tex-material/WissArb-latex/WYSIWYM}
+	\end{figure}
 	
-	\item \LaTeX :
-	
-	\ras WYGIWYN-Prinzip (\emph{what-you-get-is-what-you-need}) oder
-	
-	\ras WYGIWYM-Prinzip (\emph{what-you-get-is-what-you-mean})
-	
-	\item[]
-	
-	\item \LaTeX\ arbeitet mit einer \textbf{logischen Textauszeichnung} -- ähnlich wie HTML -- um Textelemente zu definieren.
-
 \end{itemize}\end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Warum sollte ich es benutzen?}
-%\frame{
-%	%\frametitle{~}
-%	\begin{multicols}{2}
-%		\tableofcontents[currentsection,hideallsubsections]
-%	\end{multicols}
-%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Warum sollte ich es benutzen?}
+%%\frame{
+%%	%\frametitle{~}
+%%	\begin{multicols}{2}
+%%		\tableofcontents[currentsection,hideallsubsections]
+%%	\end{multicols}
+%%}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Warum sollte ich es benutzen?}
-
-\begin{itemize}
-	\item Zeitersparnis ({\tiny nicht am Anfang!})
-	\item[]
-
-\pause	
-
-	\item Man hört auf, Sachen zu tun, die der Computer für einen erledigen kann. Daher hat man mehr Zeit, um sich mit dem Inhalt zu befassen.
-	\item[]
-
-\pause	
-
-	\item Die Texte werden sehr gut gesetzt!
-	\item[]
-
-\pause
-
-	\item Ein Programm für alle Funktionen: Artikel, Bücher, Poster, Präsentationen, \dots 
-	\item[]
-
-\pause
-
-	\item Gratis!!
-
-\end{itemize}
-
-\end{frame}
+%\begin{frame}
+%\frametitle{Warum sollte ich es benutzen?}
+%
+%\begin{itemize}
+%	\item Zeitersparnis ({\tiny nicht am Anfang!})
+%	\item[]
+%
+%\pause	
+%
+%	\item Man hört auf, Sachen zu tun, die der Computer für einen erledigen kann. Daher hat man mehr Zeit, um sich mit dem Inhalt zu befassen.
+%	\item[]
+%
+%\pause	
+%
+%	\item Die Texte werden sehr gut gesetzt!
+%	\item[]
+%
+%\pause
+%
+%	\item Ein Programm für alle Funktionen: Artikel, Bücher, Poster, Präsentationen, \dots 
+%	\item[]
+%
+%\pause
+%
+%	\item Gratis!!
+%
+%\end{itemize}
+%
+%\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iftoggle{handout}{
 	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-%\frametitle{Bücher \& Artikel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\dots\ aus Glaubwürdigkeitsgründen \dots
-
-\begin{figure}[b]
-	
-		\centering
-		\includegraphics[width=0.40\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/file_extensions_xkcd_1301}
-
-\caption{\url{https://xkcd.com/1301/}}
-\end{figure}
-
-\end{frame}
-
-}
-%% END handout true 
-%% BEGIN handout false
-{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% EMPTY
-
-}%% END HO-Toggle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Examples}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-%\frametitle{Bücher \& Artikel}
+\frametitle{Examples}
 
-Einige Beispiele, was man mit \LaTeX\ tun kann:
+What can you do with \LaTeX ?
 
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Bücher \& Artikel}
+\frametitle{Books \& Articles}
 
 %\begin{figure}[htbp]
 
@@ -266,7 +247,7 @@ Einige Beispiele, was man mit \LaTeX\ tun kann:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Poster \& Briefe}
+\frametitle{Poster \& Letter}
 
 %\begin{figure}[b]
 
@@ -288,7 +269,7 @@ Einige Beispiele, was man mit \LaTeX\ tun kann:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Bäume}
+\frametitle{Trees}
 
 \begin{figure}
 
@@ -298,25 +279,28 @@ Einige Beispiele, was man mit \LaTeX\ tun kann:
 \begin{forest}
 %sn edges,
 [IP 
-	[DP [Peter,roof]]
+	[DP [Peter\\
+	\emph{Peter},roof]]
 	[\xprime{I} 
 		[VP 
 			[\xprime{V} 
-				[DP [den Wagen, roof]]
+				[DP [den Wagen\\
+				\emph{the car}, roof]]
 				[\xzero{V} [t$_{i}$,draw]{
 				\draw[->,dotted] () to[out=south east,in=south] (IHead);}
 				]
 			]
 		]
 		[\xzero{I} 
-			[\alert{kauft}$_{i}$,name=IHead]
+			[\alert{kauft}$_{i}$\\
+			\emph{buys},name=IHead]
 		]{\draw[<-,red] (.south east)--++(0em,-1.5ex)--++(+2em,0pt)
-node[anchor=west,align=center]{finit};}
+node[anchor=west,align=center]{finite};}
 	]
 ]
 \end{forest}
 }
-\caption{Kopfbewegung}	
+\caption{Head movement}	
 \end{minipage} 
 
 \end{figure}
@@ -326,38 +310,46 @@ node[anchor=west,align=center]{finit};}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Glossen \& IPA}
+\frametitle{Glossing \& IPA}
 
 \ea 
-%\settowidth\jamwidth{\textsc{Deutsch}}
-\gll Der Mann hat dem Jungen ein Buch über Linguistik gegeben.\\
-the man.\textsc{nom} has the boy.\textsc{dat} a book.\textsc{acc} about linguistics give.\textsc{ptcp.prf}/gave\\
-\glt `The man gave the boy a book about linguistics.' 
-%\jambox{\textsc{Deutsch}}
+	\ea
+	\gll Der Mann schläf -t.\\
+	the.\textsc{nom} man.\textsc{nom} sleep -s\\
+	\glt `The man is sleeping.'
 
-\ex \ab{phonetics} \\
-{/}\textipa{f@".nE.tIks}/ \\
-{[}\textipa{f@"nEtIks}] \\
+	\ex 
+	%\settowidth\jamwidth{\textsc{Deutsch}}
+	\gll Der Mann hat dem Jungen ein Buch über Linguistik gegeben.\\
+	the.\textsc{nom} man.\textsc{nom} has the.\textsc{dat} boy.\textsc{dat} a.\textsc{acc} book.\textsc{acc} about linguistics give.\textsc{ptcp.prf}\\
+	\glt `The man gave the boy a book about linguistics.' 
+	%\jambox{\textsc{Deutsch}}
+	\z 
+		
+\ex 
+	\ea \ab{phonetics} 
+	\ex {/}\textipa{f@".nE.tIks}/ 
+	\ex {[}\textipa{f@"nEtIks}] 
+	\z 
 \z 
 
 \end{frame}
 
-
+}
+%% END handout true 
+%% BEGIN handout false
+{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% EMPTY
+
+}%% END HO-Toggle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Grundlagen}
-%\frame{
-%%\frametitle{~}
-%\begin{multicols}{2}
-%\tableofcontents[currentsection,hideallsubsections]
-%\end{multicols}
-%}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Wie funktioniert \LaTeX ?}
+\subsection{How does \LaTeX\ work?}
 %\frame{
 %	%\frametitle{~}
 %	\begin{multicols}{2}
@@ -367,9 +359,24 @@ the man.\textsc{nom} has the boy.\textsc{dat} a book.\textsc{acc} about linguist
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Wie funktioniert \LaTeX ?}
+\frametitle{How does \LaTeX\ work?}
 
-\includegraphics[width=\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1.pdf}
+By compiling your document, \LaTeX\ creates further \textbf{auxiliary files} to improve the next compilations.
+
+\begin{columns}
+
+\column[t]{.6\textwidth}
+
+\includegraphics[scale=.75]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1.pdf}
+
+\column[t]{.4\textwidth}
+
+\begin{itemize}
+	\item your document: \ltxterm{.tex}
+	\item your product: \ltxterm{.pdf}
+\end{itemize}
+
+\end{columns}
 
 \end{frame}
 
@@ -379,17 +386,18 @@ the man.\textsc{nom} has the boy.\textsc{dat} a book.\textsc{acc} about linguist
 %\frametitle{Wie funktioniert \LaTeX ?}
 
 \begin{minipage}{.58\textwidth}
-Beim Kompilieren kreiert \LaTeX\ eine Menge an \textbf{Hilfsdateien}, um die Kompilierungsprozesse zu optimieren. 
 
-Diese Hilfsdateien können \textbf{gelöscht} werden.
+The auxiliary files can be \textbf{deleted} after your work is done. They will be created again when you compile.
 
 \begin{itemize}
-	\item \texttt{.bbl} \ras Information für das Literaturverzeichnis
+	\item \ltxterm{.log} \ras information about the compiling process
 	
-	\item \texttt{.nav} \ras Information für die Foliennavigation
+	\item \ltxterm{.bbl} \ras information for the bibliography
 	
-	\item \texttt{.toc} \ras Information für das Inhaltsverzeichnis
+	\item \ltxterm{.nav} \ras information for the navigation through slides
 	
+	\item \ltxterm{.toc} \ras information for the table of contents
+		
 	\item \dots 
 \end{itemize}
 
@@ -409,18 +417,16 @@ Diese Hilfsdateien können \textbf{gelöscht} werden.
 %\frametitle{Wie funktioniert \LaTeX ?}
 
 \begin{minipage}{.58\textwidth}
-	Dateien, die für Sie \textbf{wichtig} sind 
-	
-	(\textbf{NICHT LÖSCHEN!}):
-	
+	The following files are important and \textbf{should not be deleted}. They are not created in the compiling process:
+		
 	\begin{itemize}
-		\item \texttt{.tex} \ras Das ist die Datei, die Sie bearbeiten, d.\,h. das ist Ihr Dokument!
+		\item \texttt{.tex} \ras this is the document you are working on.
 		
-		\item \texttt{.pdf} \ras das Ergebnis Ihres Dokuments als PDF
+		\item \texttt{.pdf} \ras you can delete your PDF, but this is what you normally want as your result
 		
-		\item \texttt{.bib} \ras diese Datei enthält Ihre Bibliographie
+		\item \texttt{.bib} \ras this file contains your bibliography data base (if you have one)
 		
-		\item Ordner \texttt{graphics} \ras Hier sind die Abbildungen, die Sie verwenden 
+		\item folder \texttt{graphics} \ras here could be your graphics (if you need some)
 	\end{itemize}
 	
 \end{minipage}
@@ -434,9 +440,154 @@ Diese Hilfsdateien können \textbf{gelöscht} werden.
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Software}
+%%\frame{
+%%	%\frametitle{~}
+%%	\begin{multicols}{2}
+%%		\tableofcontents[currentsection,hideallsubsections]
+%%	\end{multicols}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}
+%\frametitle{Software}
+%
+%In diesem Kurs werden wir mit dem \textbf{Editor} \texttt{TeXstudio} arbeiten, welcher folgende Vorteile anbietet: 
+%
+%\begin{itemize}
+%	\item kostenlos, 
+%	
+%	\item kompatible mit Linux-, Windows- und Mac OS-Rechnern,
+%	\item Unicode-Unterstützung, Rechtschreibkontrolle, Autovervollständigung von Befehlen, PDF-Viewer,
+%	\item einfach zu verwenden und zu konfigurieren, \dots
+%\end{itemize}
+%
+%Außer dem Editor benötigt man eine \LaTeX -\textbf{Distribution}.
+%In diesem Fall werden wir \texttt{MiKTeX} (für Windows-User)
+%verwenden. Für Linux-User ist \texttt{TeXLive} eine sehr bekannte Alternative und für Mac OS-User \texttt{MacTeX}. \textbf{Zuerst} soll die Distribution (\zB \texttt{MiKTeX}) und erst dann der Editor (\zB \texttt{TeXstudio}) installiert werden!
+%
+%\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Software}
+\section{Document structure 1}
+\frame{
+	%\frametitle{~}
+	\begin{multicols}{2}
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Document structure 1}
+
+A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textbf{body}.
+
+\begin{block}{\LaTeX\ preamble}
+	part of the document where \textbf{global characteristics} of the document are specified.
+\end{block}
+
+	\begin{itemize}
+		\item The preamble \textbf{begins} (\textbf{obligatorily}) with the \lstinline|\documentclass{}| command.
+		
+		\item In the preamble you will install \textbf{packages} for further \LaTeX\ functions.
+		
+		\item \textbf{Optional} (either in the preamble or in the body -- preferably in the preamble)
+
+		\begin{itemize}
+			\item your \textbf{own commands} and 
+			
+			\item \textbf{metadata} 
+		\end{itemize}
+		
+		\item The preamble \textbf{ends} with the command  \lstinline|\begin{document}|.
+		
+	\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentstruktur}
+
+
+\begin{block}{\LaTeX\ body}
+	part of the document where \textbf{local characteristics} of the document are specified and where you write your document.
+\end{block}
+
+
+\begin{itemize}
+	
+	\item The body \textbf{begins} with the \lstinline|\begin{document}| command  (end of preambel).
+	
+	\item The body \textbf{ends} with \lstinline|\end{document}|. 
+	
+	\item[]
+	
+	\item Everything following the command \lstinline|\end{document}| will not be interpreted by \LaTeX .
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
+
+Insert the following lines in your \ltxterm{.tex} file and compile.
+
+\vspace{.5cm}
+
+%\begin{figure}[b]
+
+\centering
+\includegraphics[scale=0.45]{../../texfiles-beamer/tex-material/WissArb-latex/xelatexTest1tex}
+
+%	\caption{Präambel 1}
+%\end{figure}
+%
+%
+%\begin{figure}[b]
+
+\centering
+\includegraphics[width=0.86\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest1pdf}
+
+%	\caption{Präambel 2}
+%\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentstruktur}
+
+\centering
+\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentstruktur}
+
+\centering
+\includegraphics[width=0.99\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2pdf}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dokumentklasse}
 %\frame{
 %	%\frametitle{~}
 %	\begin{multicols}{2}
@@ -445,22 +596,87 @@ Diese Hilfsdateien können \textbf{gelöscht} werden.
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Software}
+\begin{frame}[fragile]
+\frametitle{Dokumentklasse}
 
-In diesem Kurs werden wir mit dem \textbf{Editor} \texttt{TeXstudio} arbeiten, welcher folgende Vorteile anbietet: 
+Der \lstinline|documentclass|-Befehl legt die \textbf{Parameter des allgemeinen Dokument-Layouts} fest. Die wichtigsten Klassen sind: 
 
 \begin{itemize}
-	\item kostenlos, 
-	
-	\item kompatible mit Linux-, Windows- und Mac OS-Rechnern,
-	\item Unicode-Unterstützung, Rechtschreibkontrolle, Autovervollständigung von Befehlen, PDF-Viewer,
-	\item einfach zu verwenden und zu konfigurieren, \dots
+\item \texttt{book} für Bücher  
+\item \texttt{report} für längere Schriften mit etlichen Kapiteln, z.\,B. eine Dissertation
+\item \texttt{article} für Artikel, ohne Kapitel nur mit Abschnitten
+\item \texttt{letter} für Briefe
 \end{itemize}
 
-Außer dem Editor benötigt man eine \LaTeX -\textbf{Distribution}.
-In diesem Fall werden wir \texttt{MiKTeX} (für Windows-User)
-verwenden. Für Linux-User ist \texttt{TeXLive} eine sehr bekannte Alternative und für Mac OS-User \texttt{MacTeX}. \textbf{Zuerst} soll die Distribution (\zB \texttt{MiKTeX}) und erst dann der Editor (\zB \texttt{TeXstudio}) installiert werden!
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+Da diese Klassen häufig für \textbf{amerikanische Formate}
+spezifiziert sind, gibt es Varianten dieser Klassen, die von
+\textbf{\texttt{KOMA-Script}} zur Verfügung gestellt werden (die wir verwenden werden):
+
+\begin{itemize}
+\item \texttt{scrbook} für Bücher  
+\item \texttt{scrreprt} für längere Schriften mit etlichen Kapiteln, z.\,B. eine Dissertation
+\item \texttt{scrartcl} für Artikel, ohne Kapitel nur mit Abschnitten
+\item \texttt{scrlttr2} für Briefe
+\end{itemize}
+
+Für Details über das \texttt{KOMA-Script} siehe \citet{Kohm&Co13a} und \url{https://www.komascript.de/}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentstruktur}
+
+\centering
+\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentklasse}
+
+Zudem kann man die Optionen dieser Dokumentklassen in dem \ltxterm{documentclass}-Befehl festlegen.
+
+Häufigste Optionen und Minimalbeispiel:
+
+\begin{itemize}
+\item \textbf{Schriftgröße} für die (Default-)Schriftgröße: \ltxterm{10pt}, \texttt{11pt}, \texttt{12pt} \par
+Default $\rightarrow$ \ltxterm{10pt} 
+
+\item \textbf{Papierformat}: \ltxterm{letterpaper}, \ltxterm{a4paper} \par
+Default $\rightarrow$ \ltxterm{letterpaper} \par
+\end{itemize}
+
+
+In den \ltxterm{KOMA-Script}-Klassen sollte man \ltxterm{paper=a4}
+oder \ltxterm{paper=letter} statt \ltxterm{a4paper} bzw. \ltxterm{letterpaper} verwenden.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Dokumentklasse}
+
+\begin{lstlisting}
+\documentclass[10pt,paper=a4]{scrartcl}
+\begin{document}
+Text Text Text
+\end{document}
+\end{lstlisting}
+
+\begin{description}
+\item[Hinweis:] \ltxterm{TeXstudio} bietet einen Assistenten, der die Präambel für Sie schreibt. Schauen Sie in der Toolbar unter \texttt{Assistenten/Assistent für ein neues Dokument} nach. Dort können Sie alles weitere einstellen.
+\end{description}
 
 \end{frame}
 
