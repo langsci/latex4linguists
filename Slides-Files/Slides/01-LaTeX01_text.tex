@@ -48,7 +48,7 @@
 %% Contents slide
 \frame{
 \begin{multicols}{2}
-	\frametitle{Inhaltsverzeichnis}
+	\frametitle{Contents}
 %	\tableofcontents[hideallsubsections]
 	\tableofcontents
 	%[pausesections]
@@ -70,20 +70,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Basic literature for these slides
-
-\begin{frame}
-\frametitle{Grundlage \& empfohlene Lektüre}
-
-\dots basierend auf \citet{Freitag&MyP15a} und auf \citet{MyP&Kerkhof16a}\\
-\ras \href{https://www.researchgate.net/publication/279514740_LATEX-Einfuhrung_fur_Linguisten}{LINK}
-
-
-\nocite{Kopka94a}
-
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Basic literature for these slides
+%
+%\begin{frame}
+%\frametitle{Grundlage \& empfohlene Lektüre}
+%
+%\dots basierend auf \citet{Freitag&MyP15a} und auf \citet{MyP&Kerkhof16a}\\
+%\ras \href{https://www.researchgate.net/publication/279514740_LATEX-Einfuhrung_fur_Linguisten}{LINK}
+%
+%
+%\nocite{Kopka94a}
+%
+%\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -373,7 +373,7 @@ By compiling your document, \LaTeX\ creates further \textbf{auxiliary files} to 
 
 \begin{itemize}
 	\item your document: \ltxterm{.tex}
-	\item your product: \ltxterm{.pdf}
+	\item your output: \ltxterm{.pdf}
 \end{itemize}
 
 \end{columns}
@@ -491,6 +491,8 @@ A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textb
 	part of the document where \textbf{global characteristics} of the document are specified.
 \end{block}
 
+\pause 
+
 	\begin{itemize}
 		\item The preamble \textbf{begins} (\textbf{obligatorily}) with the \lstinline|\documentclass{}| command.
 		
@@ -520,6 +522,7 @@ A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textb
 	part of the document where \textbf{local characteristics} of the document are specified and where you write your document.
 \end{block}
 
+\pause 
 
 \begin{itemize}
 	
@@ -528,6 +531,8 @@ A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textb
 	\item The body \textbf{ends} with \lstinline|\end{document}|. 
 	
 	\item[]
+
+\pause 
 	
 	\item Everything following the command \lstinline|\end{document}| will not be interpreted by \LaTeX .
 \end{itemize}
@@ -613,6 +618,8 @@ Global parameters of the layout can be specified in the \lstinline|documentclass
 	\item \ltxterm{article} for articles, without chapters, only with sections
 	\item \ltxterm{letter} for letters
 \end{itemize}
+
+\pause 
 
 Variations of these classes (not in American formats) are provided by the \textbf{\ltxterm{KOMA-Script}}:
 
@@ -729,7 +736,6 @@ Specification of paper format in \ltxterm{KOMA-Script} classes: \ltxterm{paper=a
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}[fragile]
 %\frametitle{Befehle}
 
@@ -756,6 +762,7 @@ In \LaTeX , there are normally \textbf{3 types of commands}:
 \end{columns}
 \end{itemize}
 
+\pause 
 
 \begin{itemize}
 	\item \textbf{environments:} \ltxterm{begin} $+$ \ltxterm{end} command. 
@@ -784,6 +791,8 @@ Hello world!
 
 \end{columns}
 \end{itemize}
+
+\pause 
 
 \begin{itemize}
 
@@ -815,38 +824,111 @@ Hello world!
 \end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile,fragile]
-%\frametitle{Befehle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Document structure 2}
+\frame{
+	%\frametitle{~}
+	\begin{multicols}{2}
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Meta data}
+
+Specifying the meta data of your document in the preamble: 
+
+\begin{lstlisting}
+\author{first name last name \and first name last name}
+\title{my title}
+\subtitle{my subtitle}
+\date{14th Februar 2019}
+\end{lstlisting}
 
 \begin{itemize}
-\item \textbf{Deklarationen:}
+	\item Other options for date: \lstinline|\date{\today}|, \lstinline|\date{}|
+	
+	Default $\rightarrow$ \lstinline|\date{\today}|
+\end{itemize}
 
-Deklarationen verändern Parameter. 
+Use the command \lstinline|\maketitle| after \lstinline|\begin{document}| to include this information in your output.
+\end{frame}
 
-Der \textbf{Skopus} von Deklarationen kann so definiert sein, dass er an bestimmten Grenzen -- wie an einem Absatzschluss -- endet, oder dass er nur auf einen \textbf{von geschweiften Klammern bestimmten Skopus} beschränkt ist.
 
-\begin{lstlisting}
-\Deklaration ... [Skopusende]
-{\Deklaration ...} ausserhalb des Skopus
-\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
 
-	\pause 
+Specify the meta data f your document with two authors, use the  \lstinline|\maketitle| command, and try different commands for date.
 
-%	\item[]
-\item Beispiele:
+\centering
+\includegraphics[width=0.65\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/xelatexTest3tex}
 
-\begin{lstlisting}
-{\small Hello world!} \Huge Hello world!
-\end{lstlisting}
+\end{frame}
 
-\pause 
 
-\ea 
-{\tiny Hello world!} \Huge Hello world!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Headlines and paragraphs}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\z 
+\begin{frame}[fragile]
+\frametitle{Headlines and paragraphs}
 
+\noindent Commands for the structure of your text:
+
+\begin{itemize}
+	\item \lstinline|\part[short title]{title}|  \hfill (only in  \ltxterm{book}/\ltxterm{scrbook} and \ltxterm{report}/\ltxterm{scrreprt})
+	
+	\item \lstinline|\chapter[short title]{title}| \hfill (only in  \ltxterm{book}/\ltxterm{scrbook} and \ltxterm{report}/\ltxterm{scrreprt})
+		
+	\item \lstinline|\section[short title]{title}|
+	
+	\item \lstinline|\subsection[short title]{title}| 
+	
+	\item \lstinline|\subsubsection[short title]{title}| 
+	
+	\item \lstinline|\paragraph[short title]{title}|
+	
+	\item \lstinline|\subparagraph[short title]{title}|
+\end{itemize}
+
+\noindent \lstinline|[short title]| for \textbf{table of contents} and \textbf{header}
+
+\vspace{.3cm}
+
+\noindent \lstinline|{title}| for the title \textbf{in your text}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Gliederung}
+
+
+\begin{itemize}
+	\item new paragraph: 
+		\begin{itemize}
+			\item \lstinline|\par| ends a paragraph (and begins a new one)
+			\item twice \short{enter} (\rotatebox[origin=c]{180}{$\Rsh$}) key
+		\end{itemize}
+	
+	\item line break
+		\begin{itemize}
+			\item \lstinline|\newline| or \lstinline|\\| cause a line break without ending the paragraph
+		\end{itemize}
+	
+	\item \lstinline|\noindent| prevents the indentation after a line break
+	
 \end{itemize}
 
 \end{frame}
@@ -854,7 +936,97 @@ Der \textbf{Skopus} von Deklarationen kann so definiert sein, dass er an bestimm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Zeichen \& Umbrüche}
+\subsection{Table of contents}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Table of contents}
+
+To \textbf{generate} a \textbf{table of contents} just include the following command in the body of your document at the position where you want the toc to appear.
+
+\LaTeX\ generates your toc taking the \textbf{information from your structuring commands} (\fe \lstinline|\section[short title]{title}|).
+
+\begin{lstlisting}
+\tableofcontents
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentstruktur}
+
+\centering
+\includegraphics[width=0.84\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/xelatexTest4tex}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Footnotes}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Footnotes}
+
+To generate a footnote use the following command at the position where the \textbf{footnote index} should appear. 
+
+\begin{lstlisting}
+\footnote{content of the footnote}
+\end{lstlisting}
+
+\noindent \textbf{Example 1}
+\begin{lstlisting}
+This is an sample text. The only purpose of this text\footnote{A text 
+(literary theory) is any object that can be read.} is to show how 
+to work with footnotes in \LaTeX .\footnote{\LaTeX\ is a document preparation 
+system.}
+\end{lstlisting}
+
+\pause 
+
+\noindent \textbf{Example 2}
+\begin{lstlisting}
+This is an sample text. The only purpose of this text%
+%
+\footnote{A text (literary theory) is any object that can be read.} %
+%
+is to show how to work with footnotes in \LaTeX .%
+%
+\footnote{\LaTeX\ is a document preparation system.}%
+%
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
+
+Download the PDF \alert{\texttt{myDocument-EX1.pdf}} and replicate it with the commands you have already learnt.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Characters \& spaces}
 \frame{
 	%\frametitle{~}
 	\begin{multicols}{2}
@@ -866,7 +1038,7 @@ Der \textbf{Skopus} von Deklarationen kann so definiert sein, dass er an bestimm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Zeichen \& Sonderzeichen}
+\subsection{Special characters}
 %\frame{
 %	%\frametitle{~}
 %	\begin{multicols}{2}
@@ -876,34 +1048,32 @@ Der \textbf{Skopus} von Deklarationen kann so definiert sein, dass er an bestimm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Zeichen \& Sonderzeichen}
+\frametitle{Characters \& spaces}
 
 \begin{itemize}
-\item Die folgenden Zeichen können problemlos verwendet werden:\\ 
+	
+	\item The following characters can be used without problems:
 
 \begin{lstlisting}
 a...z  A...Z  0...9
 . , : ; ? ! ` ' " ( ) [ ] + - * =
 \end{lstlisting}
 
-\item[]
+%\item Achten Sie darauf, welche Art von \textbf{Anführungszeichen} durch \lstinline|` ' "|  generiert werden \citep[vgl.][]{MyP17c}. 
 
-\item Achten Sie darauf, welche Art von \textbf{Anführungszeichen} durch \lstinline|` ' "|  generiert werden \citep[vgl.][]{MyP17c}. 
+%\item Die \textbf{Umlaute} \gqq{ä, ö, Ä, Ö, \dots}, \textbf{Akzente} \gqq{á, à, \dots} und das \textbf{Eszett} \gqq{ß} können (bei PDF-\LaTeX ) mithilfe des folgenden Pakets \lstinline|\usepackage[utf8]{inputenc}| direkt eingegeben werden.
 
-\item[]
+\pause 
 
-\item Die \textbf{Umlaute} \gqq{ä, ö, Ä, Ö, \dots}, \textbf{Akzente} \gqq{á, à, \dots} und das \textbf{Eszett} \gqq{ß} können (bei PDF-\LaTeX ) mithilfe des folgenden Pakets \lstinline|\usepackage[utf8]{inputenc}| direkt eingegeben werden.
-
-Andernfalls müssen sie mit Extrabefehlen geschrieben werden:
-
+	\item With Xe\LaTeX , you can write \textbf{accents} and \textbf{umlauts} without further commands. Another option is to use commands for that:
 
 \begin{lstlisting}
-\"A \"O \"a \"o \'a \`o \ss{} 
-oder \"{A} {\"O} {\ss} 
+\"A \"O \"a \"o \'a \`o \ss{} \^u \~n
+or \"{A} {\"O} {\ss} 
 \end{lstlisting}
 
-\ea \"A \"O \"a \"o \'a \`o \ss{} oder \"{A} {\"O} {\ss} 
-\z 
+	\ea \"A \"O \"a \"o \'a \`o \ss{} \^u \~n or \"{A} {\"O} {\ss}
+	\z 
 
 \end{itemize}
 
@@ -916,139 +1086,153 @@ oder \"{A} {\"O} {\ss}
 
 \begin{itemize}
 	
-	\item Die folgenden Zeichen haben in \LaTeX\ eine \textbf{besondere Bedeutung} und können nicht einfach im Fließtext verwendet werden:
+		\item The following characters have a \textbf{special meaning} in \TeX . You must \textbf{escape} their function to use them.
 	
 \begin{lstlisting}
-#  $  &  ~  _  ^  {  }  <  >  |  \  %
+#  $  &  _  {  }  %  \  <  >  |  ~  ^  
 \end{lstlisting}
-
-	\item[]
 
 \pause
 
-	\item Um diese Zeichen verwenden zu können, musst man den in \LaTeX\ vordefinierten Funktionen dieser Zeichen \textbf{entkommen}. Bei einigen Zeichen kann man den vordefinierten Funktionen durch \textbf{Voranstellen eines Backslashs} entkommen. 
+	\item escaping with \textbf{backslash} 
 
 \begin{lstlisting}
 \#  \$  \&  \_  \{  \}  \%
 \end{lstlisting}
 	
-\end{itemize}
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{(Sonder-)Zeichen}
-
-\begin{itemize}
-
-	\item Dem \textbf{Backslash}, der \textbf{Größer-als}- und \textbf{Kleiner-als}-Zeichen, der \textbf{Tilde}, dem \textbf{Zirkumflex} und dem \textbf{senkrechten Strich} (\emph{pipe}) kann man nicht mit dem Backslash entkommen.
-
-\end{itemize}
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{(Sonder-)Zeichen}
-
-\begin{itemize}
-
-\item Da die Folge \textbackslash\textbackslash\ für \textbf{Zeilenumbrüche} reserviert ist, kann man dem einfachen \textbf{Backslash} \gqq{\textbackslash} nicht mit Verwendung eines vorangestellten Backslashs entkommen. Dafür sollte der folgende Befehl benutzt werden:
+	\ea \#  \$  \&  \_  \{  \}  \%
+	\z 
+	
+\pause 
+	
+	\item escaping with \textbf{macros} or \textbf{math mode}
 
 \begin{lstlisting}
-\textbackslash 
-\end{lstlisting}
-
-\item Die \textbf{Größer-als-} \gqq{\textgreater} und \textbf{Kleiner-als-Symbole} \gqq{\textless} können im Text durch die folgenden Befehle oder durch die Verwendung des Mathematikmodus', d.\,h. durch die \textbf{Klammerung in \$-Zeichen} erzeugt werden (mehr zum Mathematikmodus später).
-
-\begin{lstlisting}
-\textgreater $>$
-\textless $<$
-\end{lstlisting}
-
+\textbackslash \textasciitilde \textasciicircum 
+\textgreater $>$ \textless $<$ \textbar $\vert$  $|$  
+\end{lstlisting}	
+	\ea \textbackslash\ \textasciitilde\ \textasciicircum\ 
+	\textgreater\ $>$ \textless\ $<$ \textbar\ $\vert$  $|$  
+	\z 
 \end{itemize}
 
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{(Sonder-)Zeichen}
-
-\begin{itemize}
-
-\item Um den \textbf{senkrechten Strich} (\gq{pipe}) darzustellen, kann man entweder den Befehl \textbf{\texttt{vert}} oder den Strich in der \textbf{Mathematikmodusklammerung} eingeben oder den Befehl \textbf{\texttt{textbar}} außerhalb des Mathematikmodus'.
-
-\begin{lstlisting}
-$\vert$  $|$  \textbar
-\end{lstlisting}
-
-\item[]
-
-\item Die \textbf{Tilde} \gqq{\textasciitilde} hat in \LaTeX\ die Funktion eines geschützten Leerzeichens. Um dieser Funktion zu entkommen, kann man nicht den Backslash verwenden (\lstinline|\~|), denn dadurch erscheint der folgende Buchstabe mit einer Tilde. So bei der Eingabe \gqq{\texttt{\textbackslash\textasciitilde nicht}}, erscheint \gqq{\~nicht}. Will man auch dieser Funktion entkommen, muss der folgende Befehl (ähnlich wie bei dem Backslash) benutzt werden:
-
-\begin{lstlisting}
-\textasciitilde
-\end{lstlisting}
-
-\end{itemize}
-
+More on special characters: \url{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{(Sonder-)Zeichen}
-
-\begin{itemize}
-\item Das gleiche Problem taucht beim \textbf{Zirkumflex}  \gqq{\textasciicircum} auf, welcher als Akzent \zB im Französischen gebraucht wird. Daher erscheint bei der Eingabe \gqq{\texttt{s\textbackslash\textasciicircum ur}} der folgende Output: \gqq{s\^ur}. Aus diesem Grund benötigt man den folgenden Befehl um den Zirkumflex als Output zu haben:
-
-\begin{lstlisting}
-\textasciicircum
-\end{lstlisting}
-
-\item[]
-
-\item Weiteres zu Sonderzeichen in \LaTeX :
-
-\url{https://de.wikibooks.org/wiki/LaTeX/_Akzente_und_Sonderzeichen}
-
-\end{itemize}
-
-\end{frame}
+%\begin{frame}[fragile]
+%%\frametitle{(Sonder-)Zeichen}
+%
+%\begin{itemize}
+%
+%	\item Dem \textbf{Backslash}, der \textbf{Größer-als}- und \textbf{Kleiner-als}-Zeichen, der \textbf{Tilde}, dem \textbf{Zirkumflex} und dem \textbf{senkrechten Strich} (\emph{pipe}) kann man nicht mit dem Backslash entkommen.
+%
+%\end{itemize}
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{(Sonder-)Zeichen}
+%
+%\begin{itemize}
+%
+%\item Da die Folge \textbackslash\textbackslash\ für \textbf{Zeilenumbrüche} reserviert ist, kann man dem einfachen \textbf{Backslash} \gqq{\textbackslash} nicht mit Verwendung eines vorangestellten Backslashs entkommen. Dafür sollte der folgende Befehl benutzt werden:
+%
+%\begin{lstlisting}
+%\textbackslash 
+%\end{lstlisting}
+%
+%\item Die \textbf{Größer-als-} \gqq{\textgreater} und \textbf{Kleiner-als-Symbole} \gqq{\textless} können im Text durch die folgenden Befehle oder durch die Verwendung des Mathematikmodus', d.\,h. durch die \textbf{Klammerung in \$-Zeichen} erzeugt werden (mehr zum Mathematikmodus später).
+%
+%\begin{lstlisting}
+%\textgreater $>$
+%\textless $<$
+%\end{lstlisting}
+%
+%\end{itemize}
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{(Sonder-)Zeichen}
+%
+%\begin{itemize}
+%
+%\item Um den \textbf{senkrechten Strich} (\gq{pipe}) darzustellen, kann man entweder den Befehl \textbf{\texttt{vert}} oder den Strich in der \textbf{Mathematikmodusklammerung} eingeben oder den Befehl \textbf{\texttt{textbar}} außerhalb des Mathematikmodus'.
+%
+%\begin{lstlisting}
+%$\vert$  $|$  \textbar
+%\end{lstlisting}
+%
+%\item[]
+%
+%\item Die \textbf{Tilde} \gqq{\textasciitilde} hat in \LaTeX\ die Funktion eines geschützten Leerzeichens. Um dieser Funktion zu entkommen, kann man nicht den Backslash verwenden (\lstinline|\~|), denn dadurch erscheint der folgende Buchstabe mit einer Tilde. So bei der Eingabe \gqq{\texttt{\textbackslash\textasciitilde nicht}}, erscheint \gqq{\~nicht}. Will man auch dieser Funktion entkommen, muss der folgende Befehl (ähnlich wie bei dem Backslash) benutzt werden:
+%
+%\begin{lstlisting}
+%\textasciitilde
+%\end{lstlisting}
+%
+%\end{itemize}
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{(Sonder-)Zeichen}
+%
+%\begin{itemize}
+%\item Das gleiche Problem taucht beim \textbf{Zirkumflex}  \gqq{\textasciicircum} auf, welcher als Akzent \zB im Französischen gebraucht wird. Daher erscheint bei der Eingabe \gqq{\texttt{s\textbackslash\textasciicircum ur}} der folgende Output: \gqq{s\^ur}. Aus diesem Grund benötigt man den folgenden Befehl um den Zirkumflex als Output zu haben:
+%
+%\begin{lstlisting}
+%\textasciicircum
+%\end{lstlisting}
+%
+%\item[]
+%
+%\item Weiteres zu Sonderzeichen in \LaTeX :
+%
+%\url{https://de.wikibooks.org/wiki/LaTeX/_Akzente_und_Sonderzeichen}
+%
+%\end{itemize}
+%
+%\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Leerzeichen \& Zeilenumbrüche}
+\subsection{Space \& line break}
 %\frame{
 %	%\frametitle{~}
 %	\begin{multicols}{2}
 %		\tableofcontents[currentsection,hideallsubsections]
 %	\end{multicols}
 %}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Leerzeichen \& Zeilenumbrüche}
+\frametitle{Space \& line break}
+
+special treatment of \textbf{spaces} and \textbf{line breaks} to avoid typographic errors
 
 \begin{itemize}
-\item \LaTeX\ hat eine \textbf{gesonderte Behandlung von Leerzeichen}, die viele typographische Fehler automatisch korrigiert.
 
-\item Es macht \textbf{keinen Unterschied} zwischen einem Leerzeichen (\gq{blank}) oder einem Tabulator (\gq{tab}).
+\item \textbf{no difference} between a \textbf{blank} and a \textbf{tab}
 
-\item Es zählt \textbf{keine aufeinanderfolgenden Leerzeichen}, d.\,h. mehrere konsekutive Leerzeichen werden nur als eins behandelt.
+\item \textbf{Consecutive blanks} are treated as only one blank.
 
-\item Ein Leerzeichen zu \textbf{Beginn einer Zeile} wird einfach ignoriert.
+\item A \textbf{blank} at the \textbf{beginning of a line} is ignored.
 
-\item Ein \textbf{Zeilenumbruch} im Code wird als einzelnes Leerzeichen interpretiert.
+\item One \textbf{line break} (1x \short{enter}) is interpreted as a blank.
 
-\item Eine \textbf{Leer\emph{zeile}} (d.\,h. zwei Zeilenumbrüche hintereinander) legen das Ende eines Absatzes fest.
+\item One \textbf{empty line} (2x \short{enter}) is interpreted as the end of a paragraph.
 
-\item \textbf{Mehr Leerzeilen} (oder Zeilenumbrüche) werden als \emph{eine} einzelne Leerzeile interpretiert.
+\item \textbf{More than one empty line} is interpreted as one empty line.
 
 \end{itemize}
 
@@ -1059,34 +1243,32 @@ $\vert$  $|$  \textbar
 \begin{frame}[fragile]
 %\frametitle{Leerzeichen}
 
-Hier ein Beispiel:
+\textbf{Example}
 
 \begin{lstlisting}
-Hier ist   ein      Beispieltext   mit   viel
-zu vielen    Leerzeichen   .
-In     Word   sind sie immer     zu   sehen.
-Hier verwenden wir einen  
-Zeilenumbruch.
+   This is        a sample             text with too    many spaces. Here, I use one 
+line break.
+This is a sample text. Now, I use one blank line.
 
-Zwei Zeilenumbrüche ergeben einen neuen Absatz.
+This is a sample text. Now, I use 3 blank lines.
 
 
 
-Mehr als zwei Umbrüche ergeben nur einen neuen Absatz.
+This is a sample text. 
 \end{lstlisting}
 
+\pause 
+
 \outputbox{
-Hier ist   ein      Beispieltext   mit   viel
-zu vielen    Leerzeichen   .
-In     Word   sind sie immer     zu   sehen.
-Hier verwenden wir einen  
-Zeilenumbruch.
+   This is        a sample             text with too    many spaces. Here, I use one 
+line break.
+This is a sample text. Now, I use one blank line.
 
-Zwei Zeilenumbrüche ergeben einen neuen Absatz.
+This is a sample text. Now, I use 3 blank lines.
 
 
 
-Mehr als zwei Umbrüche ergeben nur einen neuen Absatz.
+This is a sample text. 
 }
 
 \end{frame}
@@ -1094,7 +1276,7 @@ Mehr als zwei Umbrüche ergeben nur einen neuen Absatz.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{(Aus-)Kommentieren}
+\section{Commenting out}
 \frame{
 	%\frametitle{~}
 	\begin{multicols}{2}
@@ -1103,104 +1285,668 @@ Mehr als zwei Umbrüche ergeben nur einen neuen Absatz.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{(Aus-)Kommentieren}
+\begin{frame}[fragile]
+\frametitle{Commenting out}
 
-Das \textbf{\%} ist das Zeichen um \LaTeX -Code auszukommentieren, d.\,h. \LaTeX\ wird den gesamten folgenden Text bis zum Zeilenumbruch \textbf{ignorieren}. Der Text nach dem Prozentzeichen wird weder interpretiert noch im Output wiedergegeben. Kommentare sind sehr hilfreich beim Programmieren. 
-
-Durchs Auskommentieren kann man:
+In \LaTeX , text following the character \textbf{\%} in a line will be \textbf{ignored}.
 
 \begin{itemize}
-\item \textbf{Code/Text verstecken}, ohne ihn zu löschen;
+\item \textbf{hiding code/text}, without deleting it;
 
-\item leichter in Zeilen oder größeren Regionen \textbf{Fehler} finden;
+\item \textbf{finding errors} in sections;
 
-\item \textbf{Leerzeichen oder Leerzeilen} in langen Eingabezeilen \textbf{unterbinden};
+\item \textbf{avoiding blanks} and \textbf{empty lines} in a long input line;
 
-\item \textbf{Kommentare in den Code schreiben}, ohne dass sie als Text gedruckt werden
+\item \textbf{writing comments} without seeing it in the output.
 
 \end{itemize}
 
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-\frametitle{(Aus-)Kommentieren}
-
 \begin{lstlisting}
-Hier ist etwas Code, der angezeigt werden soll.
-%hier sind wichtige Notizen
+This is a sample text. %This are just notes
+%Here is a special characters and a command: & \small
 
-Kommentare können sogar ein Wort teilen: 
-Rindfleischetikettierungs% Notiz: Fugen-s
-überwachungsaufgaben% Notiz: Fugen-n
+A comment can divide a word:
+Rindfleischetikettierungs% 5 morphemes
+überwachungsaufgaben% 6 morphemes
 übertragungsgesetz. 
 \end{lstlisting}
 
 \outputbox{
-Hier ist etwas Code, der angezeigt werden soll.
-%hier sind wichtige Notizen
+This is a sample text. %This are just notes
+%Here is a special characters and a command: & \small
 
-Kommentare können sogar ein Wort teilen: 
-Rindfleischetikettierungs% Notiz: Fugen-s
-überwachungsaufgaben% Notiz: Fugen-n
+A comment can divide a word:
+Rindfleischetikettierungs% 5 morphemes
+überwachungsaufgaben-% 6 morphemes
 übertragungsgesetz. 
 }
 
 \end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Hausaufgabe 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Text formatting}
 \frame{
+	%\frametitle{~}
 	\begin{multicols}{2}
-		%\frametitle{~}
 		\tableofcontents[currentsection,hideallsubsections]
 	\end{multicols}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Hausaufgabe 0: \LaTeX -Vorbereitung}
+\begin{frame}[fragile]
+\frametitle{Text formatting}
+
+%\LaTeX\ bietet verschiedene Befehle zur Textauszeichnung:
+
+\begin{multicols}{2}
+	
+\begin{lstlisting}
+\textbf{bold} 
+\textit{italics}
+\textsl{slanted} 
+\emph{emphasized} 
+\underline{underline} 
+\texttt{typewriter} 
+\textsc{small caps} 
+ex\textsuperscript{up} 
+ex\textsubscript{down} 
+\end{lstlisting}
+	
+\outputbox{
+	\textbf{bold}\newline 
+	\textit{italics}\newline
+	\textsl{slanted}\newline 
+	\emph{emphasized}\newline 
+	\underline{underline}\newline 
+	\texttt{typewriter}\newline
+	\textsc{small caps}\newline 
+	ex\textsuperscript{up} \newline
+	ex\textsubscript{down} 
+}
+	
+\end{multicols}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Textauszeichnung}
+
+%\LaTeX\ bietet auch die Möglichkeit an, die Schriftgröße zu ändern. Dies ist jedoch in wissenschaftlichen Arbeiten nicht empfehlenswert. Die Schriftgrößenbefehle können entweder als \textbf{Deklarationen} wie auch als \textbf{Umgebungen} angegeben werden.
+
+\begin{multicols}{2}
+\begin{lstlisting}
+{\tiny tiny} 
+{\scriptsize scsize} 
+{\footnotesize fnsize} 
+{\small small} 
+{\normalsize normal} 
+{\large large} 
+{\Large Large} 
+{\LARGE LARGE} 
+{\huge huge} 
+{\Huge Huge} 
+\end{lstlisting} 
+\columnbreak{}
+\outputbox{
+	{\tiny{tiny}\newline 
+		\scriptsize{scsize}\newline
+		\footnotesize{fnsize}\newline
+		\small{small}\newline
+		\normalsize{normal}\newline
+		\large{large}\newline
+		\Large{Large}\newline  
+		\LARGE{LARGE}\newline
+		\huge{huge}\newline
+		\Huge{Huge}}
+}
+\end{multicols}
+
+The commands for font size can be used as \textbf{declarations} or as \textbf{environments}.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
+
+Download the PDF \alert{\texttt{myDocument-EX2.pdf}} and replicate it with the commands you have already learnt.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Text environments}
+\frame{
+	%\frametitle{~}
+	\begin{multicols}{2}
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{multicols}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Text environments}
+You will normally need the following environments:
 
 \begin{itemize}
-	\item Laden Sie \ltxpack{MiKTeX} und \ltxpack{TeXstudio} \gs{wie in der Anleitung in Moodle angegeben} herunter.
-	\item[]
+	\item quotations,
 	
-	\item Installieren Sie beide Programme.
-	\item[]
+	\item lists, 
 	
-	\item Folgen Sie dabei der Anleitung in Moodle.
-	\item[]
+%	\item \gqq{wörtliche Wiedergaben} und 
 	
-	\item Falls Sie \textbf{Probleme bei der Installation} haben, melden Sie sich bitte bei Pia Linscheid \emph{vor} der nächsten Sitzung! Andernfalls werden Sie die kommenden Hausaufgaben nicht abgeben können.
+	\item abstracts,
 	
-	\item[]
-	
-	\item \textbf{Alternative:} Anstatt die Programme zu installieren, können Sie versuchen Ihre Hausaufgaben mit Overleaf zu lösen (Siehe Anleitung in Moodle).
+	\item \dots 
 \end{itemize}
 
 \end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Hausaufgabe 0: Lektüre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quotations}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]
+\frametitle{Quotations}
 \begin{itemize}
-\item Lesen Sie den \textbf{LingStudi-Guide} (s.~Moodle/Allgemeines)
+	
+%\item Wörtliche Zitate, die länger als zwei Zeilen lang sind, sollen \textbf{vom Fließtext getrennt} werden.
+
+\item In \LaTeX\, there are two environments for quotations \ltxterm{quote} and \ltxterm{quotation}.
+
+\item Both show a different output dependent on the document class (\fe \ltxterm{beamer} \vs \ltxterm{article}).
+
+%\item Der Unterschied zwischen den beiden Befehlen betrifft die \textbf{Absatzgrenzen}.
+
+%\begin{itemize}
+%	\item \ltxterm{quote} trennt die Absätze mit vertikalem Abstand, 
+%	
+%	\item während \ltxterm{quotation} die erste Zeile jedes Absatzes einrückt.		
+%\end{itemize}
+%
+%\item In der \ltxterm{beamer}-Klasse werden Zitate zusätzlich kursiviert.
 \end{itemize}
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%\frametitle{Quote-Umgebung}
+
+
+\begin{lstlisting}
+This is a sentence before the \texttt{quote} environment.
+\begin{quote}
+Furthermore, each actual ``language'' will incorporate a periphery of borrowings,
+historical residues, inventions, and so on, which we can hardly expect to -- and
+indeed would not want to -- incorporate within a principled theory of UG. [\dots]
+
+Viewed against the reality of what a particular person may have inside
+his head, core grammar is an idealization.
+\hfill (Chomsky,~1981:~8)
+\end{quote}
+This is a sentence after the \texttt{quote} environment.
+\end{lstlisting}
+
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%\frametitle{Quote-Umgebung}
+
+%\outputbox{
+%This is a sentence before the \texttt{quote} environment.
+%\begin{quote}
+%	Furthermore, each actual ``language'' will incorporate a periphery of borrowings,
+%	historical residues, inventions, and so on, which we can hardly expect to -- and
+%	indeed would not want to -- incorporate within a principled theory of UG. [\dots]
+%	
+%	Viewed against the reality of what a particular person may have inside
+%	his head, core grammar is an idealization.
+%	\hfill (Chomsky,~1981:~8)
+%\end{quote}
+%This is a sentence after the \texttt{quote} environment.
+%}
+%
+%%\nocite{Nolda&Co14a}
+
+\nocite{Chomsky81b}
 
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Hausaufgabe 0: Mitgestalten}
+%\begin{frame}[fragile]
+%\frametitle{Quotation-Umgebung}
+%
+%
+%\begin{lstlisting}
+%Das ist der Text vor der \texttt{quotation}-Umgebung.
+%
+%\begin{quotation}
+%Die grammatischen Phänomene in einer Sprache 
+%zerfallen in zwei Teilbereiche: kerngrammatische und 
+%randgrammatische Phänomene (\emph{Ausnahmen}).
+%\end{quotation}
+%Das ist der Text nach der \texttt{quotation}-Umgebung.
+%\end{lstlisting}
+%
+%\outputbox{
+%Das ist der Text vor der \texttt{quotation}-Umgebung.
+%
+%\begin{quotation}
+%Die grammatischen Phänomene in einer Sprache 
+%zerfallen in zwei Teilbereiche: kerngrammatische und 
+%randgrammatische Phänomene (\emph{Ausnahmen}).
+%\end{quotation}
+%Das ist der Text nach der \texttt{quotation}-Umgebung.
+%}
+%
+%\nocite{Nolda&Co14a}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{List environments}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{List environments}
+
+\LaTeX\ has 3 pre-defined and 1 general list environments:
 
 \begin{itemize}
-\item Schreiben Sie bei Moodle im Bereich \gqq{Was will ich in diesem Kurs lernen?} \textbf{einen bis zwei Stichpunkte} auf. Erklären Sie kurz \gs{wenn nötig} was Sie damit meinen.
+	\item \ltxterm{itemize},
+	\item \ltxterm{enumerate},
+	\item \ltxterm{description},
+
+	\item \ltxterm{list}.
+\end{itemize}
+
+Every environment begins with the \lstinline|\begin{ }| and ends with the \lstinline|\end{ }| command.
+
+Each point in the list begins with \lstinline|\item|.  
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%\frametitle{Itemize}
+%
+%Die \ltxterm{itemize}-Umgebung wird für ungeordnete Listen verwendet. 
+
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{itemize}
+\item syntax
+\item semantics 
+
+\begin{itemize}
+\item lexical semantics
+\item propositional semantics
+\end{itemize}
+
+\item morphology
+\end{itemize}
+\end{lstlisting}
+\columnbreak{}
+\outputbox{
+\begin{itemize}
+	\item syntax
+	\item semantics 
+	
+	\begin{itemize}
+		\item lexical semantics
+		\item propositional semantics
+	\end{itemize}
+	
+	\item morphology
+\end{itemize}
+}
+\end{multicols}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%\frametitle{Enumerate}
+%
+%Nummerierte Listen werden mit der \ltxterm{enumerate}-Umgebung erzielt.
+%
+%\begin{multicols}{2}
+%
+%\begin{lstlisting}
+%\begin{enumerate}
+%\item erster Punkt
+%\item zweiter Punkt
+%
+%\begin{enumerate}
+%\item Unterpunkt 1
+%\item Unterpunkt 2
+%\end{enumerate}
+%
+%\item dritter Punkt
+%\end{enumerate}
+%\end{lstlisting}
+%\columnbreak{}
+%\outputbox{
+%\begin{enumerate}
+%\item erster Punkt
+%\item zweiter Punkt
+%
+%\begin{enumerate}
+%\item Unterpunkt 1
+%\item Unterpunkt 2
+%\end{enumerate}
+%
+%\item dritter Punkt
+%\end{enumerate}
+%}
+%\end{multicols}
+%
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Description}
+
+The \ltxterm{description} list can be used for terms with their definitions.
+
+\begin{lstlisting}
+\begin{description}
+\item[Morpheme:] smallest grammatical unit in a language bearing a meaning
+
+\begin{description}
+\item[Allomorph:] phonetic variant of a morpheme 
+\end{description}
+
+\item[Phoneme:] systematic unit of sound (or gesture in the case of sign 
+languages, see chereme) that distinguish one word from another in a particular 
+language
+\end{description}
+\end{lstlisting}
+
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Description}
+
+\outputbox{
+\begin{description}
+	\item[Morpheme:] smallest grammatical unit in a language bearing a meaning
+	
+	\begin{description}
+		\item[Allomorph:] phonetic variant of a morpheme 
+	\end{description}
+	
+	\item[Phoneme:] systematic unit of sound (or gesture in the case of sign 
+	languages, see chereme) that distinguish one word from another in a particular 
+	language
+\end{description}
+}
+
+
+% MyP: Welchen Unterschied?
+%\vspace{\baselineskip}
+%\noindent Bitte beachten Sie den Unterschied zwischen den Befehlen \textbackslash\textbackslash\ und \lstinline|\par|.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Combining lists}
+
+Lists can be \textbf{combined} and \textbf{embedded} in other list types. 
+
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{description}
+\item[Morpheme:] smallest grammatical 
+unit in a language bearing a meaning
+
+\begin{itemize}
+\item minimal unit in morphology
+\item subtypes:
+
+\begin{enumerate}
+\item roots
+\item prefixes
+\item suffixes
+\item \dots
+\end{enumerate}
 
 \end{itemize}
+
+\end{description}
+\end{lstlisting}
+\columnbreak{}
+\outputbox{
+\begin{description}
+	\item[Morpheme:] smallest grammatical 
+	unit in a language bearing a meaning
+	
+	\begin{itemize}
+		\item minimal unit in morphology
+		\item subtypes:
+		
+		\begin{enumerate}
+			\item roots
+			\item prefixes
+			\item suffixes
+			\item \dots
+		\end{enumerate}
+		
+	\end{itemize}
+	
+\end{description}
+}
+\end{multicols}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Customizing lists}
+
+\noindent Bullet points can be customized with an \textbf{optional parameter}.
+
+\begin{multicols}{2}
+
+\begin{lstlisting}
+\begin{itemize}
+\item standard symbol
+\item[+] customized
+\item[$+$] customized
+\item[$\checkmark$] customized
+\end{itemize}
+\end{lstlisting}
+
+\columnbreak{}
+
+\outputbox{
+\begin{itemize}
+	\item standard symbol
+	\item[+] customized
+	\item[$+$] customized
+	\item[$\checkmark$] customized
+\end{itemize}
+}
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{lstlisting}
+\begin{enumerate}
+\item standard symbol
+\item[-] customized
+\item[$-$] customized
+\item[--] customized
+\item standard symbol
+\end{enumerate}
+\end{lstlisting}
+
+\columnbreak{}
+
+\outputbox{
+\begin{enumerate}
+	\item standard symbol
+	\item[-] customized
+	\item[$-$] customized
+	\item[--] customized
+	\item standard symbol
+\end{enumerate}
+}
+
+\end{multicols}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Abstract}
+
+For automatic abstracts, use the option \ltxterm{abstracton} in the \lstinline|\documentclass| command.
+
+{\small
+\begin{lstlisting}
+\begin{abstract}
+An abstract is a brief summary of a research article, thesis, or any in-depth 
+analysis of a particular subject and is often used to help the reader quickly 
+ascertain the paper's purpose.\par 
+When used, an abstract always appears at the beginning of a manuscript, acting 
+as the point-of-entry for any given academic paper. 
+\end{abstract}
+\end{lstlisting}
+}
+\outputbox{
+\begin{abstract}
+An abstract is a brief summary of a research article, thesis, or any in-depth 
+analysis of a particular subject and is often used to help the reader quickly 
+ascertain the paper's purpose.\par 
+When used, an abstract always appears at the beginning of a manuscript, acting 
+as the point-of-entry for any given academic paper. 
+\end{abstract}
+}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
+
+Download the PDF \alert{\texttt{myDocument-EX3.pdf}} and replicate it with the commands you have already learnt.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Installing packages}
+\frame{
+	%\frametitle{~}
+	\begin{multicols}{2}
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{multicols}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Installing Packages}
+
+\begin{itemize}
+	\item The functions \LaTeX\ offers are restricted. Most \textbf{extra features} your will need are in \textbf{packages} that you can install in your \TeX\ document.
+
+	\item Packages must be installed in the \textbf{preamble} of your document.
+\end{itemize}
+
+\begin{lstlisting}
+\usepackage[parameter1, parameter2]{package name}
+\end{lstlisting}
+
+\pause 
+
+\begin{itemize}
+\item Normally, (many) \LaTeX\ packages are \textbf{pre-installed} in your \TeX\ distribution (\fe \href{http://miktex.org/}{\ltxterm{MiKTeX}}).
+
+\item (Almost) every other package with manual can be \textbf{downloaded} from \textbf{\ltxterm{CTAN}} -- The Comprehensive \TeX\ Archive Network (\href{http://www.ctan.org/}{www.ctan.org})
+
+\item With the command \lstinline|usepackage| your \TeX\ distribution usually \textbf{downloads automatically} the package -- if necessary.
+
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Pakete einbinden}
+
+This packages can be useful:
+\begin{itemize}
+
+%\item Kodierung (Input): \ltxterm{inputenc}
+%\lstinline|\usepackage[utf8]{inputenc}|
+
+\item Language package: \ltxterm{babel} \hfill 
+\lstinline|\usepackage[ngerman, english]{babel}|
+
+%\item Kodierung (Font): \ltxterm{fontenc}
+%\lstinline|\usepackage[T1]{fontenc}|
+
+\item Font: \ltxterm{libertine} \hfill 
+\lstinline|\usepackage{libertine}|
+
+\item Blind text: \ltxterm{blindtext} \hfill 
+\lstinline|\usepackage{blindtext}|
+\end{itemize}
+
+Sometimes the \textbf{order} in that packages have been installed can affect the compilation.
+
+Also, not all packages are \textbf{compatible} with each other or with your compiler (Xe\TeX\ \vs PDF\LaTeX ).
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
+
+Download the PDF \alert{\texttt{myDocument-EX4.pdf}} and replicate it with the commands you have already learnt. Follow the instructions in the last section and install the packages.
 
 \end{frame}
 
