@@ -13,7 +13,7 @@
 	\LaTeX\ for Linguists
 }
 
-\subtitle{\LaTeX\ 1: Basics}
+\subtitle{\LaTeX\ 2: Objects \& Crossreferences}
 
 \author[aMyP]{
 	{\small Sebastian Nordhoff \& Antonio Machicao y Priemer}
@@ -88,36 +88,153 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{What is \LaTeX ?}
+\section{Graphics}
 \frame{
-%\frametitle{~}
 \begin{multicols}{2}
+\frametitle{~}
 	\tableofcontents[currentsection,hideallsubsections]
 \end{multicols}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{History}
 
-\begin{frame}
-\frametitle{History}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Including a graphic}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Including a graphic}
+
 
 \begin{itemize}
-	\item $\tau \epsilon \chi$ (\TeX ) was developed between 1977 and 1986 by Donald E. Knuth.
+	\item Install the \textbf{package} \ltxterm{graphicx}: \lstinline|\usepackage{graphicx}|
 	
-	\item \LaTeX\ is an interface with helpful macros for the \TeX\ system. It was written by Leslie Lamport ($=$ \textbf{La}mport \textbf{\TeX }). 
+%\begin{lstlisting}
+%\usepackage{graphicx}
+%\end{lstlisting}
 	
-	\item Pronunciation: \textipa{["la:.tE\c{c}]}, \textipa{["leI.tE\c{c}]}, \textipa{["leI.tEkh]}
+	\item To include the graphic, use the following command (\textbf{file ending}, \ie \ltxpack{.pdf}, doesn't need to be added) :
 	
-	\item \LaTeX\ works with markup tagging conventions -- similar to HTML -- to 
+\begin{lstlisting}
+\includegraphics[size of graphic]{path/name of graphic}  
+\end{lstlisting}
+
+\end{itemize}
+
+\pause
 	
+%\textbf{Example:}
+
+
+\includegraphics{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1.pdf}   
+
+\begin{lstlisting}
+\includegraphics{LaTeX-flowchart-1.pdf}    
+\end{lstlisting}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rescaling the graphic}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Rescaling the graphic}
+
+Rescaling \textbf{relative} to the \textbf{original size} with the option \lstinline|scale| (\lstinline|scale=0.5| $=$ 50\,\% of the original size)
+
+\begin{lstlisting}
+\includegraphics[scale=0.5]{LaTeX-flowchart-1.pdf}  
+\end{lstlisting}
+
+\includegraphics[scale=0.5]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1.pdf}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Rescaling the graphic}
+
+Rescaling with \textbf{absolute specification} 
+
+
+\begin{lstlisting}
+\includegraphics[width=5cm]{LaTeX-flowchart-1.pdf}
+\includegraphics[height=5cm]{LaTeX-flowchart-1.pdf}
+\end{lstlisting}
+
+\includegraphics[width=5cm]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1}
+
+Rescaling \textbf{relative} to the \textbf{document size}
+
+\begin{lstlisting}
+\includegraphics[width=\linewidth]{LaTeX-flowchart-1.pdf}  
+\includegraphics[width=.2\linewidth]{LaTeX-flowchart-1.pdf}
+\includegraphics[width=.2\textwidth]{LaTeX-flowchart-1.pdf}
+\end{lstlisting}
+
+%\includegraphics[width=.2\textwidth]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1.pdf}
+
+\includegraphics[width=.2\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Formats and paths}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Formats and paths}
+
+\begin{itemize}
+\item The following \textbf{formats} can be used with Xe\LaTeX\ and PDF\LaTeX :
 	\begin{itemize}
-		\item define the structure of the document (\fe chapters and sections),
-		
-		\item for typographic marking (\fe bold and italics), 
-		
-		\item for cross-references (\fe citations)
+	\item \ltxterm{.pdf} (vector graphics)
+	\item \ltxterm{.png} (raster graphics)
+	\item \ltxterm{.jpg} (raster graphics)
+	%\item \ltxterm{.eps}, Format für Vektorgrafiken (nur mit dem \ltxterm{epstopdf}-Paket benutzbar)
 	\end{itemize}
+
+\pause 
+
+\item You must specify the place where you have saved the graphic \textbf{starting from the location of your \ltxterm{.tex}-file}.
+
+\begin{enumerate}
+	\item Graphic and  \ltxterm{.tex}-file are in the same folder:	
+	
+	\lstinline|\includegraphics{LaTeX-flowchart-1}|
+	
+	\item Graphic is in a folder \texttt{graphics}. This folder is in the same folder as your  \ltxterm{.tex}-file: 
+	
+	\lstinline|\includegraphics{graphics/LaTeX-flowchart-1}|
+	
+	\item \ltxterm{.tex}-file is in a folder. This folder and your graphic are in the same folder: 
+	
+	\lstinline|\includegraphics{../LaTeX-flowchart-1}|
+\end{enumerate}
 
 \end{itemize}
 
@@ -126,76 +243,504 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{WYSIWYG vs. WYGIWYN}
-%\frame{
-%	%\frametitle{~}
-%	\begin{multicols}{2}
-%		\tableofcontents[currentsection,hideallsubsections]
-%	\end{multicols}
-%}
-
+\section{Tables}
+\frame{
+%\frametitle{~}
+\begin{multicols}{2}
+	\tableofcontents[currentsection,hideallsubsections]
+\end{multicols}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{WYSIWYG vs. WYGIWYN}
+
+\begin{frame}[fragile]
+\frametitle{Tables}
 
 \begin{itemize}
-	\item \emph{MS Word} or \emph{Libre Office}:
-	\textbf{WYSIWYG} (\emph{what-you-see-is-what-you-get}) 
+	\item \textbf{environment} for tables: \ltxterm{tabular} 
+	\item optional argument for \textbf{position} of table
+	\item obligatory argument for \textbf{layout} inside a column
+	\item separation of table cells: \& 
+	\item End of a row: \textbackslash\textbackslash 
+\end{itemize}
+
+%\begin{lstlisting}
+%\begin{tabular}[position]{layout}
+%...    
+%\end{tabular}
+%\end{lstlisting}
+
+\pause 
+
+\textbf{Example:}
+
+\begin{multicols}{2}
 	
-	\begin{figure}
-		\includegraphics[scale=.3]{../../texfiles-beamer/tex-material/WissArb-latex/WYSIWYG}
-	\end{figure}
-		
-	\item \LaTeX : \textbf{WYGIWYN} or \textbf{WYGIWYM} (\emph{what-you-get-is-what-you-need}/\emph{mean})
+%{\scriptsize
+\begin{lstlisting}
+sample text	
+\begin{tabular}[t]{l|c|r}
+0001 & 002 & 03 \\
+\hline
+0A & 000B & 00C \\
+\hline
+00i  & 0ii  & 000iii  \\
+\end{tabular}
+\end{lstlisting}
+%}
 	
-	\begin{figure}
-		\includegraphics[scale=.3]{../../texfiles-beamer/tex-material/WissArb-latex/WYSIWYM}
-	\end{figure}
+	\columnbreak
 	
-\end{itemize}\end{frame}
+	%\scalebox{.8}{
+sample text	
+	\begin{tabular}[t]{l|c|r}
+%		\hline
+		0001 & 002 & 03 \\
+		\hline
+		0A & 000B & 00C \\
+		\hline
+		00i  & 0ii  & 000iii  \\
+%		\hline
+	\end{tabular}
+	%}
+\end{multicols}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+\begin{itemize}
+	\item possible values for \textbf{option}: \ltxterm{t} (top, (\ref{ex:TabTop})), \ltxterm{b} (bottom, (\ref{ex:TabBot})), or \ltxterm{c} (center, (\ref{ex:TabCent})) -- Default: \ltxterm{c}
+	
+	\begin{exe}
+		\ex\label{ex:TabTop} \ltxterm{t}:		
+		sample text	
+		\begin{tabular}[t]{l|c|r}
+			%		\hline
+			0001 & 002 & 03 \\
+			\hline
+			0A & 000B & 00C \\
+			\hline
+			00i  & 0ii  & 000iii  \\
+			%		\hline
+		\end{tabular}
+	
+\pause 
+	
+		\ex\label{ex:TabBot}  \ltxterm{b}:	
+		sample text	
+		\begin{tabular}[b]{l|c|r}
+			%		\hline
+			0001 & 002 & 03 \\
+			\hline
+			0A & 000B & 00C \\
+			\hline
+			00i  & 0ii  & 000iii  \\
+			%		\hline
+		\end{tabular}
+
+\pause 
+
+		\ex\label{ex:TabCent}  \ltxterm{c}:
+		sample text	
+		\begin{tabular}[c]{l|c|r}
+			%		\hline
+			0001 & 002 & 03 \\
+			\hline
+			0A & 000B & 00C \\
+			\hline
+			00i  & 0ii  & 000iii  \\
+			%		\hline
+		\end{tabular}
+	\end{exe}
+\end{itemize}
+
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Warum sollte ich es benutzen?}
-%%\frame{
-%%	%\frametitle{~}
-%%	\begin{multicols}{2}
-%%		\tableofcontents[currentsection,hideallsubsections]
-%%	\end{multicols}
-%%}
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Tabellen}
 %
-%\begin{frame}
-%\frametitle{Warum sollte ich es benutzen?}
+%Die Option \textbf{Position} kann die Werte \ltxterm{t} (top), \ltxterm{c} (center), oder \ltxterm{b} (bottom) annehmen. 
+%Diese Positionswerte geben die \textbf{vertikale Positionierung der gesamten Tabelle in Bezug zur aktuellen Zeile} (zur zuletzt geschriebenen Zeile), die Default-Einstellung ist in diesem Fall \ltxterm{center}.
+%
+%\begin{multicols}{2}
+%
+%Code für \textbf{top}:
+%
+%\columnbreak
+%
+%{\scriptsize
+%	\begin{lstlisting}
+%	Hier ist die aktuelle Zeile
+%	\begin{tabular}[t]{l|c|r}
+%	Zelle 01 & Zelle 02 & Zelle 03 \\
+%	\hline
+%	Zelle A & Zelle B & Zelle C \\
+%	\hline
+%	Zelle  & Zelle  & Zelle  \\
+%	\end{tabular}
+%	\end{lstlisting}
+%}
+%
+%\end{multicols}
+%
+%Hier ist die aktuelle Zeile	
+%\begin{tabular}[t]{l|c|r}
+%Zelle 01 & Zelle 02 & Zelle 03 \\
+%\hline
+%Zelle A & Zelle B & Zelle C \\
+%\hline
+%Zelle  & Zelle  & Zelle  \\
+%\end{tabular}
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Tabellen}
+%
+%\begin{multicols}{2}
+%
+%Code für \textbf{bottom}:
+%
+%\columnbreak
+%
+%{\tiny
+%\begin{lstlisting}
+%Hier ist die aktuelle Zeile
+%\begin{tabular}[b]{l|c|r}
+%Zelle 01 & Zelle 02 & Zelle 03 \\
+%\hline
+%Zelle A & Zelle B & Zelle C \\
+%\hline
+%Zelle  & Zelle  & Zelle  \\
+%\end{tabular}
+%\end{lstlisting}
+%}
+%
+%\end{multicols}
+%
+%Hier ist die aktuelle Zeile	
+%\begin{tabular}[b]{l|c|r}
+%Zelle 01 & Zelle 02 & Zelle 03 \\
+%\hline
+%Zelle A & Zelle B & Zelle C \\
+%\hline
+%Zelle  & Zelle  & Zelle  \\
+%\end{tabular}
+%
+%
+%\pause 
+%
+%
+%\begin{multicols}{2}
+%
+%Code für \textbf{center}:
+%
+%\columnbreak
+%
+%{\tiny
+%\begin{lstlisting}
+%Hier ist die aktuelle Zeile
+%\begin{tabular}[c]{l|c|r}
+%Zelle 01 & Zelle 02 & Zelle 03 \\
+%\hline
+%Zelle A & Zelle B & Zelle C \\
+%\hline
+%Zelle  & Zelle  & Zelle  \\
+%\end{tabular}
+%\end{lstlisting}
+%}
+%
+%\end{multicols}
+%
+%
+%Hier ist die aktuelle Zeile	
+%\begin{tabular}[c]{l|c|r}
+%Zelle 01 & Zelle 02 & Zelle 03 \\
+%\hline
+%Zelle A & Zelle B & Zelle C \\
+%\hline
+%Zelle  & Zelle  & Zelle  \\
+%\end{tabular}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Tabellen}
+
+\begin{itemize}
+	\item possible values for the \textbf{obligatory argument}: \ltxterm{l} (left), \ltxterm{c} (centered), \ltxterm{r} (right), \ltxterm{p\{length\}} (fixed width), optionally \ltxterm{|} (pipe, for vertical lines between columns)
+	
+	\item each column must have an alignment specification (\ie \ltxterm{l}, \ltxterm{c}, \ltxterm{r}, or \ltxterm{p})
+	
+\end{itemize}
+
+%\pause 
+
+\begin{multicols}{2}
+
+{\scriptsize
+\begin{lstlisting}
+\begin{tabular}[t]{lc|r|p{1.5cm}}
+00001 & 002 & 03 & 0004 \\
+\hline
+0A & 000B & 00C & 0000D\\
+\hline
+00i  & 0000ii  & 000iii  & iv\\
+\end{tabular}
+\end{lstlisting}
+}
+
+\columnbreak
+
+%\scalebox{.8}{
+\begin{tabular}[t]{lc|r|p{1.5cm}}
+	00001 & 002 & 03 & 0004 \\
+	\hline
+	0A & 000B & 00C & 0000D\\
+	\hline
+	00i  & 0000ii  & 000iii  & iv\\
+\end{tabular}
+%}
+\end{multicols}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Tabellen}
 %
 %\begin{itemize}
-%	\item Zeitersparnis ({\tiny nicht am Anfang!})
-%	\item[]
+%\item Tabellen werden Zeile für Zeile geschrieben. 
 %
-%\pause	
+%\item Das \textbf{Et-Zeichen} \ltxterm{\&} trennt zwei Zellen von einander.
 %
-%	\item Man hört auf, Sachen zu tun, die der Computer für einen erledigen kann. Daher hat man mehr Zeit, um sich mit dem Inhalt zu befassen.
-%	\item[]
-%
-%\pause	
-%
-%	\item Die Texte werden sehr gut gesetzt!
-%	\item[]
-%
-%\pause
-%
-%	\item Ein Programm für alle Funktionen: Artikel, Bücher, Poster, Präsentationen, \dots 
-%	\item[]
-%
-%\pause
-%
-%	\item Gratis!!
+%\item Der \textbf{doppelte Backslash} \textbackslash\textbackslash\ markiert das Ende einer Zeile.
 %
 %\end{itemize}
 %
+%\small{
+%\begin{lstlisting}
+%Aktuelle Zeile
+%\begin{tabular}[c]{lc|rp{1.7cm}|}
+%l-bündig & zentriert & r-bündig & feste Breite \\
+%\hline
+%viel Inhalt & viel Inhalt & viel viel Inhalt & viel viel Inhalt \\
+%wenig & & wenig & wenig \\
+%\end{tabular}
+%\end{lstlisting}
+%
+%%\outputbox{
+%Aktuelle Zeile
+%\begin{tabular}[c]{lc|rp{1.7cm}|}
+%l-bündig & zentriert & r-bündig & feste Breite \\
+%\hline
+%viel Inhalt & viel Inhalt & viel viel Inhalt & viel viel Inhalt \\
+%wenig & & wenig & wenig \\
+%\end{tabular}
+%}
+%%}
 %\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Tabellen}
+
+Two more helpful commands for tables:
+
+\begin{itemize}
+	\item With \lstinline|\multicolumn{number of colums}{alignment}{text}| text can occupy more than one column.
+	
+	\item With \lstinline|\cline{cell number - cell number}| you can have horizontal lines specifying its begin (cell number) and end (cell number).
+\end{itemize}
+
+%\footnotesize{
+%Beispiele weiterer Tabellen:
+
+\begin{multicols}{2}
+
+\begin{lstlisting}
+\begin{tabular}[t]{llr}
+\multicolumn{2}{c}{Item} &  \\
+\cline{1-2}
+article & unit & price \\
+\hline
+proofreading & per words & 0.02 \\
+layout & per page & 0.80 \\
+printing & per page & 0.99 \\
+typesetting & per article & 40.33 \\
+\end{tabular}
+\end{lstlisting}
+
+%\begin{tabular}[t]{llr}
+%\multicolumn{2}{c}{Item} &  \\
+%article & unit & price \\
+%proofreading & per words & 0.02 \\
+%layout & per page & 0.80 \\
+%printing & per page & 0.99 \\
+%typesetting & per article & 40.33 \\
+%\end{tabular}
+%
+%\vspace{\baselineskip}
+%
+%\begin{tabular}[t]{|l|l|r|}
+%\hline
+%\multicolumn{2}{|c}{Item} &  \\
+%\hline
+%article & unit & price \\
+%\hline
+%proofreading & per words & 0.02 \\
+%\hline
+%layout & per page & 0.80 \\
+%\hline
+%printing & per page & 0.99 \\
+%\hline
+%typesetting & per article & 40.33 \\
+%\hline
+%\end{tabular}
+%
+%\vspace{\baselineskip}
+
+\columnbreak{}
+
+\begin{tabular}[t]{llr}
+\multicolumn{2}{c}{Item} &  \\
+\cline{1-2}
+article & unit & price \\
+\hline
+proofreading & per words & 0.02 \\
+layout & per page & 0.80 \\
+printing & per page & 0.99 \\
+typesetting & per article & 40.33 \\
+\end{tabular}
+
+%\vspace{\baselineskip}
+%
+%\begin{tabular}[t]{llr}
+%\toprule
+%\multicolumn{2}{c}{Item} &  \\
+%\cmidrule{1-2}
+%article & unit & price \\
+%\midrule
+%proofreading & per words & 0.02 \\
+%layout & per page & 0.80 \\
+%printing & per page & 0.99 \\
+%typesetting & per article & 40.33 \\
+%\bottomrule
+%\end{tabular}
+
+\end{multicols}
+%}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Floating environments}
+\frame{
+	%\frametitle{~}
+	\begin{multicols}{2}
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Floating environments}
+
+\begin{itemize}
+	
+	\item With floating environments, \LaTeX\ puts figures or tables in the best position to avoid gaps in the layout. 
+
+\end{itemize}
+
+\begin{multicols}{2}
+
+{\small
+\begin{lstlisting}
+It is not necessary that this text has 
+any meaning.
+\begin{table}[htbp]
+\centering
+
+\begin{tabular}[t]{l|l}
+Eins & Zwei \\
+\hline
+Drei & Vier \\
+\end{tabular}
+
+\caption{Caption of my table}
+\end{table}
+\end{lstlisting}
+}
+
+\columnbreak
+
+It is not necessary that this text has any meaning.
+\begin{table}[htbp]
+	\centering
+	
+	\begin{tabular}[t]{l|l}
+		Eins & Zwei \\
+		\hline
+		Drei & Vier \\
+	\end{tabular}
+	
+	\caption{Caption of my table}
+\end{table}
+
+\end{multicols}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Gleitumgebung}
+
+\begin{itemize}
+	\item floating for tables: \lstinline|table|
+	
+	\item floating for figures: \lstinline|figure|
+	
+	\item In the environment, the command \lstinline|\caption{ }| can be used.
+	
+	\item Optionally, preferences for the position can be given: \ltxterm{h} (here), \ltxterm{t} (top), \ltxterm{b} (bottom), \ltxterm{p} (new page).
+	
+	\item Inside the environment, you can specify the position of the figure/table
+\end{itemize}	
+
+\begin{multicols}{2}
+	
+\begin{lstlisting}
+\begin{figure}[htbp]
+\centering
+
+\includegraphics{LaTeX-flowchart-1.pdf}
+\caption{My first float}
+\end{figure}
+\end{lstlisting}
+
+\columnbreak
+
+\begin{figure}[htbp]
+%\centering
+\includegraphics[scale=0.5]{../../texfiles-beamer/tex-material/WissArb-latex/LaTeX-flowchart-1.pdf}
+\caption{My first float}
+\label{fig:latex-flowchart}
+\end{figure}
+\end{multicols}
+
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -335,6 +880,17 @@ node[anchor=west,align=center]{finite};}
 
 \end{frame}
 
+}
+%% END handout true 
+%% BEGIN handout false
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% EMPTY
+
+}%% END HO-Toggle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -428,17 +984,6 @@ The auxiliary files can be \textbf{deleted} after your work is done. They will b
 
 \end{frame}
 
-}
-%% END handout true 
-%% BEGIN handout false
-{
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% EMPTY
-
-}%% END handout false
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -482,97 +1027,62 @@ The auxiliary files can be \textbf{deleted} after your work is done. They will b
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\iftoggle{handout}{
-%%% BEGIN handout true	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{frame}[fragile]
-%\frametitle{Document structure 1}
-%
-%A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textbf{body}.
-%
-%\begin{block}{\LaTeX\ preamble}
-%	part of the document where \textbf{global characteristics} of the document are specified.
-%\end{block}
-%
-%\pause 
-%
-%	\begin{itemize}
-%		\item The preamble \textbf{begins} (\textbf{obligatorily}) with the \lstinline|\documentclass{}| command.
-%		
-%		\item In the preamble you will install \textbf{packages} for further \LaTeX\ functions.
-%		
-%		\item \textbf{Optional} (either in the preamble or in the body -- preferably in the preamble)
-%
-%		\begin{itemize}
-%			\item your \textbf{own commands} and 
-%			
-%			\item \textbf{metadata} 
-%		\end{itemize}
-%		
-%		\item The preamble \textbf{ends} with the command  \lstinline|\begin{document}|.
-%		
-%	\end{itemize}
-%
-%\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{frame}[fragile]
-%%\frametitle{Dokumentstruktur}
-%
-%
-%\begin{block}{\LaTeX\ body}
-%	part of the document where \textbf{local characteristics} of the document are specified and where you write your document.
-%\end{block}
-%
-%\pause 
-%
-%\begin{itemize}
-%	
-%	\item The body \textbf{begins} with the \lstinline|\begin{document}| command  (end of preambel).
-%	
-%	\item The body \textbf{ends} with \lstinline|\end{document}|. 
-%	
-%	\item[]
-%
-%\pause 
-%	
-%	\item Everything following the command \lstinline|\end{document}| will not be interpreted by \LaTeX .
-%\end{itemize}
-%
-%\end{frame}
-
-%}
-%%% END handout true 
-%%% BEGIN handout false
-%{
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Document structure 1}
 
-A \LaTeX\ document consists of (at least) two parts: \textbf{preamble} and \textbf{body}.
+A \LaTeX document consists of (at least) two parts: \textbf{preamble} and \textbf{body}.
 
 \begin{block}{\LaTeX\ preamble}
 	part of the document where \textbf{global characteristics} of the document are specified.
 \end{block}
 
+\pause 
+
+	\begin{itemize}
+		\item The preamble \textbf{begins} (\textbf{obligatorily}) with the \lstinline|\documentclass{}| command.
+		
+		\item In the preamble you will install \textbf{packages} for further \LaTeX\ functions.
+		
+		\item \textbf{Optional} (either in the preamble or in the body -- preferably in the preamble)
+
+		\begin{itemize}
+			\item your \textbf{own commands} and 
+			
+			\item \textbf{metadata} 
+		\end{itemize}
+		
+		\item The preamble \textbf{ends} with the command  \lstinline|\begin{document}|.
+		
+	\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Dokumentstruktur}
+
+
 \begin{block}{\LaTeX\ body}
 	part of the document where \textbf{local characteristics} of the document are specified and where you write your document.
 \end{block}
 
-\end{frame}
+\pause 
 
-%}%% END handout false
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	
+	\item The body \textbf{begins} with the \lstinline|\begin{document}| command  (end of preambel).
+	
+	\item The body \textbf{ends} with \lstinline|\end{document}|. 
+	
+	\item[]
+
+\pause 
+	
+	\item Everything following the command \lstinline|\end{document}| will not be interpreted by \LaTeX .
+\end{itemize}
+
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -583,16 +1093,52 @@ A \LaTeX\ document consists of (at least) two parts: \textbf{preamble} and \text
 	\item Insert the following lines in your \ltxterm{.tex} file and compile.
 \end{itemize}
 
+
 \vspace{.25cm}
+
+%\begin{figure}[b]
 
 \centering
 \includegraphics[scale=0.45]{../../texfiles-beamer/tex-material/WissArb-latex/xelatexTest1tex}
+
+%	\caption{Präambel 1}
+%\end{figure}
+%
+%
+%\begin{figure}[b]
+
+%\centering
+%\includegraphics[width=0.86\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest1pdf}
+
+%	\caption{Präambel 2}
+%\end{figure}
 
 \begin{itemize}
 	\item Write something after the \lstinline|\end{document}| command and compile again.	
 \end{itemize}
 
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Dokumentstruktur}
+%
+%\centering
+%\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
+%
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Dokumentstruktur}
+%
+%\centering
+%\includegraphics[width=0.99\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2pdf}
+%
+%\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -613,10 +1159,9 @@ Global parameters of the layout can be specified in the \lstinline|documentclass
  
 \begin{itemize}
 	\item \ltxterm{book} for books
-%	\item \ltxterm{report} for long scripts with different chapters
+	\item \ltxterm{report} for long scripts with different chapters
 	\item \ltxterm{article} for articles, without chapters, only with sections
-	\item \ltxterm{beamer} for presentations, without chapters, only with sections
-%	\item \ltxterm{letter} for letters
+	\item \ltxterm{letter} for letters
 \end{itemize}
 
 \pause 
@@ -630,7 +1175,7 @@ Variations of these classes (not in American formats) are provided by the \textb
 	\item \ltxterm{scrlttr2} for letters
 \end{itemize}
 
-%Cf.\ \citet{Kohm&Co13a} and \url{https://www.komascript.de/}
+Cf.\ \citet{Kohm&Co13a} and \url{https://www.komascript.de/}
 
 \end{frame}
 
@@ -670,6 +1215,17 @@ Specification of paper format in \ltxterm{KOMA-Script} classes: \ltxterm{paper=a
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Dokumentstruktur}
+%
+%\centering
+%\includegraphics[width=0.9\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/latexTest2tex}
+%
+%
+%\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{frame}[fragile]
 %\frametitle{Dokumentklasse}
@@ -699,66 +1255,39 @@ Specification of paper format in \ltxterm{KOMA-Script} classes: \ltxterm{paper=a
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\begin{frame}[fragile]
-%\frametitle{Commands}
-%
-%\textbf{Syntax of commands:}
-%
-%\begin{itemize}
-%	
-%	\item backslash \\
-%	$+$ command name \\
-%	$+$ optional arguments in square brackets \\
-%	$+$ obligatory arguments in curly brackets
-%
-%\end{itemize}
-%		
-%\begin{lstlisting}
-%\name[optional argument]{obligatory argument} 
-%\name[opt1, opt2=value]{obl1}{obl2}
-%
-%\textbf{bold}
-%\documentclass[10pt, paper=a4]{scrartcl}
-%\end{lstlisting}
-%
-%\end{frame}
+\begin{frame}[fragile]
+\frametitle{Commands}
+
+\textbf{Syntax of commands:}
+
+\begin{itemize}
+	
+	\item backslash \\
+	$+$ command name \\
+	$+$ optional arguments in square brackets \\
+	$+$ obligatory arguments in curly brackets
+
+\end{itemize}
+		
+\begin{lstlisting}
+\name[optional argument]{obligatory argument} 
+\name[opt1, opt2=value]{obl1}{obl2}
+
+\textbf{bold}
+\documentclass[10pt, paper=a4]{scrartcl}
+\end{lstlisting}
+
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{Commands}
+%\frametitle{Befehle}
 
 In \LaTeX , there are normally \textbf{3 types of commands}:
 
 \begin{itemize}
-	\item \textbf{declarations:} backslash $+$ command name\\
-	The scope of the command can be defined by an environment or with curly brackets. 
-\end{itemize}
-
-\vspace{-.5cm}
-
-\begin{columns}
-	\column[t]{.5\textwidth}
-	
-\begin{lstlisting}
-\declaration ... 
-{\declaration ...} outside of scope
-
-\end{lstlisting}
-	
-	\column[t]{.5\textwidth}	
-	
-\begin{lstlisting}
-{\Huge Hello world!} outside of scope
-\end{lstlisting}
-	
-\end{columns}
-
-\pause
-
-\begin{itemize}
 	\item \textbf{simple commands:} backslash $+$ command name $+$ optional arguments (square brackets) $+$ obligatory arguments (curly brackets)
-\end{itemize}
 
 \vspace{-.5cm}
 
@@ -776,13 +1305,14 @@ In \LaTeX , there are normally \textbf{3 types of commands}:
 \end{lstlisting}
 	
 \end{columns}
+\end{itemize}
 
 \pause 
 
 \begin{itemize}
-	\item \textbf{environments:} \ltxterm{begin} $+$ \ltxterm{end} command. \\
+	\item \textbf{environments:} \ltxterm{begin} $+$ \ltxterm{end} command. 
+		
 	Command applies between \ltxterm{begin} and \ltxterm{end}.
-\end{itemize}
 
 \vspace{-.5cm}
 
@@ -805,6 +1335,36 @@ Hello world!
 \end{lstlisting}
 
 \end{columns}
+\end{itemize}
+
+\pause 
+
+\begin{itemize}
+
+	\item \textbf{declarations:} backslash $+$ command name
+	
+	The scope of the command can be defined by an environment or with curly brackets. 
+
+\vspace{-.5cm}
+
+\begin{columns}
+	\column[t]{.5\textwidth}
+	
+\begin{lstlisting}
+\declaration ... 
+{\declaration ...} outside of scope
+
+\end{lstlisting}
+	
+	\column[t]{.5\textwidth}	
+	
+\begin{lstlisting}
+{\Huge Hello world!} outside of scope
+\end{lstlisting}
+	
+\end{columns}
+	
+\end{itemize}
 
 \end{frame}
 
@@ -823,7 +1383,7 @@ Hello world!
 \begin{frame}[fragile]
 \frametitle{Meta data}
 
-Specifying the \textbf{meta data} of your document \textbf{in the preamble}: 
+Specifying the meta data of your document in the preamble: 
 
 \begin{lstlisting}
 \author{first name last name \and first name last name}
@@ -871,33 +1431,26 @@ Specify the meta data f your document with two authors, use the  \lstinline|\mak
 \noindent Commands for the structure of your text:
 
 \begin{itemize}
-	\item \lstinline|\part{title}|  \hfill (only in  \ltxterm{book}/\ltxterm{scrbook} and \ltxterm{report}/\ltxterm{scrreprt})
+	\item \lstinline|\part[short title]{title}|  \hfill (only in  \ltxterm{book}/\ltxterm{scrbook} and \ltxterm{report}/\ltxterm{scrreprt})
 	
-	\item \lstinline|\chapter{title}| \hfill (only in  \ltxterm{book}/\ltxterm{scrbook} and \ltxterm{report}/\ltxterm{scrreprt})
+	\item \lstinline|\chapter[short title]{title}| \hfill (only in  \ltxterm{book}/\ltxterm{scrbook} and \ltxterm{report}/\ltxterm{scrreprt})
 		
-	\item \lstinline|\section{title}|
+	\item \lstinline|\section[short title]{title}|
 	
-	\item \lstinline|\subsection{title}| 
+	\item \lstinline|\subsection[short title]{title}| 
 	
-	\item \lstinline|\subsubsection{title}| 
+	\item \lstinline|\subsubsection[short title]{title}| 
 	
-	\item \lstinline|\paragraph{title}|
+	\item \lstinline|\paragraph[short title]{title}|
 	
-	\item \lstinline|\subparagraph{title}|
+	\item \lstinline|\subparagraph[short title]{title}|
 \end{itemize}
 
-\pause 
+\noindent \lstinline|[short title]| for \textbf{table of contents} and \textbf{header}
 
-\bigskip
+\vspace{.3cm}
 
-\noindent These commands can be used with an option, \fe\\
-
-\lstinline|\section[short title]{long title}| 
-
-\bigskip
-
-The text in the \textbf{option} -- when used -- appears in the \textbf{table of contents} and in the \textbf{headers}, otherwise only the text in the \textbf{argument} is used.
-
+\noindent \lstinline|{title}| for the title \textbf{in your text}
 
 \end{frame}
 
@@ -908,20 +1461,18 @@ The text in the \textbf{option} -- when used -- appears in the \textbf{table of 
 
 
 \begin{itemize}
-	\item new \textbf{paragraph}: twice \short{enter} (\rotatebox[origin=c]{180}{$\Rsh$}) key
-%		\begin{itemize}
-%			\item \lstinline|\par| ends a paragraph (and begins a new one)
-%			\item twice \short{enter} (\rotatebox[origin=c]{180}{$\Rsh$}) key
-%		\end{itemize}
+	\item new paragraph: 
+		\begin{itemize}
+			\item \lstinline|\par| ends a paragraph (and begins a new one)
+			\item twice \short{enter} (\rotatebox[origin=c]{180}{$\Rsh$}) key
+		\end{itemize}
 	
-	\item \textbf{line} break: \lstinline|\newline| or \lstinline|\\| cause a line break without ending the paragraph.
-%		\begin{itemize}
-%			\item \lstinline|\newline| or \lstinline|\\| cause a line break without ending the paragraph
-%		\end{itemize}
+	\item line break
+		\begin{itemize}
+			\item \lstinline|\newline| or \lstinline|\\| cause a line break without ending the paragraph
+		\end{itemize}
 	
-	\item new \textbf{page}: \lstinline|\newpage| or \lstinline|\clearpage| 
-	
-	\item \lstinline|\noindent| \textbf{prevents} the \textbf{indentation} after a line break.
+	\item \lstinline|\noindent| prevents the indentation after a line break
 	
 \end{itemize}
 
@@ -943,8 +1494,6 @@ The text in the \textbf{option} -- when used -- appears in the \textbf{table of 
 \frametitle{Table of contents}
 
 To \textbf{generate} a \textbf{table of contents} just include the following command in the body of your document at the position where you want the toc to appear.
-
-\bigskip
 
 \LaTeX\ generates your toc taking the \textbf{information from your structuring commands} (\fe \lstinline|\section[short title]{title}|).
 
@@ -986,7 +1535,7 @@ To generate a footnote use the following command at the position where the \text
 \footnote{content of the footnote}
 \end{lstlisting}
 
-\noindent \textbf{Example}
+\noindent \textbf{Example 1}
 \begin{lstlisting}
 This is an sample text. The only purpose of this text\footnote{A text 
 (literary theory) is any object that can be read.} is to show how 
@@ -994,19 +1543,19 @@ to work with footnotes in \LaTeX .\footnote{\LaTeX\ is a document preparation
 system.}
 \end{lstlisting}
 
-%\pause 
+\pause 
+
+\noindent \textbf{Example 2}
+\begin{lstlisting}
+This is an sample text. The only purpose of this text%
 %
-%\noindent \textbf{Example 2}
-%\begin{lstlisting}
-%This is an sample text. The only purpose of this text%
-%%
-%\footnote{A text (literary theory) is any object that can be read.} %
-%%
-%is to show how to work with footnotes in \LaTeX .%
-%%
-%\footnote{\LaTeX\ is a document preparation system.}%
-%%
-%\end{lstlisting}
+\footnote{A text (literary theory) is any object that can be read.} %
+%
+is to show how to work with footnotes in \LaTeX .%
+%
+\footnote{\LaTeX\ is a document preparation system.}%
+%
+\end{lstlisting}
 
 \end{frame}
 
@@ -1052,7 +1601,7 @@ Download the PDF \alert{\texttt{myDocument-EX1.pdf}} and replicate it with the c
 
 \begin{lstlisting}
 a...z  A...Z  0...9
-. , : ; ? ! ` ' " ( ) + - * =
+. , : ; ? ! ` ' " ( ) [ ] + - * =
 \end{lstlisting}
 
 %\item Achten Sie darauf, welche Art von \textbf{Anführungszeichen} durch \lstinline|` ' "|  generiert werden \citep[vgl.][]{MyP17c}. 
@@ -1061,27 +1610,15 @@ a...z  A...Z  0...9
 
 \pause 
 
-	\item With Xe\LaTeX , you can write \textbf{accents} and \textbf{umlauts} without further commands. Another option is to use \textbf{commands} for that:
+	\item With Xe\LaTeX , you can write \textbf{accents} and \textbf{umlauts} without further commands. Another option is to use commands for that:
 
 \begin{lstlisting}
 \"A \"O \"a \"o \'a \`o \ss{} \^u \~n
-
-\"{A} {\"O} {\ss} 
+or \"{A} {\"O} {\ss} 
 \end{lstlisting}
 
-	\ea \"A \"O \"a \"o \'a \`o \ss{} \^u \~n 
-	
-	\"{A} {\"O}  {\ss}
+	\ea \"A \"O \"a \"o \'a \`o \ss{} \^u \~n or \"{A} {\"O} {\ss}
 	\z 
-
-\pause
-
-	\item The following characters have a \textbf{special meaning} in \TeX . \\
-	You must \textbf{escape} their function to use them. (It depends on your compiler \fe Xe\LaTeX\ \vs PDF\LaTeX )
-
-\begin{lstlisting}
-#  $  &  _  {  }  \  <  >  |  ~  ^  [  ]  % 
-\end{lstlisting}
 
 \end{itemize}
 
@@ -1094,14 +1631,13 @@ a...z  A...Z  0...9
 
 \begin{itemize}
 	
-%		\item The following characters have a \textbf{special meaning} in \TeX . \\
-%		You must \textbf{escape} their function to use them. (It depends on your compiler \fe Xe\LaTeX\ \vs PDF\LaTeX )
-%	
-%\begin{lstlisting}
-%#  $  &  _  {  }  \  <  >  |  ~  ^  [  ]  % 
-%\end{lstlisting}
-%
-%\pause
+		\item The following characters have a \textbf{special meaning} in \TeX . You must \textbf{escape} their function to use them.
+	
+\begin{lstlisting}
+#  $  &  _  {  }  %  \  <  >  |  ~  ^  
+\end{lstlisting}
+
+\pause
 
 	\item escaping with \textbf{backslash} 
 
@@ -1123,16 +1659,7 @@ a...z  A...Z  0...9
 	\ea \textbackslash\ \textasciitilde\ \textasciicircum\ 
 	\textgreater\ $>$ \textless\ $<$ \textbar\ $\vert$  $|$  
 	\z 
-
-\pause 
-	
-	\item \textbf{Angled brackets} < > can be used in Xe\LaTeX\ without further commands.
-	
-	\item \textbf{Square brackets} [ ] can be used in plain text, but they can mark also the \textbf{option} of a command (\fe in \lstinline|\section[short title]{title}|). \\
-	In this case use \lstinline|\[ \]|
 \end{itemize}
-
-\bigskip 
 
 More on special characters: \url{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}
 \end{frame}
@@ -1365,7 +1892,7 @@ Rindfleischetikettierungs% 5 morphemes
 \textit{italics}
 \textsl{slanted} 
 \emph{emphasized} 
-{\it test \textup{upright} test}
+\underline{underline} 
 \texttt{typewriter} 
 \textsc{small caps} 
 ex\textsuperscript{up} 
@@ -1377,17 +1904,14 @@ ex\textsubscript{down}
 	\textit{italics}\newline
 	\textsl{slanted}\newline 
 	\emph{emphasized}\newline 
-	{\it test \textup{upright} test}\newline 
-%	\underline{underline}\newline 
+	\underline{underline}\newline 
 	\texttt{typewriter}\newline
 	\textsc{small caps}\newline 
 	ex\textsuperscript{up} \newline
-	ex\textsubscript{down} %\newline
+	ex\textsubscript{down} 
 }
 	
 \end{multicols}
-
-Some of these commands can be also used as \textbf{declarations}. 
 \end{frame}
 
 
@@ -1995,17 +2519,22 @@ Download the PDF \alert{\texttt{myDocument-EX4.pdf}} and replicate it with the c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\iftoggle{handout}{
-%%% BEGIN handout true
 %	
-%%% EMPTY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%%\frametitle{Bücher \& Artikel}
+%	
+%Test Toggle ON
+%	
+%\end{frame}
 %
 %}
 %%% END handout true 
 %%% BEGIN handout false
 %{
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%% EMPTY
 %
-%}%% END handout false
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%}%% END HO-Toggle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
