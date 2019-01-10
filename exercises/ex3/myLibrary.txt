@@ -1,0 +1,30 @@
+
+@book{Heim&Kratzer00a,
+	Author = {Heim, Irene and Kratzer, Angelika},
+	Title = {Semantics in Generative Grammar},
+	Publisher = {Blackwell},
+	Address = {Oxford},
+	Edition = {2},
+	Year = {2000} }
+
+@misc{MyP17c,
+	Author = {Machicao y Priemer, Antonio},
+	Title = {Hinweise für Seminararbeiten},
+	Publisher = {Humboldt-Universität zu Berlin},
+	URL = {https://www.linguistik.hu-berlin.de/de/staff/amyp/paperskonferenzen},
+	URLdate = {16.10.2017},
+	Howpublished = {Manuskript},
+	Note = {[Version von 2016; MyP]},
+	Year = {2017} }
+
+@incollection{Nolda&Co14a,
+	Author = {Nolda, Andreas and Machicao y Priemer, Antonio and Sioupi, Athina},
+	Title = {Die {K}ern/{P}eripherie-Unterscheidung: {P}robleme und {P}ositionen},
+	BookTitle = {Zwischen Kern und Peripherie: Untersuchungen zu Randbereichen in Sprache und Grammatik},
+	Editor = {Machicao y Priemer, Antonio and Nolda, Andreas and Sioupi, Athina},
+	Publisher = {De Gruyter},
+	Address = {Berlin},
+	Pages = {9--23},
+	Year = {2014} }
+
+

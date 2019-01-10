@@ -1,0 +1,681 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Compile the master file!
+%% 		Slides: Antonio Machicao y Priemer
+%% 		Course: Wissenschaftliches Arbeiten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Metadata                         
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
+
+\title{
+	Wissenschaftliches Arbeiten in der Linguistik\\
+	(Technische Übung)
+}
+
+\subtitle{Formelles}
+
+\author[aMyP]{
+	{\small Antonio Machicao y Priemer}
+	\\
+	{\footnotesize \url{www.linguistik.hu-berlin.de/staff/amyp}}
+%	\\
+%	{\footnotesize \href{mailto:mapriema@hu-berlin.de}{mapriema@hu-berlin.de}}
+}
+
+\institute{Institut für deutsche Sprache und Linguistik}
+
+\date{ }
+
+%\publishers{\textbf{6. linguistischer Methodenworkshop \\ Humboldt-Universität zu Berlin}}
+
+%\hyphenation{nobreak}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Preamble's End                   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%% Title slide 
+\begin{frame}
+  \HUtitle
+\end{frame}
+
+
+%% Contents slide
+\frame{
+\begin{multicols}{2}
+	\frametitle{Inhaltsverzeichnis}
+	\tableofcontents
+%		[hideallsubsections]
+%		[pausesections]
+\end{multicols}
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Extra literature
+
+\nocite{Freitag&MyP15a}
+%\nocite{Knuth1986}
+%\nocite{Kopka94a}
+\nocite{MyP17c}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Basic literature for these slides
+%
+%\begin{frame}
+%\frametitle{Grundlage \& empfohlene Lektüre}
+%
+%\dots basierend auf \citet{Freitag&MyP15a} und auf \citet{MyP&Kerkhof16a}\\
+%\ras \href{https://www.researchgate.net/publication/279514740_LATEX-Einfuhrung_fur_Linguisten}{LINK}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kontakt}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Kontakt}
+
+\begin{itemize}
+	\item \textbf{Dozent:} Antonio Machicao y Priemer \textipa{[ma.\t{tS}i."ka.o."Pi."pKi:.m5]}
+	\item \textbf{Büro:} Dorotheenstraße 24, Raum: 3.305
+	\item \textbf{Telefon:} +49 (30) 2093-9702
+	\item \textbf{Webseite:} \href{www.linguistik.hu-berlin.de/staff/amyp}{www.linguistik.hu-berlin.de/staff/amyp}
+	\item \textbf{E-Mail:} \href{mailto:mapriema@hu-berlin.de}{mapriema@hu-berlin.de}
+	\item[]
+	\item \textbf{Sprechstunde}: Mo. 10--12h (Anmeldung per E-Mail erforderlich!)
+	
+	\textbf{Keine Sprechstunden}: 14.01.--20.01.
+\end{itemize}	
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sekretariat}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sekretariat}
+
+\begin{itemize}
+	\item[] \textbf{Anina Klein}	
+	\item \textbf{Büro:} Dorotheenstraße 24, Raum: 3.306
+	\item \textbf{Telefon:} +49 (30) 2093-9639
+	\item \textbf{E-Mail:} \href{mailto:Anina.Klein@cms.hu-berlin.de}{Anina.Klein@cms.hu-berlin.de}
+\end{itemize}	
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Moodle}	
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Moodle}
+
+\begin{itemize}
+	\item Alle \textbf{Folien} und \textbf{Materialien} werden über Moodle zur Verfügung gestellt.
+	\item[]
+	\item Wichtige \textbf{Hinweise} (Ausfälle, etc.) werden immer über Moodle bekannt gegeben.
+	\item[]
+	\item Die \textbf{Hausaufgaben} werden nur über Moodle abgegeben! 
+	
+	(Achten Sie auf das \textbf{Abgabedatum}!)
+	\item[]
+	\item \textbf{Moodleseite des Kurses:} \href{https://moodle.hu-berlin.de/course/view.php?id=83977}{https://moodle.hu-berlin.de/course/view.php?id=83977}\\
+	\textbf{Moodleschlüssel:} kompilieren
+\end{itemize}		
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Technische Beratung}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Technische Beratung}
+
+\begin{itemize}
+	\item \textbf{Stud. Mitarbeiterin:} Pia Linscheid
+	
+	\item \textbf{Büro:} Dorotheenstraße 24, Raum: 3.307
+
+	\item \textbf{E-Mail:} \href{mailto:linschep@cms.hu-berlin.de}{linschep@cms.hu-berlin.de}
+	
+	\item \textbf{Sprechstunde:} Mo., 12--13 (oder nach Vereinbarung)
+\end{itemize}	
+
+\end{frame}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Tutorien}
+%%\frame{
+%%\begin{multicols}{2}
+%%\frametitle{~}
+%%	\tableofcontents[currentsection]
+%%\end{multicols}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}{Tutorien}
+%
+%	\begin{itemize}
+%		\item \textbf{Tutorium zum GK Semantik}
+%	\end{itemize}	
+%	
+%	\scalebox{0.8}{
+%		\begin{tabular}{p{5cm}l}
+%			\textbf{Lehrender} & Nico Lehmann \\
+%			\textbf{Seminar -- Zeit \& Raum} & Do., 16--18~|~UL 6,1070 \\
+%			\textbf{Moodle}	&  \href{https://moodle.hu-berlin.de/course/view.php?id=76458}{https://moodle.hu-berlin.de/course/view.php?id=76458}\\
+%			& Wahrheit \\
+%		\end{tabular}
+%	}
+%
+%	\begin{itemize}
+%		\item \textbf{Tutorium zur VL Syntax}
+%	\end{itemize}
+%	
+%	\scalebox{0.8}{	
+%		\begin{tabular}{p{5cm}l}
+%			\textbf{Lehrende} & Luise Hiller \& Robert Fritzsche \\
+%			\textbf{Seminar -- Zeit \& Raum} & Mi., 18--20~|~DOR 24, 1.102 \\
+%			\textbf{Moodle}	&  \href{https://moodle.hu-berlin.de/course/view.php?id=76438}{https://moodle.hu-berlin.de/course/view.php?id=76438}\\
+%			& Tochterkopf \\
+%		\end{tabular}
+%	}
+%
+%\vspace{2mm}
+%Die Tutorien beginnen \textbf{erst in der zweiten Vorlesungswoche}!
+%	
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Leistungserbringung}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Leistungserbringung}
+
+	\begin{itemize}
+		\item Regelmäßige und \textbf{aktive!} Teilnahme
+		\item[+]
+		
+		\item Lektüre
+		\item[+]
+				
+		\item 6 (von 8) Hausaufgaben 
+		
+		\item[]
+		\item[=] \textbf{Voraussetzungen für die Unterschrift}
+			
+	\end{itemize}
+	
+	\begin{itemize}
+		\item Laut Prüfungsordnung:
+		
+		\textbf{60} Stunden $=$ 25 Stunden Präsenzzeit $+$ \textbf{35} Stunden Vor- und Nachbereitung
+	\end{itemize}	
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Hausaufgaben}
+
+\begin{itemize}
+
+	\item Es gibt insgesamt \textbf{8 mögliche Hausaufgaben}. Sie müssen \textbf{6 Hausaufgaben} erledigen.
+
+	\begin{itemize}
+		\item \textbf{HA0:} (u.\,a.) Bereiten Sie Ihr System für \LaTeX\ vor (bzw.\ richten Sie sich ein Overleaf-Konto ein) und testen Sie die \texttt{Testdatei.tex}.
+		
+		\item \textbf{HA1--HA7:} Die Fragen sind in den Foliensätzen. Die Lösungen müssen rechtzeitig über Moodle hochgeladen werden.
+	\end{itemize}
+
+	\item \textbf{Abgabedatum} der Hausaufgaben \ras Semesterplan
+	
+	\item Die Hausaufgaben werden \textbf{nur über Moodle angenommen}.
+	
+	\item Sie können Ihre Hausaufgaben \textbf{in Gruppen} lösen, die Abgabe erfolgt aber \textbf{individuell}!
+
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+Was wird noch erwartet\dots
+
+\begin{itemize}
+	\item Befassen Sie sich mit der angegebenen \textbf{Literatur}.
+	\item[]
+	\item Fragen und Diskussionen
+	\item[]	
+	\item Während des Seminars bitte kein Facebook, Twitter, Tumblr,
+	Youtube, WhatsApp, Netflix, \dots
+	\item[]	
+	\item Wenn Sie früher gehen müssen, sagen Sie mir bitte zu Beginn der
+	Stunde Bescheid, und \textbf{nehmen Sie bitte Platz in der Nähe der Tür}.
+	
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kurse im Career Center der HU}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Kurse im Career Center der HU}
+
+\begin{itemize}
+	\item Wissenschaftliches oder journalistisches Schreiben, Rhetorik und Kommunikation, wirkungsvolles Präsentieren \textbf{und vieles mehr} können Sie dort lernen.
+	
+	\item[]
+	
+	\item[] \url{https://www.hu-berlin.de/de/career-center}
+	
+\end{itemize}		
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Lesekreis}
+%%\frame{
+%%\begin{multicols}{2}
+%%\frametitle{~}
+%%	\tableofcontents[currentsection]
+%%\end{multicols}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}{Lesekreis}
+%
+%\begin{itemize}
+%	\item Wollen Sie mit anderen Studenten linguistische Texte lesen und diskutieren?
+%	
+%	\item[]
+%	
+%	\item Sehr empfehlenswert, wenn Sie einen schwierigen Text lesen müssen, ihn aber nicht alleine bearbeiten wollen/können!
+%	
+%	\item[]
+%	
+%	\item \textbf{Organisation:}  Tjona Kristina Sommer
+%	
+%	\item \textbf{E-Mail:} \href{mailto:sommerkr@hu-berlin.de}{sommerkr@hu-berlin.de}
+%	
+%	\item \textbf{Webseite:} 
+%	 \url{www.klesekreis.junge-sprachwissenschaft.de}
+%	
+%\end{itemize}		
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kolloquien}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Kolloquien}
+
+\begin{itemize}
+	\item Es gibt zwei Kolloquien am IdSL:
+
+	\begin{itemize}
+		\item Kolloquium für \textbf{Korpuslinguistik und Phonetik/Phonologie}
+		\item[]
+
+		\item Kolloquium für \textbf{Syntax \& Semantik}
+	\end{itemize}
+
+	\item \textbf{Kolloquium Syntax \& Semantik} (2 SWS; 0 LP)
+	
+	\item[] Leitung: Elisabeth Verhoeven \& Stefan Müller
+	
+	\item[] Ort \& Zeit: Mo., 16:00--17:30 $|$ DOR 24, 1.401 
+	
+	\item[]
+	\item Sie können \textbf{Ihre Arbeit präsentieren/diskutieren}!
+
+	\item[]
+	\item Sie können das Kolloquium auch \textbf{einfach nur aus Interesse} besuchen!
+\end{itemize}		
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Versuchspersonendatenbank LingEx}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Versuchspersonendatenbank LingEx}
+
+\begin{itemize}
+	\item Wollen Sie \textbf{an linguistischen Experimenten teilnehmen}?
+	\item Helfen Sie Ihren Mitstudenten/Kollegen! Helfen Sie der Forschung!
+	
+	\item[]
+	
+	\item Da die \textbf{Datenbank relativ neu} ist, verfügt Sie leider noch nicht über allzu viele registrierte Probanden, weshalb es für die Durchführung von Experimenten sehr wichtig und hilfreich wäre, wenn sich noch \textbf{möglichst viele} Studierende anmelden.
+	
+	\item[] 
+
+	\item \textbf{Webseite:}  \url{https://lingex.zas.gwz-berlin.de/public/}	
+	
+	\item[]
+	\item Falls Sie selbst Interesse haben, Experimente über LingEx zu bewerben, wenden Sie sich bitte an die ZAS-Mitarbeiter.
+	
+	\item \textbf{E-Mail:} \href{mailto:salfner@leibniz-zas.de}{salfner@leibniz-zas.de}
+		
+\end{itemize}		
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Language Science Press}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Language Science Press}
+
+\begin{itemize}
+	
+	\item Open Access-Verlag an der HU-Berlin
+	\item[]
+
+	\item \textbf{Webseite:}  \url{http://langsci-press.org/}
+	\item[]
+
+	\item \textbf{Aktuelle (gratis) Bücher:} \url{http://langsci-press.org/catalog}
+	\item[]	
+
+	\item \textbf{Unterstützer:}
+	\url{http://langsci-press.org/supporters}
+	\item[]	
+	
+	\item Werden Sie Unterstützer und Proof-reader!
+		
+\end{itemize}		
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Literatur für das Seminar}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Literatur für das Seminar}
+
+\begin{itemize}
+	\item Für jede Sitzung wird die Literatur aus dem Semesterplan (s.~Handout bzw.\ Semesterplan in Moodle) vorausgesetzt.
+	
+	\item Die Lektüre für jede Sitzung wird als PDF über Moodle bereitgestellt.
+	\item[]
+	\item Dieser Kurs basiert hauptsächlich auf \citet{Krifka08a, Krifka13a, Luedeling12a, Freitag&MyP15a, MyP17c, Meindl11a, Rothstein11a, Albert&Marx10a}.
+
+\end{itemize}		
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+\begin{itemize}
+	\item Die \textbf{Lexika} \citet{Glueck&Roedel16a} und \citet{Schierholz&Co18} sind durch die Webseite der HU-Bibliothek kostenlos konsultierbar.
+	
+	\item Die \textbf{\LaTeX -Materialien} \citep{Freitag&MyP15a} und die \textbf{Hinweise für Seminararbeiten} \citep{MyP17c} können Sie aus den angegebenen URLs herunterladen.
+	
+	\item Die \textbf{Bücher} von \citet{Albert&Marx10a}, \citet{Meindl11a} und \citet{Rothstein11a} sind über die Webseite der HU-Bibliothek kostenlos herunterladbar.
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Verbesserungsvorschläge}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Beschwerden, Verbesserungsvorschläge}
+
+\begin{itemize}
+	\item mündlich
+	\item per Mail oder 
+	\item anonym durch die Lehrevaluation am Ende des Semesters
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mailverkehr}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Mailverkehr}
+
+\begin{itemize}
+	\item HU-Mail-Adresse verwenden (wegen Spam-Gefahr)
+	
+	\item Geben Sie Ihren Vor- und Nachname richtig an.
+	
+	\item Überlegen Sie zuerst, ob Ihre Kommilitonen Ihnen nicht eine Antwort auf die Frage geben können
+	
+	\ras Benutzen Sie das \textbf{Forum} auf unserer Moodleseite, auch für Fragen bzgl. der Hausaufgaben.
+	
+	\item Bitte beachten Sie die gängigen Höflichkeitsregeln beim Mailverkehr!
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ziel des Kurses}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ziel des Kurses}
+Es handelt sich \textbf{nicht} um eine \textbf{fachliche} Einführung in die Linguistik! ($\rightarrow$~Grundkurs Linguistik \& Übung deutsche Grammatik)
+
+\begin{itemize}
+	\item<2-> (Einige wenige) Grundbegriffe der Wissenschaftstheorie\\
+	($\rightarrow$ \textbf{Theorie})
+
+	\item<3-> Wie bereite ich Präsentationsformen vor (Seminararbeiten, Referate, etc.)?\\
+	($\rightarrow$ \textbf{Form})
+	
+	\item<4-> Wie gehe ich mit der Recherche und mit der Literatur um?\\
+	($\rightarrow$ \textbf{Informationssuche} \&  \textbf{-rezeption})
+	
+	\item<5-> Wie bereite ich meine Fragestellung vor und wie sammle ich meine Daten?\\
+	($\rightarrow$ \textbf{Empirie})
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+Darüber hinaus:
+
+\begin{itemize}
+	
+	\item<2-> Wie präsentiere ich meine Arbeit möglichst makellos?\\
+	(\ras linguistische und typographische \textbf{Konventionen})
+	
+	\item<3-> Präsentationssoftware\\
+	(\ras \LaTeX )
+	 
+	\item<4-> Bibliographiesoftware\\
+	(\ras EndNote)
+	
+	\item<5-> Wie baue ich meine Argumentation möglichst logisch auf?\\
+	(\ras Logik und Rhetorik)
+
+\end{itemize}			
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 0}
+\frame{
+	\begin{multicols}{2}
+		%\frametitle{~}
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Hausaufgabe 0: \LaTeX -Vorbereitung}
+
+\begin{itemize}
+	\item Laden Sie \ltxpack{MiKTeX} und \ltxpack{TeXstudio} \gs{wie in der Anleitung in Moodle angegeben} herunter.
+	\item[]
+	
+	\item Installieren Sie beide Programme.
+	\item[]
+	
+	\item Folgen Sie dabei der Anleitung in Moodle.
+	\item[]
+	
+	\item Falls Sie \textbf{Probleme bei der Installation} haben, melden Sie sich bitte bei Pia Linscheid \emph{vor} der nächsten Sitzung! Andernfalls werden Sie die kommenden Hausaufgaben nicht abgeben können.
+	
+	\item Anstatt die Programme zu installieren, können Sie versuchen Ihre Hausaufgaben mit Overleaf zu lösen (Siehe Anleitung in Moodle).
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Hausaufgabe 0: Lektüre}
+
+\begin{itemize}
+	\item Lesen Sie den LingStudi-Guide (s.~Moodle/Allgemeines)
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Hausaufgabe 0: Mitgestalten}
+
+\begin{itemize}
+	\item Schreiben Sie bei Moodle im Bereich \gqq{Was will ich in diesem Kurs lernen?} einen bis zwei Stichpunkte auf. Erklären Sie kurz \gs{wenn nötig} was Sie damit meinen.
+	
+\end{itemize}
+
+\end{frame}

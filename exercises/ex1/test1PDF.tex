@@ -1,0 +1,186 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compile: PDFLaTeX BibTeX PDFLaTeXP PDFLaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,paper=a4,abstracton]{scrartcl}
+
+%%%%%%%%%%%%%PACKAGES%%%%%%%%%%%%%
+
+%\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel}
+%\usepackage{blindtext}
+\usepackage[T3,T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{natbib}
+%\usepackage{graphicx}
+%\usepackage{booktabs, array}
+%\usepackage{linguex}
+%\usepackage[noenc,safe]{tipa}
+%\usepackage{etex}		%For Forest bug
+%\usepackage{forest}
+%\usepackage{tikz-qtree}
+%\usepackage{xspace}
+%\usepackage{setspace}
+%\usepackage{listings}
+%\usepackage{multicol}
+%\usepackage[bookmarksnumbered]{hyperref}
+
+
+%%%%%%%%%%%%%%META DATA%%%%%%%%%%%%%
+%\author{$\langle$Ihr Name$\rangle$ \and $\langle$noch ein Name$\rangle$}
+%\title{\LaTeX\ für Linguisten}
+%\subtitle{Meine erste \LaTeX -Datei}
+%\date{$\langle$Das heutige Datum$\rangle$}
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%META DATA%%%%%%%%%%%%%
+\author{$\langle$Ihr Name$\rangle$ \and $\langle$noch ein Name$\rangle$}
+\title{\LaTeX\ für Linguisten}
+\subtitle{Meine erste \LaTeX -Datei}
+\date{$\langle$Das heutige Datum$\rangle$}
+
+\maketitle
+
+\begin{abstract}
+	Ein Abstract ist eine kurze Zusammenfassung über den Inhalt 
+	der Arbeit. Das Abstract wird immer am Anfang des Dokuments 
+	positioniert.\par
+	Es ist auch möglich das Abstract in mehrere Absätze
+	zu teilen.
+\end{abstract}
+
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Zeichen und Sonderzeichen]{Hier werden Zeichen und Sonderzeichen geübt}
+
+Folgende Zeichen können bei \LaTeX\ nicht direkt benutzt werden: \# \$ \& \_ \{ \} \%. Für die folgenden Zeichen braucht man andere Befehle: \textbackslash, \textgreater , \textless , \textasciicircum .
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection[Erste Subsection]{Das ist eine Subsection}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection[Zweite Subsection]{Das ist eine weitere Subsection}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Fußnoten]{Hier werden Fußnoten geübt}
+
+Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer\footnote{Hier ist eine Fußnote.} einige Vorzüge von \LaTeX\ austesten können.\footnote{Hier ist noch eine Fußnote.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Textauszeichnung]{Hier wird die Textauszeichnung geübt}
+
+Diese Datei ist {\tiny dazu} gemacht, dass {\Huge alle} Workshopteilnehmer einige {\Large Vorzüge} von \LaTeX\ austesten können.
+
+Diese \textbf{Datei} ist dazu \underline{gemacht}, dass alle \textsc{Workshopteilnehmer} einige \emph{Vorzüge} von \LaTeX\ austesten \texttt{können}.
+
+\noindent Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Textumgebungen}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{Quote und Quotation}
+%
+% Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können. Das ist der Text vor der \texttt{quote}-Umgebung.
+%\begin{quote}
+%	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+%	
+%	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+%\end{quote}
+%Das ist der Text nach der \texttt{quote}-Umgebung. Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+%
+%
+% Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können. Das ist der Text vor der \texttt{quotation}-Umgebung.
+%\begin{quotation}
+%	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+%	
+%	Die grammatischen Phänomene in einer Sprache zerfallen in zwei Teilbereiche: kerngrammatische und randgrammatische Phänomene (\emph{Ausnahmen}).
+%\end{quotation}
+%Das ist der Text nach der \texttt{quotation}-Umgebung. Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{Listen}
+%
+%Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+% 
+%\begin{itemize}
+%	\item Diese 
+%	\item Datei 
+%	\item[+] ist 
+%	\item dazu 
+%	\item gemacht
+%\end{itemize} 
+%
+%Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+%
+%\begin{enumerate}
+%	\item Diese 
+%	\item Datei 
+%	\begin{enumerate}
+%		\item[+] ist 
+%		\item dazu 
+%		\item gemacht
+%	\end{enumerate}
+%	\item einige 
+%	\item Vorzüge 
+%	\item von 
+%	\item \LaTeX\ 
+%	\item auszutesten
+%\end{enumerate}
+%
+%Diese Datei ist dazu gemacht, dass alle Workshopteilnehmer einige Vorzüge von \LaTeX\ austesten können.
+%
+%\begin{description}
+%	\item[Linguistik:] eine wissenschaftliche Disziplin
+%	\begin{itemize}
+%		\item Ihr Untersuchungsobjekt ist die Sprache.
+%		\item Sie interagiert mit anderen Disziplinen:
+%		\begin{enumerate}
+%			\item Philosophie
+%			\item Psychologie
+%			\item Soziologie
+%		\end{enumerate}
+%	\end{itemize}
+%\end{description}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hausaufgabe 4}
+
+
+
+
+%\blindtext
+
+\end{document}
+
+%%%%%%%%END DOCUMENT%%%%%%%%%%%%%

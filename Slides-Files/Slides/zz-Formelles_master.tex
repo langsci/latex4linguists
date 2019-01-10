@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Compile: XeLaTeX BibTeX XeLaTeX XeLaTeX
+%% Course Slides: Wissenschaftliches Arbeiten
+%% Antonio Machicao y Priemer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,10pt, bibtotoc]{beamer}
+%\documentclass[a4paper,10pt,handout]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PACKAGES & COMMANDS 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{../../texfiles-beamer/tex-localpackages}
+
+\input{../../texfiles-beamer/tex-localcommands}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Preamble's End                   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+
+\togglefalse{handout}
+%\toggletrue{handout}
+
+\input{00-Formelles_text}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                References                  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\appendix
+\backupbegin
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Quellen}
+%%\frame{
+%%\begin{multicols}{2}
+%%\frametitle{~}
+%%	\tableofcontents[currentsection]
+%%\end{multicols}
+%%}
+%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[allowframebreaks]
+%\frametitle{Quellen}
+%
+%{\footnotesize
+%	
+%	\begin{itemize}
+%		
+%		%		\item \DWDS{1} \url{https://www.dwds.de/r?h=1&from=&corpus=kern&q=von+uns+gehen} \\
+%		%		{[}Zugriff: 10.04.2017]; Treffer aus: \citep[202]{Becker69a} 
+%		%		
+%		%		\item Grafik: Aristoteles: Von nach Lysipp -- Jastrow (2006), Gemeinfrei, \url{https://commons.wikimedia.org/w/index.php?curid=1359807} \\
+%		%		{[}Zugriff: 10.05.2017]
+%		
+%		%		\item Grafik: ``but'' implicature: Twitter @realDonaldTrump\\
+%		%		\url{https://twitter.com/realDonaldTrump/status/855901315305795584}\\
+%		%		{[}Zugriff: 10.04.2018]
+%		%		
+%		%		\item Grafik\& Text: Kompatibilität von Lego und Duplo,\\ \url{https://www.lego.com/de-de/service/help/produkte/themen-bausatze/duplo/bauen-mit-lego-und-duplo-steinen-408100000007962} \\
+%		%		{[}Zugriff: 13.06.2018]	
+%		%
+%		%		\item Grafik: Lügnerparadox (Semantik in der Berliner U-Bahn): A.\ Machicao y Priemer\\
+%		%		{[}Zugriff: 12.04.2010]	
+%		%		
+%		%		\item Grafik: Semantische Restriktionen: Linguist Llama, \url{http://lingllama.tumblr.com/post/14266418758/picture-background-8-piece-pie-style-color} \\
+%		%		{[}Zugriff: 07.04.2014]
+%		%		
+%		%		\item Video: Trump vs.\ Truth: Last Week Tonight with John Oliver (HBO) \url{https://www.youtube.com/watch?v=xecEV4dSAXE} \\
+%		%		{[}Zugriff: 12.04.2017]  
+%		
+%		%		\item Grafik: Verletzung der Quantität \& Modalität\\
+%		%		\url{http://mypling.tumblr.com/}\\
+%		%		{[}Zugriff: 29.07.2017]
+%		%	
+%	\end{itemize}
+%}
+%
+%\end{frame}		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Literatur}
+%\frame{
+%\begin{multicols}{2}
+%\frametitle{~}
+%	\tableofcontents[currentsection]
+%\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[allowframebreaks]
+\frametitle{Literatur}
+
+
+%German
+\bibliographystyle{../../texfiles-beamer/deChicagoMyP}
+
+%	%English
+%	\bibliographystyle{../../texfiles-beamer/enChicagoMyP} 
+
+
+{\footnotesize
+	\bibliography{../../texfiles-beamer/tex-literature}
+}	
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backupend
+
+
+\end{document}
