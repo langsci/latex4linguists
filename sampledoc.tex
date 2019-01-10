@@ -19,8 +19,70 @@
 \usepackage{langsci-basic}
 \usepackage{langsci-optional}
 \usepackage{pgfplots}
+\usepackage{listings}
+\lstset{ %  
+  inputencoding=utf8,
+  extendedchars=true,
+  basicstyle=\ttfamily,        % the size of the fonts that are used for the code  
+  literate=%
+  {\{}{{{\color{orange}\{}}}1 
+  {[}{{{\color{red}[{}}}}1 
+  {]}{{{\color{red}]}}}1 
+  {)}{{{\color{green})}}}1  
+  {(}{{{\color{green}(}}}1  
+  {\}}{{{\color{orange}\}}}}1 
+} 
+ 
+
+
+\usepackage{setspace} 
+\usepackage[framemethod=tikz]{mdframed}
+% \mdfdefinestyle{firstfoc}{linecolor=gray,innerleftmargin=0.01mm} 
+\mdfdefinestyle{firstfoc}{linecolor=white,backgroundcolor=gray!10!white,innerleftmargin=0.01mm,innertopmargin=0.01mm} 
+% \mdfdefinestyle{secondfoc}{linecolor= white,innerleftmargin=0.01mm,tikzsetting = {draw=black, line width = .4pt,dashed,inner sep=0mm}}
+\mdfdefinestyle{secondfoc}{linecolor=white,backgroundcolor=gray!30!white,innerleftmargin=0.01mm,innertopmargin=0.01mm}
+% \mdfdefinestyle{thirdfoc}{linecolor=white,innerleftmargin=0.01mm,tikzsetting = {draw=black, line width = .4pt,dotted,inner sep=0mm}}
+ \mdfdefinestyle{thirdfoc}{linecolor=white,backgroundcolor=gray!50!white,innerleftmargin=0.01mm,innertopmargin=0.01mm}
+ 
+\newcommand{\transheader}[2]{\ea\label{#1}#2\z\vspace*{-.7\baselineskip}}
+
+\newlength{\transindent}
+\setlength{\transindent}{2mm}
+
+\newenvironment{transbox}[3][\footnotesize]{%
+\setstretch{0.7}
+\medskip\noindent
+\hspace*{\transindent}% 
+#1
+\parbox[b]{3mm}{#1  \oldstylenums{#2}\vphantom{fj}}%
+\parbox[b]{8mm}{#1\scshape  \MakeLowercase{#3} \vphantom{fj}}%
+\begin{minipage}[t]{11cm}#1\vspace*{-1.9\baselineskip}{}\,\vphantom{fj}}
+{\end{minipage}}
+
+\newcommand{\emptytransbox}[3][\footnotesize]{%
+\medskip\noindent
+\hspace*{\transindent}% 
+\parbox{3mm}{#1 \oldstylenums{#2}}%
+\parbox{8mm}{~}%
+#1 #3\\
+}
+
+\newcommand{\xtransbox}[4][\footnotesize]{%
+\medskip\noindent
+\hspace*{\transindent}% 
+\parbox{3mm}{#1 \oldstylenums{#2}}%
+\parbox{8mm}{\scshape #1 #3}%
+#1 #4
+}
 
 \definecolor{lsRichGreen}{cmyk}{0.6,0,0.9,0.35}
+
+
+\usepackage{hebtex}
+\fullvocalize
+\newcommand{\arabictext}[1]{\<\setarab \fullvocalize #1>}
+
+\usepackage{tipa}
 \begin{document}
 
 \maketitle
@@ -370,7 +432,84 @@ Table \ref{tab:tabularx66} has lines
 \label{tab:tabularxmultirow}
 \end{table}
  
-\section{3-1} 
+\section{3-1}
+\ea
+\begin{lstlisting}[language=java]
+ public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+
+}
+\end{lstlisting}
+\z
+
+\ea
+\begin{lstlisting}
+JA: Where did you put the bloody papers? 
+CI:                       I did not put them ANYWHERE!
+\end{lstlisting}
+\z
+
+\ea 
+\begin{transbox}{1}{Kar}
+\begin{verbatim}
+Ay kuraka djiwa karrimbuk[tharr.
+Ay kura    -ka  djiwa karrim            -buktharr
+Oh NC:WATER-TOP that  3SG.S.stand(3)NFUT-be_red
+\end{verbatim}\vspace*{-3mm}
+Ay that tea is too strong ((too red)).
+\end{transbox}
+
+\begin{transbox}{2}{Ali}
+\begin{verbatim}
+                         [Yawu munak [kura path- pathayu]=
+                          yawu munak  kura     STRI patha=yu
+                          hey  sister NC:WATER STRI good =CL
+\end{verbatim}\vspace*{-3mm}
+Hey sis, fresh water,
+\end{transbox}
+
+\begin{transbox}{3}{Ali}
+\begin{verbatim}
+                                     [((points to car))]
+\end{verbatim}\vspace*{-3mm}
+\end{transbox}
+\z
+
+\ea
+(Π M$_1$: [\\
+~~~~~~~~(Π A$_1$: [\\
+~~~~~~~~~~~~~~~~(Π F$_1$: ILL (F$_1$): Σ (F$_1$))$_\Phi$\\
+~~~~~~~~~~~~~~~~(Π P$_1$: {\dots} (P$_1$): Σ (P$_1$))$_\Phi$\\
+~~~~~~~~~~~~~~~~(Π P$_2$: {\dots} (P$_2$): Σ (P$_2$))$_\Phi$\\
+~~~~~~~~~~~~~~~~(Π C$_1$ : [\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~(Π TI [{\dots}] (TI): Σ (TI))$_\Phi$\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~(Π RI [{\dots}] (RI): Σ (RI))$_\Phi$\\
+~~~~~~~~~~~~~~~~](C$_1$): Σ (C$_1$))$_\Phi$\\
+~~~~~~~~](A$_1$): Σ (A$_1$))$_\Phi$\\
+](M$_1$): Σ (M$_1$))$_\Phi$ \\
+\z
+
+----
+
+- Write "Happy New Year" in Russian, Greek, Chinese 
+
+С новым годом
+
+Ευτυχισμένο το νέο έτος
+
+\newfontfamily\cn[Mapping=tex-text,Ligatures=Common,Scale=MatchUppercase]{AR PL UMing CN}
+\newcommand{\zh}[1]{{\cn #1}} 
+{\cn 新年快乐}
+
+[\textipa{'h\ae pi nju: 'ji5}]
+
+ 
+- Write \textit{Happy New Year} in IPA
+\section{3-2} 
 
 \ea\label{ex:john}
 John gives Mary the book
@@ -408,7 +547,7 @@ While examples \REF{ex:john}, \REF{ex:cat}, and \REF{ex:mouse1} are grammatical,
 \z
 
 \ea
-Tên... khátpy ra khuthun tho mo nhy ndo khá than jáwi arak anhi khãm mbaj to no.\\
+Tên{\dots} khátpy ra khuthun tho mo nhy ndo khá than jáwi arak anhi khãm mbaj to no.\\
 \gll   tên           khátpy=ra   khu-thu=n  t<h>o   mo=nhy   ndo khá  tha=n              jáwi        arak    anhi khãm ∅-mba-j             to   no    \\
       unexpectedly monster=\textsc{nom} 3-load.on.back=\&.\textsc{ss} <3>with go.\textsc{pl}=\&.\textsc{ds} eye skin rupture=\&.\textsc{ss} as.they.say already self in   3-hear-\textsc{nmlz} with lie.down.\textsc{sg}\\
 \glt ‘Unexpectedly, the \textit{khátpy} monster had loaded it (the basket) on his back and was carrying it, and he (the ancestor) woke up and was already lying down listening.’
