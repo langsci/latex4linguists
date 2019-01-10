@@ -1,0 +1,93 @@
+\documentclass[colorlinks,citecolor=blue]{scrartcl}
+\author{Sebastian Nordhoff}
+\title{Sample document for bibliographies}
+\usepackage[
+	natbib=true, 
+% 	style=nature,
+% 	style=science,
+	style=biblatex-langsci-unified,	citestyle=langsci-authoryear-comp,
+	useprefix = true,
+	maxbibnames=99,
+	uniquename=false,
+	mincrossrefs=99,
+	maxcitenames=2,
+	isbn=false,
+	doi=false,
+	url=false,
+	eprint=false,
+        autolang=hyphen,
+	backend=biber,
+	indexing=cite
+]{biblatex}
+\usepackage{hyperref}
+\addbibresource{mybib.bib}
+\begin{document}
+\maketitle 
+\section{Bibliographies}
+\citet{Chomsky1957} and \citet{Comrie1981} are great books
+
+\citealt{Chomsky1957}
+
+\citet{Chomsky1957}
+
+\citep{Chomsky1957}
+
+\citet[23]{Chomsky1957}
+
+\citep[23]{Chomsky1957}
+
+\citet{Chomsky1957,Comrie1981}
+
+\citeauthor{Chomsky1957} showed in \citeyear{Chomsky1957} ...
+
+
+\citet{Decker1992,Bashir2003dardic,Bashir2003palula,Liljegren2008,Liljegren2016,Kogan2015} are important works for the Palula language. 
+
+\printbibliography 
+\end{document}
+
+# Tasks for class 2-2
+
+----
+- Open the sample document `bibtest.tex`
+- Locate the commands `\citet` and `\citep`
+- Swap the commands and see what happens
+- Open the file `bibtest.bib` and familiarise yourself with the structure
+- Cite some more entries in `bibtest.tex`
+- Create an entry for a book you cite often, an article you cite often, and an entry for your own latest talk. Cite those in `bibtest.tex`
+
+----
+- In `bibtest.tex`, change the bibliography style. Try `nature`, and `science`
+
+----
+- Create the following outputs: 
+    - "Chomsky (1957)"
+    - "(Chomsky 1957)
+    - "Chomsky (1957: 23)"
+    - "(Chomsky 1957: 23)"
+    - "(Chomsky 1957, Everett 2000)"
+    - "Chomsky showed in 1957 ..."
+
+
+----
+- Visit glottolog.org 
+- Choose a language family you like and search it on Glottolog 
+- Retrieve 5 bibliographical entries for that language family and paste them into `bibtest.bib`. Cite those entries in the `bibtest.tex`
+- Make sure capitalisation is correct in the output
+
+    
+----
+- remove a comma from the final line of a bib entry. Recompile and see what happens
+- remove a `}` from a line in `bibtest.bib`, recompile and see what happens  
+- remove the final `}` from a bib entry, recompile and see what happens 
+- Create an entry with the title "Under_scores in practices". Cite that entry in `bibtest.tex`. Recompile and see what happens. 
+- Create an entry with "$\Theta$-roles in practice". Cite that entry in `bibtest.tex`. Recompile and see what happens. 
+- Create an entry with the authors "Juan Pablo Ruiz de Mendoza, John de Ruijter, and Margot van den Berg". Cite that entry. Fix the errors. 
+
+----
+- On your local computer, install one of the following programs and open `bibtest.bib` with it:
+    - JabRef
+    - BibDesk
+    - Zotero
+    
+ https://github.com/langsci/latex4linguists/blob/master/3-1.md   
