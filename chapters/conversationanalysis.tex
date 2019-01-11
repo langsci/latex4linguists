@@ -1,0 +1,71 @@
+\chapter{Conversation analysis}
+\mdfdefinestyle{firstfoc}{linecolor=white,backgroundcolor=gray!10!white,innerleftmargin=0.01mm,innertopmargin=0.01mm}  
+\mdfdefinestyle{secondfoc}{linecolor=white,backgroundcolor=gray!30!white,innerleftmargin=0.01mm,innertopmargin=0.01mm} 
+ \mdfdefinestyle{thirdfoc}{linecolor=white,backgroundcolor=gray!50!white,innerleftmargin=0.01mm,innertopmargin=0.01mm}
+ 
+\newcommand{\transheader}[2]{\ea\label{#1}#2\z\vspace*{-.7\baselineskip}}
+
+\newlength{\transindent}
+\setlength{\transindent}{2mm}
+
+\newenvironment{transbox}[3][\footnotesize]{%
+  \setstretch{0.7}
+  \medskip\noindent
+  \hspace*{\transindent}% 
+  #1
+  \parbox[b]{3mm}{#1  \oldstylenums{#2}\vphantom{fj}}%
+  \parbox[b]{8mm}{#1\scshape  \MakeLowercase{#3} \vphantom{fj}}%
+  \begin{minipage}[t]{11cm}#1\vspace*{-1.9\baselineskip}{}\,\vphantom{fj}}
+  {\end{minipage}}
+
+\newcommand{\emptytransbox}[3][\footnotesize]{%
+  \medskip\noindent
+  \hspace*{\transindent}% 
+  \parbox{3mm}{#1 \oldstylenums{#2}}%
+  \parbox{8mm}{~}%
+  #1 #3\\
+}
+
+\newcommand{\xtransbox}[4][\footnotesize]{%
+  \medskip\noindent
+  \hspace*{\transindent}% 
+  \parbox{3mm}{#1 \oldstylenums{#2}}%
+  \parbox{8mm}{\scshape #1 #3}%
+  #1 #4
+}
+
+
+\ea
+\begin{lstlisting}
+JA: Where did you put the bloody papers? 
+CI:                       I did not put them ANYWHERE!
+\end{lstlisting}
+\z
+
+\ea 
+\begin{transbox}{1}{Kar}
+\begin{verbatim}
+Ay kuraka djiwa karrimbuk[tharr.
+Ay kura    -ka  djiwa karrim            -buktharr
+Oh NC:WATER-TOP that  3SG.S.stand(3)NFUT-be_red
+\end{verbatim}\vspace*{-3mm}
+Ay that tea is too strong ((too red)).
+\end{transbox}
+
+\begin{transbox}{2}{Ali}
+\begin{verbatim}
+                         [Yawu munak [kura path- pathayu]=
+                          yawu munak  kura     STRI patha=yu
+                          hey  sister NC:WATER STRI good =CL
+\end{verbatim}\vspace*{-3mm}
+Hey sis, fresh water,
+\end{transbox}
+
+\begin{transbox}{3}{Ali}
+\begin{verbatim}
+                                     [((points to car))]
+\end{verbatim}\vspace*{-3mm}
+\end{transbox}
+\z
+
+

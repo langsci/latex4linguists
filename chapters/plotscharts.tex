@@ -1,0 +1,97 @@
+\chapter{Plots and charts}
+\begin{figure}
+\centering 
+  \barplot{level}{\%}{non-existent,A1,A2,B1,B2,C1,C2,NS/NSE}{
+    (non-existent,2)
+    (A1,6)
+    (A2,11)
+    (B1,49)
+    (B2,54)
+    (C1,21)
+    (C2,7)
+    (NS/NSE,4)
+  }  
+  \caption{A bar chart}
+\end{figure}
+
+\begin{figure}
+\centering
+  \begin{tikzpicture}
+    \begin{axis}[
+	xlabel={Proficiency level},  
+	ylabel={VOT (ms)}, 
+	axis lines*=left, 
+	width  = .7\textwidth,
+	height = .3\textheight,
+	nodes near coords, 
+	xtick=data,
+	x tick label style={},  
+	ymin=0,
+	ybar,
+	bar width=10mm,
+	enlarge x limits=0.25,
+	symbolic x coords={NES, Low level, High level},
+	legend style={at={(1,0.4)},anchor=west}
+	]
+	\addplot+[ybar,blue!80!black,fill=blue!50!black] plot coordinates {
+	    (NES, 65.47 ) (Low level,  43.27) (High level,60.11 )
+	}; 
+	\addplot+[ybar,green!80!black,fill=green!50!black] plot coordinates {
+	    (NES,65.47 ) (Low level, 47.87) (High level,55.83)
+	}; 
+	\legend{T1, T2}
+    \end{axis} 
+  \end{tikzpicture} 
+  \caption{Grouped bar chart}  
+\end{figure}
+
+\begin{figure}
+\centering
+  \begin{tikzpicture}
+    \begin{axis}[
+	width  = .5\textwidth,
+	height = .6\textheight,
+	ylabel={},
+	xlabel={}, 
+	symbolic y coords={
+	  Lack of content organization,
+	  Lack of thematic content, 
+	  Speaker's storytelling ability, 
+	  Vocabulary, 
+	  Grammar,
+	  Number of silent pauses,  
+	  Repetition of words,
+	  Intonation, 
+	  Rhythm, 
+	  Word stress, 
+	  Pronunciation of vowels and consonants 
+	},   
+	ytick=data,
+	axis lines*=left,  
+	xmin=0,
+	xbar,
+	bar width = 5mm,
+	nodes near coords,
+	nodes near coords align={horizontal},
+	axis on top, 
+    ]    
+    \addplot+[green!80!black,fill=green!60!black] coordinates {%
+    (10,Word stress) 
+    (9,Rhythm) 
+    (11,Pronunciation of vowels and consonants) 
+    (9,Intonation) 
+    (2,Grammar) 
+    (2,Vocabulary)
+    (2,Repetition of words)  
+    (2,Number of silent pauses)
+    (2,Speaker's storytelling ability) 
+    (2,Lack of thematic content) 
+    (1,Lack of content organization) 
+    }; 
+    \end{axis}
+  \end{tikzpicture} 
+  \caption{Horizontal bar chart}
+\end{figure}
+
+
+  
