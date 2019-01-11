@@ -1,0 +1,137 @@
+\chapter{Tables}
+\begin{tabular}{llll}
+ 1&2&3&4\\
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16
+\end{tabular}
+
+Vestibulum turpis lectus, vulputate id lobortis et, mattis ut turpis. Etiam nisi odio, semper vel commodo at, lacinia sed mauris. Vivamus at blandit risus, eu tristique eros. Morbi venenatis ligula eu consectetur pulvinar. In eget lectus lacinia, vehicula magna in, dapibus dui. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus facilisis finibus purus quis sagittis.
+
+\begin{tabular}{ccrr}
+ 1&2&3&4\\
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16
+\end{tabular}
+
+Duis pharetra erat id sapien venenatis, id maximus quam mattis. Curabitur tincidunt eros quis lectus scelerisque tincidunt. Curabitur turpis elit, maximus tempor sagittis in, semper et nunc. Ut rhoncus viverra dui, eget gravida orci maximus sit amet. Donec vulputate nunc nulla, rhoncus tempor nisl laoreet eu. Ut fermentum laoreet velit, a auctor quam consequat et. Etiam sit amet ante fringilla, rhoncus nisi eget, varius est. Nullam id ultrices urna. Cras elit urna, condimentum in ante sed, ullamcorper pharetra mauris. Nullam sollicitudin magna et nunc gravida porta. 
+
+\begin{tabular}{p{5cm}rcl}
+ 1&2&3&4\\
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16
+\end{tabular}
+
+\begin{table}
+\begin{tabular}{p{2cm}rp{2cm}l}
+ 1&2&3&4\\
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16
+\end{tabular}
+\caption{Tabular in table with caption}
+\label{tab:intro}
+\end{table}
+
+Table \ref{tab:intro} has a caption.
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{XXXX}
+ 1&2&3&4\\
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16
+\end{tabularx}
+\caption{Tabularx}
+\label{tab:tabularx}
+\end{table}
+
+Table \ref{tab:tabularx} has the width of the page
+
+\begin{table}
+\begin{tabularx}{\textwidth}{XXXX}
+ 1&2&3&4\\
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16
+\end{tabularx}
+\caption{Tabularx at .66 width}
+\label{tab:tabularx66}
+\end{table}
+
+Table \ref{tab:tabularx66} has .66 of the width of the page
+
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{XXXX}
+\toprule
+ 1&2&3&4\\
+ \midrule 
+ 5&6&7&8\\
+ 9&10&11&12\\
+ 13&14&15&16\\
+ \bottomrule
+\end{tabularx}
+\caption{Tabularx with lines}
+\label{tab:tabularxrules}
+\end{table}
+
+Table \ref{tab:tabularx66} has lines
+
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{XXXX}
+\hline
+ 1&2&3&4\\
+\hline
+ 5&6&7&8\\
+\hline
+ 9&10&11&12\\
+\hline
+ 13&14&15&16\\
+ \hline
+\end{tabularx}
+\caption{Tabular with many lines}
+\label{tab:tabularxhline}
+\end{table}
+
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+ 1&2&3&4\\
+\hline
+ 5&\multicolumn{2}{c|}{6.5}&8\\
+\hline
+ 9&10&11&12\\
+\hline
+ 13&14&15&16\\
+ \hline
+\end{tabularx}
+\caption{Tabular with horizontally merged cell}
+\label{tab:tabularxmulticolumns}
+\end{table}
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+ 1&2&3&4\\
+\hline
+ 5&\multirow{2}{*}{8}& 7 &8\\
+\cline{1-1}\cline{3-4}
+ 9& &11&12\\
+\hline
+ 13&14&15&16\\
+ \hline
+\end{tabularx}
+\caption{Tabular with vertically merged cell}
+\label{tab:tabularxmultirow}
+\end{table}
+ 

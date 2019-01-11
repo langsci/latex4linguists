@@ -1,0 +1,111 @@
+\section{Trees}  
+ 
+\begin{forest}
+[S [NP] [VP]]
+\end{forest}
+
+\begin{forest}
+[S 
+  [NP [The] [girl]] 
+  [VP 
+    [V [eats]] 
+    [NP [the super-tasty chocolate pudding she bought at the festival, roof]]
+  ]
+]
+\end{forest}
+
+\begin{forest}
+[S 
+  [NP [The lady,roof]]
+  [VP 
+    [V [sees] ]
+    [NP [the monkey, roof]]
+    [PP [with the telescope, roof]]
+  ]
+]
+\end{forest}
+
+\begin{forest}
+[S 
+  [NP [The lady,roof]]
+  [VP 
+    [V [sees]]
+    [NP 
+      [the] 
+      [N$'$ [N [monkey]] 
+	[PP [with the telescope, roof]]
+      ]
+    ]
+  ]
+]
+\end{forest}
+
+ \begin{forest} for tree={grow'=east,delay={where content={}{shape=coordinate}{}}}, for descendants={anchor=west, child anchor=west}, forked edges, l sep=2em
+  [Proto-Basa
+    [
+      [Basa-Kontagora]
+      [Basa-Gumna]
+    ]
+    [Koromba]
+    [
+      [Basa-Gurara]
+      [Basa-Kwali]
+    ]
+    [
+      [Basa-Benue]
+      [Basa-Makurdi]
+    ]
+  ]  
+ \end{forest} 
+ 
+ \begin{forest} baseline, where n children=0{tier=word}{} ,for tree={align=center,base=bottom}
+ [ω
+    [ω$_w$
+      [Σ
+        [σ$_s$\\bun]
+        [σ$_w$\\des]
+      ]]
+    [ω$_s$
+      [ω$_s$
+        [ω$_s$
+           [ω$_s$
+              [Σ
+                [σ\\ar]
+              ]]
+           [ω$_w$
+              [Σ
+                [σ\\beits]
+              ]]]
+          [ω$_w$
+              [Σ
+                [σ\\amts]
+              ]]]
+          [ω$_w$
+              [Σ$_w$
+                [σ$_s$\\prä]
+                [σ$_w$\\si]
+              ]
+              [Σ$_s$
+                [σ\\dent]
+              ]]]
+]
+\end{forest}
+ 
+ 
+\begin{forest}
+[CP
+  [DP,name=tgt]
+    [IP
+      [,phantom]
+      [VP
+	[DP]
+	[V$’$ 
+	  [V] 
+	  [\sout{DP},name=src]
+      ]
+    ]
+  ]
+]
+\draw[->] (src) to[out=south west,in=south] (tgt);
+\end{forest}
+

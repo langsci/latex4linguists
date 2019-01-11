@@ -1,0 +1,41 @@
+\documentclass[output=book,colorlinks,citecolor=brown]{langsci/langscibook}    
+\author{Georges de la Porte}
+\title{Tractatus Linguisticus}
+\input{localpackages.tex}
+\input{localhyphenation.tex}
+\addbibresource{localbibliography.bib}
+
+% \includeonly{%
+% chapters/preface,
+% chapters/introduction
+% }
+\begin{document} 
+\input{localcommands.tex} 
+  
+\maketitle                
+\frontmatter 
+
+\currentpdfbookmark{Contents}{name} % adds a PDF bookmark
+{\sloppy\tableofcontents}
+\include{chapters/preface}
+\include{chapters/acknowledgments}
+\include{chapters/abbreviations} 
+\mainmatter     
+ 
+\include{chapters/introduction} 
+\include{chapters/linguisticexamples} 
+\include{chapters/trees} 
+\include{chapters/images} 
+\include{chapters/tables} 
+\include{chapters/codesnippets} 
+\include{chapters/conversationanalysis} 
+\include{chapters/FDG} 
+\include{chapters/nonlatinscripts} 
+\include{chapters/newenvironments} 
+\include{chapters/drawings} 
+\include{chapters/plotscharts} 
+\include{chapters/AVMs} 
+   
+\sloppy
+\printbibliography
+\end{document}  

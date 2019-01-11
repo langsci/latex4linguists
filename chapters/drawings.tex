@@ -1,0 +1,86 @@
+\section{Drawings}
+\definecolor{lsRichGreen}{cmyk}{0.6,0,0.9,0.35}
+ 
+
+\eabox{
+\begin{tikzpicture}
+ \node[rectangle,draw,minimum width = 3cm] (s) {Sebastian};
+ \node[rectangle,draw,minimum width = 3cm, left = 1cm of  s] (a) {Antonio};
+ \node[rectangle,draw,minimum width = 3cm, right = 1cm of  s] (j) {Janet};
+\end{tikzpicture}
+
+}
+
+
+\eabox{ 
+\begin{tikzpicture} 
+\node[draw,minimum width = 8mm, circle] (A) {1};
+\node[draw,minimum width = 8mm,circle, right of=A] (B) {2};
+\node[draw,minimum width = 8mm,circle, right of=B] (C) {3};
+\node[draw,minimum width = 8mm,circle, right of=C] (D) {4};
+\node[draw,minimum width = 8mm,circle, right of=D] (E) {5};
+
+
+\node[minimum width = 8mm, below of=A] (a) {1};
+\node[draw,minimum width = 8mm,circle, right of=a] (b) {2};
+\node[minimum width = 8mm, right of=b] (c) {3};
+\node[draw,minimum width = 8mm,circle, right of=c] (d) {4};
+\node[minimum width = 8mm, right of=d] (e) {5};
+\node[draw,minimum width = 8mm,circle, right of=e] (f) {6};
+\node[minimum width = 8mm, right of=f] (g) {7};
+\node[draw,minimum width = 8mm,circle, right of=g] (h) {8};
+\node[minimum width = 8mm, right of=h] (i) {9};
+\node[draw,minimum width = 8mm,circle, right of=i] (j) {10};
+
+\draw(A.south)--(b.north);
+\draw(B.south)--(d.north);
+\draw(C.south)--(f.north);
+\draw(D.south)--(h.north);
+\draw(E.south)--(j.north);
+
+\end{tikzpicture}
+}
+
+\eabox{
+\begin{tikzpicture} 
+\node[circle,draw,minimum width=2cm] (c) {Concept};
+\node[circle,draw,minimum width=2cm,below=1cm of c,xshift = -1.7cm] (s) {Symbol};
+\node[circle,draw,minimum width=2cm,below=1cm of c,xshift =  1.7cm] (r) {Referent};
+
+\draw(s) -- (r);
+\draw(s) -- (c);
+\draw(c) -- (r);
+\end{tikzpicture}
+}
+
+ 
+\eabox{
+\begin{tikzpicture} 
+\node[circle,draw,minimum width=2cm] (e) {Emma};
+\node[circle,draw,minimum width=2cm,left =  1cm  of e, yshift=-15mm] (d) {Denis};
+\node[circle,draw,minimum width=2cm,below =  1cm  of d] (j) {Janet};
+\node[circle,draw,minimum width=2cm,right =  1cm  of j, yshift=-15mm] (s) {Samira};
+\node[circle,draw,minimum width=2cm,right = 1cm  of e] (g) {Gottfried};
+\node[circle,draw,minimum width=2cm,right = 1cm  of g, yshift=-25mm] (y) {Jussi};
+\node[circle,draw,minimum width=2cm,right = 1.5cm of s, yshift=  5mm ] (w) {Wang};
+
+\draw[dashed](e) -- (g);
+\draw[ultrathick](j) -- (s);
+\draw(d) -- (y);
+\draw[dashed](d) -- (w);
+\draw[thick](d) -- (e);
+\draw(s) -- (y);
+\draw[dashed](y) -- (g);
+\draw[double](w) -- (e);
+\draw(g) -- (j);
+\draw[dashed](g) -- (w);
+\draw(e) -- (y);
+\draw[double](d) -- (s);
+\draw[dashed](j) -- (d);
+\draw(w) -- (j);
+\draw[dashed](y) -- (d);
+\draw(y) -- (s);
+\end{tikzpicture}
+}
+
+
