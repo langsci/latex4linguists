@@ -440,6 +440,64 @@ The auxiliary files can be \textbf{deleted} after your work is done. They will b
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Overleaf}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Overleaf}
+
+\begin{enumerate}
+	\item Go to: \url{https://www.overleaf.com}
+	
+	Overleaf is an online \LaTeX\ editor. 
+	
+	\item \textbf{Register} with your email address and create a new blank project.
+	
+	Your project is not completely empty. Overleaf provides already some information. Later, we are going to change this information.
+	
+	\item \textbf{Compile} your project: Click on the green button \emph{Recompile}.
+	
+	\item PDF\LaTeX\ is the \textbf{standard compiler}. 
+	Write 5 > 4 after the section \emph{Introduction}, compile, and see what happens.
+	
+	\item \textbf{Change compiler}: Click on the Overleaf menu icon above the file list panel, and set the \emph{Compiler} setting to `Xe\LaTeX '.
+	
+	\item \textbf{Recompile} your project, and see what happens.
+	
+\end{enumerate}
+
+\bigskip 
+
+You will find the tasks for our course here: \url{https://github.com/langsci/latex4linguists/blob/master/1-1.md}
+
+%In diesem Kurs werden wir mit dem \textbf{Editor} \texttt{TeXstudio} arbeiten, welcher folgende Vorteile anbietet: 
+%
+%\begin{itemize}
+%	\item kostenlos, 
+%	
+%	\item kompatible mit Linux-, Windows- und Mac OS-Rechnern,
+%	\item Unicode-Unterstützung, Rechtschreibkontrolle, Autovervollständigung von Befehlen, PDF-Viewer,
+%	\item einfach zu verwenden und zu konfigurieren, \dots
+%\end{itemize}
+%
+%Außer dem Editor benötigt man eine \LaTeX -\textbf{Distribution}.
+%In diesem Fall werden wir \texttt{MiKTeX} (für Windows-User)
+%verwenden. Für Linux-User ist \texttt{TeXLive} eine sehr bekannte Alternative und für Mac OS-User \texttt{MacTeX}. \textbf{Zuerst} soll die Distribution (\zB \texttt{MiKTeX}) und erst dann der Editor (\zB \texttt{TeXstudio}) installiert werden!
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Software}
@@ -625,9 +683,9 @@ Variations of these classes (not in American formats) are provided by the \textb
 
 \begin{itemize}
 	\item \ltxterm{scrbook} for books
-	\item \ltxterm{scrreprt} for long scripts with different chapters
+%	\item \ltxterm{scrreprt} for long scripts with different chapters
 	\item \alert{\ltxterm{scrartcl}} for articles, without chapters, only with sections
-	\item \ltxterm{scrlttr2} for letters
+%	\item \ltxterm{scrlttr2} for letters
 \end{itemize}
 
 %Cf.\ \citet{Kohm&Co13a} and \url{https://www.komascript.de/}
@@ -846,7 +904,7 @@ Use the command \lstinline|\maketitle| after \lstinline|\begin{document}| to inc
 \begin{frame}[fragile]
 \frametitle{Exercise}
 
-Specify the meta data f your document with two authors, use the  \lstinline|\maketitle| command, and try different commands for date.
+Specify the meta data in your document with two authors, use the  \lstinline|\maketitle| command, and try different commands for date.
 
 \centering
 \includegraphics[width=0.65\linewidth]{../../texfiles-beamer/tex-material/WissArb-latex/xelatexTest3tex}
@@ -856,7 +914,7 @@ Specify the meta data f your document with two authors, use the  \lstinline|\mak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Headlines and paragraphs}
+\subsection{Headlines}
 %\frame{
 %	%\frametitle{~}
 %	\begin{multicols}{2}
@@ -866,7 +924,7 @@ Specify the meta data f your document with two authors, use the  \lstinline|\mak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Headlines and paragraphs}
+\frametitle{Headlines}
 
 \noindent Commands for the structure of your text:
 
@@ -902,10 +960,98 @@ The text in the \textbf{option} -- when used -- appears in the \textbf{table of 
 \end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{Gliederung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cross references 1}
+%\label{sec:references}
+%\frame{
+%	\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]
+\frametitle{Cross references 1}
+
+To work with cross references, you need two things:
+
+\begin{enumerate}
+	\item a \ltxterm{label} with an \ltxterm{ID}: \lstinline|\label{ID}| 
+	
+	The \ltxterm{ID} must be \textbf{unique} for the labelled element in your document.
+	
+	\item a \ltxterm{reference}: \lstinline|\ref{ID}| 
+	
+	With the \lstinline|ref| command, \LaTeX\ will take the \textbf{number of element labelled} with the given \ltxterm{ID} and use it for cross references.
+\end{enumerate}
+
+\pause 
+
+%\bigskip 
+
+The \lstinline|label| command must \textbf{follow} (if possible: immediately) the element it is labelling.
+
+%Wenn \LaTeX\ die \ltxterm{ID} des Eintrags \textbf{nicht findet}, weil man sich vielleicht verschrieben hat, wird statt des Verweises ein doppeltes Fragezeichen \ltxterm{??} stehen.
+
+\bigskip 
+
+The command \lstinline|\pageref{ID}| will give you the \textbf{page} in which the labelled element appears.
+
+\begin{lstlisting}
+\section{Introduction}
+\label{sec:Intro}
+
+To see how cross referencing works, take a look at Section \ref{sec:Intro} 
+which is on page \pageref{sec:Intro}
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{Präfixe}
+
+For long works, it is \textbf{useful} to have \textbf{prefixes}. They help you to find your references faster.
+
+\begin{description}
+\item[\ltxterm{sec}] for sections, subsections, \dots 
+%\item[\ltxterm{ch}] nur für Kapitel 
+%\item[\ltxterm{part}] nur für Bücher, die auch in Teile gegliedert sind (\ltxterm{sec} kann auch benutzt werden)
+\item[\ltxterm{fig}] for figures
+\item[\ltxterm{tab}] for tables
+\item[\ltxterm{it}] for numbered items in lists
+\item[\ltxterm{eq}] for equations
+\item[\ltxterm{fn}] for footnotes
+\end{description}
+
+
+\begin{lstlisting}
+\section{Introduction}
+\label{sec:Intro}
+
+To see how cross referencing works, take a look at Section \ref{sec:Intro} 
+which is on page \pageref{sec:Intro}
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Paragraphs \& line breaks}
+%\frame{
+%	%\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Paragraphs \& line breaks}
 
 \begin{itemize}
 	\item new \textbf{paragraph}: twice \short{enter} (\rotatebox[origin=c]{180}{$\Rsh$}) key
@@ -1015,7 +1161,8 @@ system.}
 \begin{frame}[fragile]
 \frametitle{Exercise}
 
-Download the PDF \alert{\texttt{myDocument-EX1.pdf}} and replicate it with the commands you have already learnt.
+Go to \url{https://github.com/langsci/latex4linguists/blob/master/1-1.md}\\
+and follow the instructions of the \textbf{first four blocks} in your \texttt{.tex} file.
 
 \end{frame}
 
@@ -1433,7 +1580,15 @@ The commands for font size can be used as \textbf{declarations} or as \textbf{en
 \begin{frame}[fragile]
 \frametitle{Exercise}
 
-Download the PDF \alert{\texttt{myDocument-EX2.pdf}} and replicate it with the commands you have already learnt.
+
+Go to \url{https://github.com/langsci/latex4linguists/blob/master/1-1.md}\\
+and follow the instructions of the \textbf{fifth block} in your \texttt{.tex} file.
+
+\bigskip 
+
+Test further commands!
+
+%Download the PDF \alert{\texttt{myDocument-EX2.pdf}} and replicate it with the commands you have already learnt.
 
 \end{frame}
 
@@ -1452,7 +1607,7 @@ Download the PDF \alert{\texttt{myDocument-EX2.pdf}} and replicate it with the c
 
 \begin{frame}[fragile]
 \frametitle{Text environments}
-You will normally need the following environments:
+You will normally need the following text environments:
 
 \begin{itemize}
 	\item quotations,
@@ -1462,6 +1617,8 @@ You will normally need the following environments:
 %	\item \gqq{wörtliche Wiedergaben} und 
 	
 	\item abstracts,
+	
+%	\item examples (\dots\ later),
 	
 	\item \dots 
 \end{itemize}
@@ -1599,12 +1756,14 @@ This is a sentence after the \texttt{quote} environment.
 \LaTeX\ has 3 pre-defined and 1 general list environments:
 
 \begin{itemize}
-	\item \ltxterm{itemize},
-	\item \ltxterm{enumerate},
-	\item \ltxterm{description},
+	\item \alert<2->{\ltxterm{itemize}},
+	\item \alert<2->{\ltxterm{enumerate}},
+	\item \alert<2->{\ltxterm{description}},
 
 	\item \ltxterm{list}.
 \end{itemize}
+
+\pause 
 
 Every environment begins with the \lstinline|\begin{ }| and ends with the \lstinline|\end{ }| command.
 
@@ -1800,8 +1959,8 @@ unit in a language bearing a meaning
 \begin{itemize}
 \item standard symbol
 \item[+] customized
-\item[$+$] customized
-\item[$\checkmark$] customized
+\item[--] customized
+\item[--] customized
 \end{itemize}
 \end{lstlisting}
 
@@ -1811,8 +1970,8 @@ unit in a language bearing a meaning
 \begin{itemize}
 	\item standard symbol
 	\item[+] customized
-	\item[$+$] customized
-	\item[$\checkmark$] customized
+	\item[--] customized
+	\item[--] customized
 \end{itemize}
 }
 \end{multicols}
@@ -1822,8 +1981,8 @@ unit in a language bearing a meaning
 \begin{lstlisting}
 \begin{enumerate}
 \item standard symbol
-\item[-] customized
-\item[$-$] customized
+\item[+] customized
+\item[+] customized
 \item[--] customized
 \item standard symbol
 \end{enumerate}
@@ -1834,8 +1993,8 @@ unit in a language bearing a meaning
 \outputbox{
 \begin{enumerate}
 	\item standard symbol
-	\item[-] customized
-	\item[$-$] customized
+	\item[+] customized
+	\item[+] customized
 	\item[--] customized
 	\item standard symbol
 \end{enumerate}
@@ -1890,14 +2049,23 @@ as the point-of-entry for any given academic paper.
 \begin{frame}[fragile]
 \frametitle{Exercise}
 
-Download the PDF \alert{\texttt{myDocument-EX3.pdf}} and replicate it with the commands you have already learnt.
+
+Go to \url{https://github.com/langsci/latex4linguists/blob/master/1-1.md}\\
+and follow the instructions of the \textbf{blocks 6--8} in your \texttt{.tex} file.
+
+\bigskip 
+
+Test further commands!
+
+
+%Download the PDF \alert{\texttt{myDocument-EX3.pdf}} and replicate it with the commands you have already learnt.
 
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Installing packages}
+\section{Loading packages}
 \frame{
 	%\frametitle{~}
 	\begin{multicols}{2}
@@ -1908,12 +2076,12 @@ Download the PDF \alert{\texttt{myDocument-EX3.pdf}} and replicate it with the c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Installing Packages}
+\frametitle{Loading Packages}
 
 \begin{itemize}
-	\item The functions \LaTeX\ offers are restricted. Most \textbf{extra features} your will need are in \textbf{packages} that you can install in your \TeX\ document.
+	\item The functions \LaTeX\ offers are restricted. Most \textbf{extra features} you will need are in \textbf{packages} that you can load in your \TeX\ document.
 
-	\item Packages must be installed in the \textbf{preamble} of your document.
+	\item Packages must be loaded in the \textbf{preamble} of your document.
 \end{itemize}
 
 \begin{lstlisting}
@@ -1923,11 +2091,13 @@ Download the PDF \alert{\texttt{myDocument-EX3.pdf}} and replicate it with the c
 \pause 
 
 \begin{itemize}
-\item Normally, (many) \LaTeX\ packages are \textbf{pre-installed} in your \TeX\ distribution (\fe \href{http://miktex.org/}{\ltxterm{MiKTeX}}).
+\item Normally, (many) \LaTeX\ packages are already  \textbf{pre-installed} in your \TeX\ distribution (\fe \href{http://miktex.org/}{\ltxterm{MiKTeX}}).
 
-\item (Almost) every other package with manual can be \textbf{downloaded} from \textbf{\ltxterm{CTAN}} -- The Comprehensive \TeX\ Archive Network (\href{http://www.ctan.org/}{www.ctan.org})
+\item (Almost) every other package (and its manual) can be \textbf{downloaded} from \textbf{\ltxterm{CTAN}} -- The Comprehensive \TeX\ Archive Network (\url{http://www.ctan.org/})
+%(\href{http://www.ctan.org/}{www.ctan.org})
 
-\item With the command \lstinline|usepackage| your \TeX\ distribution usually \textbf{downloads automatically} the package -- if necessary.
+\item With the command \lstinline|usepackage| your \TeX\ distribution loads the package\\
+ -- or  \textbf{downloads it automatically} if necessary.
 
 \end{itemize}
 \end{frame}
@@ -1937,7 +2107,7 @@ Download the PDF \alert{\texttt{myDocument-EX3.pdf}} and replicate it with the c
 \begin{frame}[fragile]
 %\frametitle{Pakete einbinden}
 
-This packages can be useful:
+These packages can be useful:
 \begin{itemize}
 
 %\item Kodierung (Input): \ltxterm{inputenc}
@@ -1954,9 +2124,18 @@ This packages can be useful:
 
 \item Blind text: \ltxterm{blindtext} \hfill 
 \lstinline|\usepackage{blindtext}|
+
+\item URLs: \ltxterm{url} \hfill 
+\lstinline|\usepackage{url}|
+
+\item Links (\fe for cross references): \ltxterm{hyperref} \\
+\hfill 
+\lstinline|\usepackage[bookmarksnumbered, hidelinks]{hyperref}|
 \end{itemize}
 
-Sometimes the \textbf{order} in that packages have been installed can affect the compilation.
+Sometimes the \textbf{order} in that packages have been installed can affect the compilation (\fe \ltxpack{gb4e} and \ltxpack{forest}).
+
+\bigskip 
 
 Also, not all packages are \textbf{compatible} with each other or with your compiler (Xe\TeX\ \vs PDF\LaTeX ).
 
@@ -1967,7 +2146,15 @@ Also, not all packages are \textbf{compatible} with each other or with your comp
 \begin{frame}[fragile]
 \frametitle{Exercise}
 
-Download the PDF \alert{\texttt{myDocument-EX4.pdf}} and replicate it with the commands you have already learnt. Follow the instructions in the last section and install the packages.
+
+Go to \url{https://github.com/langsci/latex4linguists/blob/master/1-1.md}\\
+and follow the instructions of the \textbf{blocks 9--11} in your \texttt{.tex} file.
+
+\bigskip 
+
+Test further commands!
+
+%Download the PDF \alert{\texttt{myDocument-EX4.pdf}} and replicate it with the commands you have already learnt. Follow the instructions in the last section and install the packages.
 
 \end{frame}
 
