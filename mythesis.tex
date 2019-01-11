@@ -1,9 +1,26 @@
-\documentclass[output=book,colorlinks,citecolor=brown]{langsci/langscibook}    
+\documentclass{scrbook}
 \author{Georges de la Porte}
 \title{Tractatus Linguisticus}
 \input{localpackages.tex}
 \input{localhyphenation.tex}
-\addbibresource{localbibliography.bib}
+\usepackage[
+	natbib=true, 
+	style=biblatex-langsci-unified,	citestyle=langsci-authoryear-comp,
+% 	style=nature,
+	useprefix = true,
+	maxbibnames=99,
+	uniquename=false,
+	mincrossrefs=99,
+	maxcitenames=2,
+	isbn=false,
+	doi=false,
+	url=false,
+	eprint=false,
+        autolang=hyphen,
+	backend=biber,
+	indexing=cite
+]{biblatex}
+\addbibresource{mybib.bib}
 
 % \includeonly{%
 % chapters/preface,
@@ -15,7 +32,7 @@
 \maketitle                
 \frontmatter 
 
-\currentpdfbookmark{Contents}{name} % adds a PDF bookmark
+% \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 {\sloppy\tableofcontents}
 \include{chapters/preface}
 \include{chapters/acknowledgments}
@@ -25,12 +42,12 @@
 \include{chapters/introduction} 
 \include{chapters/linguisticexamples} 
 \include{chapters/trees} 
+\include{chapters/nonlatinscripts} 
 \include{chapters/images} 
 \include{chapters/tables} 
 \include{chapters/codesnippets} 
 \include{chapters/conversationanalysis} 
 \include{chapters/FDG} 
-\include{chapters/nonlatinscripts} 
 \include{chapters/newenvironments} 
 \include{chapters/drawings} 
 \include{chapters/plotscharts} 
