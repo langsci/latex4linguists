@@ -13,7 +13,7 @@
 	\LaTeX\ for Linguists
 }
 
-\subtitle{\LaTeX\ 4: Bibliography}
+\subtitle{\LaTeX\ 5: Linguistic packages 1}
 
 \author[aMyP]{
 	{\small Sebastian Nordhoff \& Antonio Machicao y Priemer}
@@ -88,7 +88,173 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bibliography with Bib\TeX }
+\section{Transcriptions with IPA}
+\frame{
+	\frametitle{~}
+	%	\begin{multicols}{2}
+	\tableofcontents[currentsection,hideallsubsections]
+	%	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Transcriptions with IPA}
+
+With Xe\LaTeX , you can use \textbf{Unicode characters} for your transcriptions:
+
+\smallskip
+
+You can copy the Unicode characters for transcriptions from here:\\
+\url{http://ipa.typeit.org/full/}
+%[ʔ ɛ t͡s ə n d ə ʁ ɐ]
+
+\smallskip
+
+Some fonts cannot display all Unicode characters, \fe try to copy the Unicode characters for the following word and compile using first \ltxpack{lmodern} and then \ltxpack{libertine}.
+
+\ea \textipa{["PE\t{ts}@nd@\textscr{}5]}
+\z 
+
+\pause 
+
+\bigskip
+
+The package \textbf{\ltxpack{tipa}} offers commands for transcriptions with IPA, but it is not compatible with all other packages. %\fe with \ltxpack{libertine}
+
+\begin{lstlisting}
+\usepackage{tipa}
+\end{lstlisting}
+
+%\begin{itemize}
+%	\item \ltxpack{tipa} definiert bestimmte \LaTeX -Befehle um. Abhängig von der Font-Kodierung sind manchmal zusätzliche Einstellungen nötig, bspw.\ die Optionen \ltxterm{T3} und \ltxterm{T1} (in dieser Reihenfolge) beim Paket \ltxpack{fontenc} und die Optionen \ltxterm{noenc} und \ltxterm{safe} beim Paket \ltxpack{tipa}.
+%\end{itemize}
+
+%\begin{lstlisting}
+%\usepackage[T3,T1]{fontenc}
+%
+%\usepackage[noenc,safe]{tipa}	
+%\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{}
+
+\ltxterm{tipa} provides 3 ways to use IPA characters:
+
+
+\textbf{macros:}
+
+\begin{lstlisting}
+[\textglotstop{}an.\textesh{}\textinvscr{}\texttoptiebar{a\textsci{}}.
+\textschwa{}n]
+
+[\textsecstress\textepsilon kspl\textschwa \textprimstress ne\textsci\textesh
+\textschwa n]
+\end{lstlisting}
+
+\vspace{-.25cm}
+
+\begin{multicols}{2}
+\ea {[\textglotstop{}an.\textesh{}\textinvscr{}\texttoptiebar{a\textsci{}}.\textschwa{}n]}
+
+\ex {[\textsecstress\textepsilon kspl\textschwa \textprimstress ne\textsci\textesh\textschwa n]}
+\z 
+\end{multicols}
+
+
+\textbf{groups of macros:}
+
+\vspace{-.25cm}
+
+\begin{multicols}{2}
+\begin{lstlisting}
+\textipa{[Pan.SK\t{aI}.@n]} 
+\textipa{[""Ekspl@"neIS@n]}
+\end{lstlisting}
+
+
+\ea \textipa{[Pan.SK\t{aI}.@n]}
+
+\ex \textipa{[""Ekspl@"neIS@n]}	
+\z 	
+\end{multicols}
+
+
+\textbf{\ltxterm{tipa} environment:}
+
+\vspace{-.25cm}
+
+\begin{multicols}{2}
+	
+\begin{lstlisting}
+\begin{IPA}
+[Pan.SK\t{aI}.@n]
+
+[""Ekspl@"neIS@n]
+\end{IPA}
+\end{lstlisting}
+
+
+\ea	\begin{IPA}
+[Pan.SK\t{aI}.@n]
+\end{IPA}
+
+\ex \begin{IPA} 
+[""Ekspl@"neIS@n]
+\end{IPA}
+\z
+\end{multicols}
+
+\nocite{Rei04a}
+
+\nocite{Linke05a}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{IPA-Notation}
+%
+%\begin{itemize}
+%	\item Die IPA-Transkriptionen können in verschiedenen Schriftarten eingebettet werden:
+%\end{itemize}
+%
+%{\scriptsize
+%\begin{tabular}{lll}
+%	aktuelle        & \lstinline|\textipa{Pan.SK\texttoptiebar{aI}.@n}|          & \textipa{Pan.SK\texttoptiebar{aI}.@n}          \\
+%	Standardschrift &                                                            &                                                \\
+%	Slanted         & \lstinline|\textsl{\textipa{Pan.SK\texttoptiebar{aI}.@n}}| & \textsl{\textipa{Pan.SK\texttoptiebar{aI}.@n}} \\
+%	Bold            & \lstinline|\textbf{\textipa{Pan.SK\texttoptiebar{aI}.@n}}| & \textbf{\textipa{Pan.SK\texttoptiebar{aI}.@n}} \\
+%	Sans Serif      & \lstinline|\textsf{\textipa{Pan.SK\texttoptiebar{aI}.@n}}| & \textsf{\textipa{Pan.SK\texttoptiebar{aI}.@n}} \\
+%	Typewriter      & \lstinline|\texttt{\textipa{Pan.SK\texttoptiebar{aI}.@n}}| & \texttt{\textipa{Pan.SK\texttoptiebar{aI}.@n}} \\
+%\end{tabular}
+%}
+%
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{IPA-Notation}
+%
+%\begin{itemize}
+%\item Für weitere Features des \ltxpack{tipa}-Pakets schauen Sie sich die Dokumentation an: \citet{Rei04a}
+%
+%\item Eine gute Auflistung der benötigten Befehle für IPA-Transkriptionen mittels \ltxpack{tipa} finden Sie unter: \citet{Linke05a}
+%\end{itemize}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Verbatim }
 \frame{
 	\frametitle{~}
 %	\begin{multicols}{2}
@@ -98,56 +264,62 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Bibliographieren mit BibTeX}
+\frametitle{Verbatim}
 
-\begin{itemize}
-	\item \LaTeX\ provides \textbf{Bib\TeX -Tool} for references and bibliographies.
-%	\LaTeX\ bietet das \textbf{Bib\TeX -Tool}, um in Dokumenten \textbf{Quellen} und \textbf{Bibliographien} einfach und vor allem einheitlich handzuhaben.
+If you want to \textbf{write code}, \LaTeX\ provides the \textbf{\ltxterm{verb} command} and the \textbf{\ltxterm{verbatim} environment}.
+
+\begin{multicols}{2}
 	
-	\item You need:
-	
-	\begin{enumerate}
-		\item a \textbf{bibliography database} -- an ordinary text document with the ending \ltxterm{.bib}\\
-		You just need to open a \ltxterm{.txt} document and change the ending to \alert{\ltxterm{.bib}}
-		
-		\pause
-		
-		\item \textbf{citation commands} in your document (similar to \lstinline|label| and \lstinline|ref|)
-		
-		\pause 
-		
-		\item a \textbf{bibliography style} (with the ending \ltxterm{.bst} -- normally provided by a package).
-	\end{enumerate}
-	
-\end{itemize}
+\begin{lstlisting}
+\verb|\textbf{test}|
+
+\begin{verbatim}
+\textbf{test}
+\end{verbatim}
+
+\end{lstlisting}	
+
+\columnbreak
+
+\verb|\textbf{test}|
+
+\begin{verbatim}
+\textbf{test}
+\end{verbatim}
+
+\end{multicols}
 
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bibliography database}
-\frame{
-\frametitle{~}
-%\begin{multicols}{2}
-	\tableofcontents[currentsection,hideallsubsections]
-%\end{multicols}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}[fragile]
-\frametitle{Bibliography database}
+%\frametitle{Bibliography database}
 
-\begin{itemize}
-\item an ordinary text document
+With the package \ltxpack{listings}, \textbf{more options} for verbatim can be specified:
 
-\item You must change the \ltxterm{.txt} to an \alert{\ltxterm{.bib}} ending.
-\end{itemize}
+\begin{lstlisting}
+\usepackage{listings}
 
-\begin{figure}
-\centering
-\includegraphics[width=.65\textwidth]{../../texfiles-beamer/tex-material/WissArb-latex/bib_txtDateien}
-\end{figure}
+\lstset{
+language=TeX,
+backgroundcolor=\color{lightgray},
+basicstyle={\footnotesize\ttfamily\color{blue}},
+showstringspaces=false,
+columns=flexible
+}
+\end{lstlisting}
+
+\bigskip
+
+This package offers an \textbf{in-line version} with the \lstinline|\lstinline| \textbf{command} 
+and the \lstinline|lstlisting| \textbf{environment}.
+
+\bigskip
+
+For the in-line version, use \textbf{characters as delimiters} for your command \lstinline|\lstinline| that are not used in your code.
+
+
 
 \end{frame}
 
