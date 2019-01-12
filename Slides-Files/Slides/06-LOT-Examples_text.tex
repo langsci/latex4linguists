@@ -1,0 +1,687 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Compile the master file!
+%% 		Slides: Antonio Machicao y Priemer
+%% 		Course: Wissenschaftliches Arbeiten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Metadata                         
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+\title{
+	\LaTeX\ for Linguists
+}
+
+\subtitle{\LaTeX\ 6: Examples \& glossing}
+
+\author[aMyP]{
+	{\small Sebastian Nordhoff \& Antonio Machicao y Priemer}
+	\\
+	{\footnotesize \url{www.linguistik.hu-berlin.de/staff/amyp}}
+	%	\\
+	%	{\footnotesize \href{mailto:mapriema@hu-berlin.de}{mapriema@hu-berlin.de}}
+}
+
+\institute{LOT 2019, Amsterdam}
+
+%\date{ }
+
+%\publishers{\textbf{6. linguistischer Methodenworkshop \\ Humboldt-Universität zu Berlin}}
+
+%\hyphenation{nobreak}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Preamble's End                   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%% Title slide 
+\begin{frame}
+  \HUtitle
+\end{frame}
+
+
+%% Contents slide
+\frame{
+%\begin{multicols}{2}
+	\frametitle{Contents}
+%	\tableofcontents[hideallsubsections]
+	\tableofcontents
+	%[pausesections]
+%\end{multicols}
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Extra literature
+
+\nocite{Freitag&MyP15a}
+\nocite{Knuth1986}
+\nocite{Kopka94a}
+\nocite{MyP17c}
+\nocite{MyP&Kerkhof16a}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Basic literature for these slides
+%
+%\begin{frame}
+%\frametitle{Grundlage \& empfohlene Lektüre}
+%
+%\dots basierend auf \citet{Freitag&MyP15a} und auf \citet{MyP&Kerkhof16a}\\
+%\ras \href{https://www.researchgate.net/publication/279514740_LATEX-Einfuhrung_fur_Linguisten}{LINK}
+%
+%
+%\nocite{Kopka94a}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Paket: gb4e}
+%\frame{
+%	\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{gb4e}
+
+Different packages for examples:
+
+\begin{itemize}
+	\item \ltxpack{linguex}
+	\item \alert{\ltxpack{gb4e}}
+	\item \alert{\ltxpack{langsci-gb4e}}
+	\item \dots 
+\end{itemize}
+
+\ltxpack{gb4e} has \textbf{more options} than  \ltxpack{linguex}, but it re-defines commands causing problems with the math mode (with \textbf{\_}) and other packages (\fe \ltxpack{forest}).
+
+\bigskip
+
+Load \ltxpack{gb4e} as one of the \textbf{last packages}:
+
+%\begin{itemize}
+%	\item \ltxpack{gb4e} definiert bestimmte \LaTeX -Befehle um, und generiert dadurch häufig Probleme mit anderen Paketen. Daher empfiehlt es sich \ltxpack{gb4e} (und auch \ltxpack{hyperref}) als letztes Paket zu laden.
+%\end{itemize}
+
+\begin{lstlisting}
+\usepackage{gb4e}
+\usepackage[hidelinks]{hyperref}
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{gb4e}
+
+Similar to the \ltxterm{itemize} environment, use an \textbf{\ltxterm{exe} environment} for examples, putting every sentence/phrase in an \lstinline|\ex| \textbf{item}.
+
+%Hier ein Beispiel mit dem \ltxterm{gb4e}-Paket:
+{\footnotesize 
+\begin{lstlisting}
+This is a sample text. 
+\begin{exe}
+  \ex This is an example.
+  \ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+\end{exe}	
+This is a sample text. The only purpose of this text is to show how to work 
+with \LaTeX .
+\end{lstlisting}
+}
+
+
+%\outputbox{
+This is a sample text. 
+\begin{exe}
+\ex This is an example.
+\ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+\end{exe}	
+This is a sample text. The only purpose of this text is to show how to work with \LaTeX .
+%} 
+%\vspace{1em}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{gb4e}
+
+For \textbf{embedded example levels} use the \ltxterm{xlist} \textbf{environment}.
+
+{\footnotesize 
+\begin{lstlisting}
+\begin{exe}
+  \ex This is an example.
+  \ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+  \begin{xlist}
+    \ex This is an example on a new level.
+    \ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+  \end{xlist}		
+  \ex This is an example on the first level.
+\end{exe}	
+\end{lstlisting}
+}
+
+
+%\outputbox{
+\begin{exe}
+	\ex This is an example.
+	\ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+	\begin{xlist}
+		\ex This is an example on a new level.
+		\ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+	\end{xlist}		
+	\ex This is an example on the first level.
+\end{exe}	
+%} 
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{gb4e}
+
+For \textbf{embedded example levels inside embedded examples} keep using the \ltxterm{xlist} \textbf{environment}.
+%Hier ein Beispiel mit dem \ltxterm{gb4e}-Paket:
+{\footnotesize 
+\begin{lstlisting}
+This is a sample text. 
+\begin{exe}
+  \ex This is an example.
+  \ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+  \begin{xlist}
+    \ex This is an example on a new level.
+    \ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+    \begin{xlist}
+      \ex This is an example on a whole new level.
+      \ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+    \end{xlist}
+    \ex This is an example on the second level.
+  \end{xlist}		
+  \ex This is an example on the first level.
+\end{exe}	
+This is a sample text. The only purpose of this text is to show how to work 
+with \LaTeX .
+\end{lstlisting}
+}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{gb4e}
+
+%\outputbox{
+This is a sample text. 
+\begin{exe}
+	\ex This is an example.
+	\ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+	\begin{xlist}
+		\ex This is an example on a new level.
+		\ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+		\begin{xlist}
+			\ex This is an example on a whole new level.
+			\ex This is an example. The only purpose of this text is to show how to work with \LaTeX .
+		\end{xlist}
+		\ex This is an example on the second level.
+	\end{xlist}		
+	\ex This is an example on the first level.
+\end{exe}	
+This is a sample text. The only purpose of this text is to show how to work 
+with \LaTeX .
+%} 
+%\vspace{1em}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+%\frametitle{gb4e}
+
+Embedding examples with \textbf{letter numbering} in \textbf{arabic numbering}:
+
+\vspace{-.25cm}
+
+\begin{multicols}{2}
+
+\begin{lstlisting}
+\begin{exe}
+  \ex %empty!
+  \begin{xlist}
+    \ex This is an example.
+    \ex This is a different example. 
+  \end{xlist}		
+\end{exe}	
+\end{lstlisting}
+
+\columnbreak
+
+%\outputbox{
+\begin{exe}
+	\ex %empty!
+	\begin{xlist}
+		\ex This is an example.
+		\ex This is a different example. 
+	\end{xlist}		
+\end{exe}	
+%}
+\end{multicols}
+
+\textbf{Cross-references} with \ltxterm{label} and \ltxterm{ref}:
+
+\vspace{-.25cm}
+
+\begin{multicols}{2}
+	
+\begin{lstlisting}
+\begin{exe}
+  \ex \label{ex:Arabic}%empty!
+  \begin{xlist}
+    \ex This is an example. 
+    \label{ex:Letter1}
+    \ex This is a different example. 
+    \label{ex:Letter2} 
+  \end{xlist}		
+\end{exe}	
+\end{lstlisting}
+	
+	\columnbreak
+
+See the following cross-references: (\ref{ex:Arabic}), (\ref{ex:Letter1}), and (\ref{ex:Letter2}).
+
+\vspace{-.1cm}	
+%\outputbox{
+\begin{exe}
+	\ex \label{ex:Arabic}%empty!
+	\begin{xlist}
+		\ex This is an example. \label{ex:Letter1}
+		\ex This is a different example. \label{ex:Letter2} 
+	\end{xlist}		
+\end{exe}	
+
+%}
+\end{multicols}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Acceptability judgements}
+%\frame{
+%	\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+\frametitle{Acceptability judgements}
+
+For acceptability/grammaticality judgements, use the \textbf{square brackets} and enclose the sentence in \textbf{curly brackets}.
+
+\begin{lstlisting}
+\begin{exe}
+  \ex[*]{These ungrammatical example is.}
+  \ex[]{This example is grammatical.}	
+  \ex[\#]{colorless green idea}
+  \ex This example is grammatical.
+\end{exe}
+\end{lstlisting}
+
+%\outputbox{
+\begin{exe}
+	\ex[*]{These ungrammatical example is.}
+	\ex[]{This example is grammatical.}	
+	\ex[\#]{colourless green idea}
+	\ex This example is grammatical.
+\end{exe}
+%}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Glossing}
+%\frame{
+%	\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+\frametitle{Glossing}
+
+\begin{enumerate}
+	\item The \lstinline|\ex| line remains empty;
+	
+	\item use \lstinline|\gll| and write in that line your \textbf{example}; \textbf{end} the line it with \lstinline|\\|;
+	
+	\item write the \textbf{glosses}, and \textbf{end} this line with \lstinline|\\|;
+	
+	\item \textbf{optionally}, give a \textbf{translation} \lstinline|\glt|.
+	
+\end{enumerate}
+
+
+\begin{lstlisting}
+\begin{exe}
+  \ex
+  \gll Jeder Bauer, der einen Esel besitzt, schlägt ihn. \\
+  every farmer that a.\textsc{acc} donkey owns beats it.\textsc{acc}\\
+  \glt `Every farmer who owns a donkey beats it.'  \hfill \citep{Geach62}
+\end{exe} 
+\end{lstlisting}
+
+
+%\outputbox{
+\begin{exe}
+	\ex
+	\gll Jeder Bauer, der einen Esel besitzt, schlägt ihn. \\
+	every farmer that a.\textsc{acc} donkey owns beats it.\textsc{acc}\\
+	\glt `Every farmer who owns a donkey beats it.'  \hfill \citep{Geach62}
+\end{exe} 
+%}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+%\frametitle{Glossieren}
+
+Use \textbf{curly brackets} to group elements that are being \textbf{glossed as a unit}.
+
+\begin{lstlisting}
+\begin{exe}
+  \ex
+    \gll {Multiword expression} -s can be glossed too.\\
+    Mehrwortlexem -e.\textsc{pl} können sein glossiert auch\\
+    \glt `Auch Mehrwortlexeme können glossiert werden.'
+  \ex 
+    \gll Peter$_{1}$ $t_{1}$  schläft$_{2}$  $t_{2}$\\
+    Peter {} sleeps\\
+    \glt `Peter ist sleeping.'
+\end{exe}
+\end{lstlisting}
+
+
+%\outputbox{
+\begin{exe}
+\ex
+  \gll {Multiword expression} -s can be glossed too.\\
+Mehrwortlexem -e.\textsc{pl} können sein glossiert auch\\
+\glt `Auch Mehrwortlexeme können glossiert werden.'
+\ex 
+\gll Peter$_{1}$ $t_{1}$  schläft$_{2}$  $t_{2}$\\
+Peter {} sleeps\\
+\glt `Peter ist sleeping.'
+\end{exe}
+%}
+
+%\begin{itemize}
+%\item[\ras] 
+\hfill \emph{Leipzig Glossing Rules} \citep[cf.][]{LeipzigGloss15a}
+%\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{Verweise auf Beispiele}
+%%\frame{
+%%	\frametitle{~}
+%%	\begin{multicols}{2}
+%%		\tableofcontents[currentsection,hideallsubsections]
+%%	\end{multicols}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}[fragile]
+%\frametitle{Verweise auf Beispiele}
+%
+%Mit den bereits eingeführten Befehlen: \lstinline|\label{}| und \lstinline|\ref{}| 
+%{\footnotesize
+%\begin{lstlisting}
+%\begin{exe}
+%\ex \label{ex:Bsp1}
+%\begin{xlist}
+%\ex \label{ex:Bsp2}
+%\gll Auch Mehrwortelemente könn-en glossiert werden.\\
+%also {more.word.elements} can-\textsc{3.pl} glossed be\\
+%\ex[*]{Das ungrammatischer ist Beispiel.}\label{ex:Bsp3}
+%\ex \label{ex:Bsp4}
+%\begin{xlist}
+%\ex[]{das grammatische Beispiel}\label{ex:Bsp5}
+%\ex[]{noch ein grammatisches Beispiel}\label{ex:Bsp6}
+%\end{xlist}	
+%\end{xlist}
+%\end{exe}
+%Die Beispiele (\ref{ex:Bsp1}), (\ref{ex:Bsp2}), (\ref{ex:Bsp3}),
+%(\ref{ex:Bsp4}), (\ref{ex:Bsp5}) und (\ref{ex:Bsp6}) zeigen die 
+%Verwendung von Verweisen auf Beispiele.
+%\end{lstlisting}
+%}
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}
+%
+%\begin{exe}
+%\ex \label{ex:Bsp1}
+%\begin{xlist}
+%\ex \label{ex:Bsp2}
+%\gll Auch Mehrwortelemente könn-en glossiert werden.\\
+%also {more.word.elements} can-\textsc{3.pl} glossed be\\
+%\ex[*]{Das ungrammatischer ist Beispiel.}\label{ex:Bsp3}
+%\ex \label{ex:Bsp4}
+%\begin{xlist}
+%\ex[]{das grammatische Beispiel}\label{ex:Bsp5}
+%\ex[]{noch ein grammatisches Beispiel}\label{ex:Bsp6}
+%\end{xlist}	
+%\end{xlist}
+%\end{exe}
+%Die Beispiele (\ref{ex:Bsp1}), (\ref{ex:Bsp2}), (\ref{ex:Bsp3}), (\ref{ex:Bsp4}), (\ref{ex:Bsp5}) und (\ref{ex:Bsp6}) zeigen die Verwendung von Verweisen auf Beispiele.
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Customizing identifiers}
+%\frame{
+%	\frametitle{~}
+%	\begin{multicols}{2}
+%		\tableofcontents[currentsection,hideallsubsections]
+%	\end{multicols}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Customizing identifiers}
+
+With the command \lstinline|\exi{ }| instead of \ltxterm{ex}, you can choose own identifiers. 
+The automatic numbering skips the \ltxterm{exi} examples, see (\ref{ex:DetNP}), %(\ref{ex:DetNPAP}), 
+and (\ref{ex:NPDet}).%, and (\ref{ex:DetPPNP}).
+
+\begin{lstlisting}
+\begin{exe}
+  \ex a noun phrase \label{ex:DetNP}
+  \exi{($\alpha$)} a noun phrase modified with a PP \label{ex:DetNPAP}
+  \ex[*]{noun phrase a}\label{ex:NPDet}
+  \exi{($\beta$)}[*]{a with a PP noun phrase modified} \label{ex:DetPPNP}
+\end{exe}
+\end{lstlisting}
+
+
+\begin{exe}
+\ex a noun phrase \label{ex:DetNP}
+\exi{($\alpha$)} a noun phrase modified with a PP \label{ex:DetNPAP}
+\ex[*]{noun phrase a}\label{ex:NPDet}
+\exi{($\beta$)}[*]{a with a PP noun phrase modified} \label{ex:DetPPNP}
+\end{exe}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+With the command \lstinline|\exr{ }| and \lstinline|\exp{ }| instead of \ltxterm{ex}, you can \textbf{repeat the numbering} of earlier examples or repeat it with a \textbf{prime}, respectively. 
+
+\begin{lstlisting}
+\begin{exe}
+  \ex[]{a new noun phrase}
+  \exr{ex:DetNP}[]{a noun phrase}
+  \exp{ex:NPDet}[*]{noun a phrase}
+  \ex[]{another noun phrase}
+\end{exe}
+\end{lstlisting}
+
+\begin{exe}
+	\ex[]{a new noun phrase}
+	\exr{ex:DetNP}[]{a noun phrase}
+	\exp{ex:NPDet}[*]{noun a phrase}
+	\ex[]{another noun phrase}
+\end{exe}
+
+
+For further features of \ltxpack{gb4e}, take a look at the package documentation \citep{Kolb&Co10a}.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{langsci-gb4e}
+\frame{
+	\frametitle{~}
+	%	\begin{multicols}{2}
+	\tableofcontents[currentsection,hideallsubsections]
+	%	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{langsci-gb4e}
+
+There is an \textbf{improved version} of \ltxpack{gb4e} made by the \emph{Language Science Press} team.
+
+\begin{lstlisting}
+\usepackage{langsci-gb4e}
+\end{lstlisting}
+
+You can use \textbf{all \ltxpack{gb4e} commands}, but there is also a shorter version for the \ltxterm{exe} and \ltxterm{xlist} environments: open and close every level with \lstinline|\ea| and \lstinline|\z|, every further item in a level is given by \lstinline|\ex|. 
+
+\begin{multicols}{2}
+	
+%{\footnotesize 
+\begin{lstlisting}
+\ea This is an example. 
+  \ea This is an example.
+  \ex This is an example. 
+  \z		
+\ex This is an example.
+\z 
+\end{lstlisting}
+%}
+
+%\outputbox{
+\ea This is an example. 
+\ea This is an example.
+\ex This is an example. 
+\z		
+\ex This is an example.
+\z 
+%} 
+
+\end{multicols}
+
+For further features of \ltxpack{gb4e}, take a look at the LSP guidelines \citep{Nordhoff&Co}.
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Exercise}
+
+
+Go to \url{https://github.com/langsci/latex4linguists/blob/master/3-2.md}\\
+and follow the instructions of \textbf{all blocks} in your \texttt{.tex} file.
+
+%Download the PDF \alert{\texttt{myDocument-EX4.pdf}} and replicate it with the commands you have already learnt. Follow the instructions in the last section and install the packages.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{XY}
+%%\frame{
+%%\begin{multicols}{2}
+%%\frametitle{~}
+%%	\tableofcontents[currentsection]
+%%\end{multicols}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}{XY}
+%
+%\begin{itemize}
+%	\item XY
+%\end{itemize}
+%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\iftoggle{handout}{
+%%% BEGIN handout true
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	
+%%Test Toggle ON
+%
+%}
+%%% END handout true 
+%%% BEGIN handout false
+%{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% Test Toggle OFF
+%
+%}%% END handout false
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
