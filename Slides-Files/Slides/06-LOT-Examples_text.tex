@@ -633,6 +633,124 @@ For further features of \ltxpack{gb4e}, take a look at the LSP guidelines \citep
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{jambox}
+\frame{
+	\frametitle{~}
+	%	\begin{multicols}{2}
+	\tableofcontents[currentsection,hideallsubsections]
+	%	\end{multicols}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{jambox}
+
+For adding comments to your examples, you can use the \lstinline|\hfill| command (alignment on the right side)
+
+\begin{lstlisting}
+\ea  If no mistake have you made, yet losing you are \dots\ a different game you should play. \hfill [Yoda-English]
+\ex Das ist ein Beispiel. \hfill [German]
+\ex Este es un ejemplo. \hfill [Spanish]
+\z 
+
+\end{lstlisting}
+%\settowidth\jamwidth{ Test} 
+\ea If no mistake have you made, yet losing you are \dots\ a different game you should play. \hfill [Yoda-English]
+
+\ex Das ist ein Beispiel. \hfill [German]
+
+\ex Este es un ejemplo. \hfill [Spanish]
+\z 
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+\dots\ or the \ltxpack{jambox} package.
+
+\smallskip
+
+You will need the \textbf{\ltxterm{jambox.sty} file} in the same folder as your \ltxterm{.tex} file.
+
+\begin{lstlisting}
+\usepackage{jambox}
+\end{lstlisting}
+
+\smallskip
+
+\pause 
+
+With \ltxterm{jambox.sty} you can adjust the \textbf{spacing from the right margin to the begin of the comments} (see: \lstinline|\settowidth\jamwidth{ }|)
+
+\begin{lstlisting}
+\settowidth\jamwidth{[Yoda-English]X} 
+\ea If no mistake have you made, yet losing you are \dots\ a different game you should play. \jambox{[Yoda-English]}
+\ex Das ist ein Beispiel. \jambox{[German]}
+\ex Este es un ejemplo. \jambox{[Spanish]}
+\z 
+\end{lstlisting}
+
+\settowidth\jamwidth{[Yoda-English]X} 
+\ea If no mistake have you made, yet losing you are \dots\ a different game you should play. \jambox{[Yoda-English]}
+\ex Das ist ein Beispiel. \jambox{[German]}
+\ex Este es un ejemplo. \jambox{[Spanish]}
+\z 
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+Complex examples:
+
+\begin{lstlisting}
+\settowidth\jamwidth{(Chomsky, 1957: 1)XX} 
+
+\ea[?]{Patience you must have, my young padawan. \jambox{(Yoda, 2005)}
+}\label{ex:Jam1}
+
+\ex[]{Syntax is the study of the principles and processes by which sentences are constructed in particular languages. Syntactic investigation of a given language has as its goal the construction of a grammar that can be viewed as a device of some sort for producing the sentences of the language under analysis. \jambox{\citep[1]{Chomsky57a}}
+}\label{ex:Jam2}	
+
+\ex[]{
+\gll Jeder Bauer, der einen Esel besitzt, schlägt ihn. \\ 
+every farmer that a.\textsc{m}.\textsc{acc} donkey owns beats it.\textsc{m}.\textsc{acc} \\
+\glt `Every farmer who owns a donkey beats it.' 
+\jambox{\citep{Geach62}}
+}\label{ex:Jam3}  
+\z 
+
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+\settowidth\jamwidth{(Chomsky, 1957: 1)XX} 
+\ea[?]{Patience you must have, my young padawan. \jambox{(Yoda, 2005)}
+	}\label{ex:Jam1}
+
+\ex[]{Syntax is the study of the principles and processes by which sentences are constructed in particular languages. Syntactic investigation of a given language has as its goal the construction of a grammar that can be viewed as a device of some sort for producing the sentences of the language under analysis. \jambox{\citep[1]{Chomsky57a}}
+	}\label{ex:Jam2}	
+
+\ex[]{
+	\gll Jeder Bauer, der einen Esel besitzt, schlägt ihn. \\ 
+	every farmer that a.\textsc{m}.\textsc{acc} donkey owns beats it.\textsc{m}.\textsc{acc} \\
+	\glt `Every farmer who owns a donkey beats it.' 
+	\jambox{\citep{Geach62}}
+}\label{ex:Jam3}  
+\z 
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
 \frametitle{Exercise}
