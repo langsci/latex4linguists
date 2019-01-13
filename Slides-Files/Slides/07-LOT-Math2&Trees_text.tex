@@ -47,12 +47,12 @@
 
 %% Contents slide
 \frame{
-%\begin{multicols}{2}
+\begin{multicols}{2}
 	\frametitle{Contents}
 %	\tableofcontents[hideallsubsections]
 	\tableofcontents
 	%[pausesections]
-%\end{multicols}
+\end{multicols}
 	}
 
 
@@ -63,8 +63,8 @@
 \nocite{Freitag&MyP15a}
 \nocite{Knuth1986}
 \nocite{Kopka94a}
-\nocite{MyP17c}
-\nocite{MyP&Kerkhof16a}
+%\nocite{MyP17c}
+%\nocite{MyP&Kerkhof16a}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,9 +91,9 @@
 \section{Math mode 2}
 \frame{
 	\frametitle{~}
-	\begin{multicols}{2}
+%	\begin{multicols}{2}
 		\tableofcontents[currentsection,hideallsubsections]
-	\end{multicols}
+%	\end{multicols}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -544,9 +544,9 @@ $\lsem \alpha \beta \rsem = \lsem \beta \rsem (\lsem \alpha \rsem)$
 \section{Trees}
 \frame{
 	\frametitle{~}
-	\begin{multicols}{2}
+%	\begin{multicols}{2}
 		\tableofcontents[currentsection,hideallsubsections]
-	\end{multicols}
+%	\end{multicols}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1076,33 +1076,67 @@ Tree with sub- and superscripts
 \begin{frame}[fragile]
 \frametitle{Arrows}
 
-Arrows/lines from node to node (\fe for movement, projection, etc.) can be easily drawn. 
+Arrows/lines from node to node (\fe for movement, projection, etc.) can be drawn easily. 
 	
-Dafür werden den Knoten \textbf{Namen} (Befehl: \lstinline|name=|) gegeben, und Pfeile von Knotennamen zu Knotennamen gezeichnet 
+Give the nodes a name (command: \lstinline|, name = |) and draw an arrow with the following command 
 	
 \begin{lstlisting}	
+\draw[X] (Y) to[out=V, in=W] (Z);
+
 \draw[->] (T10) to[out=south west, in=south west](T11);	
 \end{lstlisting}
-
-	
-	\textbf{Befehl:} \lstinline|\draw[X] (Y) to[out=V, in=W] (Z);|
 	
 	\begin{itemize}
-		\item \alert{X}: Art des Pfeils (\lstinline|-> <- <-> -|)
-		\item \alert{Y}: Name des Startknotens
-		\item \alert{Z}: Name des Landeknotens
-		\item \alert{V}: Ausgangsausrichtung im Startknoten
+		\item \alert{X}: type of arrow/line (\lstinline|-> <- <-> -|)
+		\item \alert{Y}: name of start node
+		\item \alert{Z}: name of end node
+		\item \alert{V}: start position of the node (\lstinline|south|/\lstinline|north| $+$ \lstinline|east|/\lstinline|west|)
 		
-		(\lstinline|south|/\lstinline|north| + \lstinline|east|/\lstinline|west|)
+		\item \alert{W}: end position of the node node (\lstinline|south|/\lstinline|north| $+$ \lstinline|east|/\lstinline|west|)
 		
-		\item \alert{W}: Ankunftsausrichtung im Landeknoten
-		\item \alert{;}: Ende des Befehls
+		\item \alert{;}: end of the command
 	\end{itemize}
 	
-
-
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+
+%\begin{multicols}{2}
+
+\begin{lstlisting}
+[NP, name=N2
+  [\textsc{Det} [die \\ the]]
+  [N$'$, name=N1
+    [N$^0$, name=N0 [Behandlung \\ treatment]]
+    [NP [des Patienten \\ of the patient, roof]]
+  ]
+]
+\draw[->,dashed] (N0) to[out=west,in=west] (N1);
+\draw[->,dashed] (N1) to[out=east,in=east] (N2);
+\end{lstlisting}
+
+\begin{figure}[h]
+\centering
+
+\begin{forest}
+[NP, name=N2
+[\textsc{Det} [die \\ the]]
+[N$'$, name=N1
+[N$^0$, name=N0 [Behandlung \\ treatment]]
+[NP [des Patienten \\ of the patient, roof]]
+]
+]
+\draw[->,dashed] (N0) to[out=west,in=west] (N1);
+\draw[->,dashed] (N1) to[out=east,in=east] (N2);
+\end{forest}
+\end{figure}
+
+\nocite{MyP18b}
+%\end{multicols}
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
@@ -1113,22 +1147,22 @@ Dafür werden den Knoten \textbf{Namen} (Befehl: \lstinline|name=|) gegeben, und
 %\tiny	
 \begin{lstlisting}
 [CP
-[DP$_{1}$, name=T12 [Peter, roof]]
-[C$^{\prime}$
-[C$^{0}$ [schläft$_{2}$, name=T22]]
-[TP
-[$t_{1}$, name=T11]
-[T$^{\prime}$
-[VP
-[$t_{1}$, name=T10]
-[V$^{\prime}$
-[V$^{0}$ [$t_{2}$, name=T20]]
-]
-]
-[T$^{0}$ [$t_{2}$, name=T21]]
-]
-]
-]
+  [DP$_{1}$, name=T12 [Peter, roof]]
+  [C$^{\prime}$
+    [C$^{0}$ [schläft$_{2}$, name=T22]]
+    [TP
+      [$t_{1}$, name=T11]
+      [T$^{\prime}$
+        [VP
+          [$t_{1}$, name=T10]
+          [V$^{\prime}$
+            [V$^{0}$ [$t_{2}$, name=T20]]
+          ]
+        ]
+        [T$^{0}$ [$t_{2}$, name=T21]]
+      ]
+    ]
+  ]
 ]
 \draw[->] (T10) 
 to[out=south west, in=south west](T11);	
@@ -1174,7 +1208,7 @@ to[out=south west, in=south west](T12);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Auszeichnung von Knoten}
+\subsection{Marking nodes}
 %\frame{
 %	\frametitle{~}
 %	\begin{multicols}{2}
@@ -1185,10 +1219,9 @@ to[out=south west, in=south west](T12);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-%\frametitle{Baumstrukturen}
+\frametitle{Marking nodes}
 
-\begin{itemize}
-\item Auszeichnung von Knoten:
+Some options: 
 
 \begin{itemize}
 \item \lstinline|draw|: Viereck
@@ -1197,32 +1230,28 @@ to[out=south west, in=south west](T12);
 \item \lstinline|fill=X|: Knoten mit Farbe \emph{X} hinterlegen
 \item \lstinline|circle, draw, fill=lightgray|: hellgrau hinterlegter Kreis 
 \end{itemize}
-\end{itemize}
-
-\end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-%\frametitle{Baumstrukturen}
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]
+%%\frametitle{Baumstrukturen}
 
 \begin{minipage}[t]{.6\textwidth}
 %\scriptsize
 %\tiny	
 \begin{lstlisting}
 [S, draw
-[DP, circle, draw
-[Peter, roof]
-]
-[VP, draw, red 
-[DP, fill=blue 
-[einen Wagen, roof]
-]
-[V$^{0}$, circle, draw,
-fill=lightgray
-[kauft]
-]
-]
+  [DP, circle, draw
+    [Peter, roof]]
+  [VP, draw, red 
+    [DP, fill=blue 
+      [einen Wagen, roof]]
+    [V$^{0}$, circle, draw, fill=lightgray
+      [kauft]]
+  ]
 ]
 \end{lstlisting}
 \end{minipage}
@@ -1256,7 +1285,7 @@ fill=lightgray
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Weitere Features}
+\subsection{Further features}
 %\frame{
 %	\frametitle{~}
 %	\begin{multicols}{2}
@@ -1267,12 +1296,12 @@ fill=lightgray
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
-\frametitle{Weitere Features}
+\frametitle{Further features}
 
 \begin{itemize}
-\item \ltxpack{forest} ist ein sehr mächtiges Paket. Um alle Vorzüge von \ltxpack{forest} zu erfahren, schauen Sie sich die Dokumentation an \citep{Zivanovic17a}.
+\item \ltxpack{forest} is a very powerful package. Check the package documentation \citep{Zivanovic17a} to see all of its benefits.
 
-\item Eine Anleitung für den schnellen Start finden Sie unter \citet{VandenWyngaerd16a}.
+\item Check also the \emph{Quick start guide} for linguists \citep{VandenWyngaerd16a}.
 \end{itemize}
 
 \end{frame}
@@ -1283,7 +1312,9 @@ fill=lightgray
 \frametitle{Exercise}
 
 
-Go to \url{https://github.com/langsci/latex4linguists/blob/master/3-2.md}\\
+Go to \url{https://github.com/langsci/latex4linguists/blob/master/4-1.md}\\
+and\\
+\url{https://github.com/langsci/latex4linguists/blob/master/4-2.md}
 and follow the instructions of \textbf{all blocks} in your \texttt{.tex} file.
 
 %Download the PDF \alert{\texttt{myDocument-EX4.pdf}} and replicate it with the commands you have already learnt. Follow the instructions in the last section and install the packages.
